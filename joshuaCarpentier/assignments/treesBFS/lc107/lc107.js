@@ -40,7 +40,7 @@ const traverse = (root) =>{
             //  return node.value
             // })}`)
 
-            console.log(`queue ${queue.length}`)
+              console.log(`queue ${queue.length}`)
             if (currentNode.right) console.log(`Right push: ${queue.push(currentNode.right)}`)
             console.log(`queue Check  ${queue.length}`)
             console.log(`queue Key Value pair checker ${queue.map((node) => {

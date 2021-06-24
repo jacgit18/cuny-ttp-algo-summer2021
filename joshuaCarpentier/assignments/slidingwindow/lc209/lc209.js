@@ -35,14 +35,30 @@ function smallest_subarray_with_given_sum(s, arr) {
   windowSizeStart = 0;
 
   for (let start = 0; start < arr.length; start++){
+    console.log(`\n winSum value ${winSum}`)
+
     winSum += arr[start];
+    console.log(`winSum value Before next for loop iteration ${winSum}`)
+
     while (winSum >= s){
+      console.log(`winSum value start of while ${winSum}`)
+
+      console.log(`minLength value before ${minLength}`)
       minLength = Math.min(minLength, start - windowSizeStart +1);
+      console.log(`minLength after ${minLength}`)
+
       winSum -= arr[windowSizeStart];
+      console.log(`winSum value before next start of while ${winSum}`)
+
       windowSizeStart += 1;
+
     }
 
   }
+  console.log(`WinSum value end ${winSum}`)
+
+  console.log(`minLength value end ${minLength}`)
+
   if(minLength === Infinity){
     return 0;
   }
