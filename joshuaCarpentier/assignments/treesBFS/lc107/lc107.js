@@ -36,9 +36,21 @@ const traverse = (root) =>{
         for (let i = 0; i < levelSize; i += 1) {
             let currentNode = queue.shift();
             if (currentNode.left) console.log(`Left push: ${queue.push(currentNode.left)}`)
+            // console.log(`queue Key Value pair checker ${queue.map((node) => {
+            //  return node.value
+            // })}`)
+
+            console.log(`queue ${queue.length}`)
             if (currentNode.right) console.log(`Right push: ${queue.push(currentNode.right)}`)
+            console.log(`queue Check  ${queue.length}`)
+            console.log(`queue Key Value pair checker ${queue.map((node) => {
+              return node.value
+             })}`)
+
               console.log(`currentNode : ${currentNode.value}`);
              currentLevel.push(currentNode.value);
+             console.log(`New Level ${currentLevel.length}`)
+
 
         }
         console.log(`Checker : ${currentLevel}`);
@@ -59,7 +71,10 @@ root.right = new TreeNode(1)
 root.left.left = new TreeNode(9)
 root.right.left = new TreeNode(10)
 root.right.right = new TreeNode(5)
+console.time('doSomething')
 console.log(`Reverse level order traversal: ${traverse(root)}`)
+console.timeEnd('doSomething')
+
 console.log(`\n ------- Edge Case -------- `);
 // console.log(`Reverse level order traversal: ${traverse(root)}`);
 
