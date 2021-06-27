@@ -20,9 +20,9 @@
  */
 
  class Node {
-  constructor(value, next=null){
+  constructor(value = null){
     this.value = value;
-    this.next = next;
+    this.next = null;
   }
 
   get_list() {
