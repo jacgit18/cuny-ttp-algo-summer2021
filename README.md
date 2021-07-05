@@ -92,21 +92,21 @@ program containing the following:
 - DSA Appendix Slides & Discussion
 - Initial HackerRank Assesment
 - Intro to "Sliding Window" Pattern: Lecture & Discussion
-- [X] Maximum Sum Subarray of Size K (easy) LC #53
+	- [x] Maximum Sum Subarray of Size K (easy) LC #53
 
 #### 06/02 (Wed):
 
 - "Sliding Window" Continued: P2P Mock Interview ( Each Pair Choose One! )
-  - [] Smallest Subarray with a given sum (easy): LC #209
+  - [x] Smallest Subarray with a given sum (easy): LC #209
   - [] Longest Substring with K Distinct Characters (medium): LC #340
   - [] Fruits into Baskets (medium): LC 904
 - Intro to "Two Pointers" Pattern: Lecture & Discussion
-  - [] Pair with Target Sum (easy): LC #1
+  - [x] Pair with Target Sum (easy): LC #1
 
 #### 06/03 (Thur):
 
 - "Two Pointers" Continued: P2P Mock Interview ( Each Pair Choose Two! )
-  - [] Remove Duplicates (easy): LC #26
+  - [x] Remove Duplicates (easy): LC #26
   - [] Squaring a Sorted Array (easy): LC #977
   - [] Triplet Sum to Zero (medium): LC #15
   - [] Triplet Sum Close to Target (medium): LC #16
@@ -117,66 +117,66 @@ program containing the following:
 #### 06/07 (Mon):
 - "Two Pointers" Continued: P2P Mock Interview ( Each Pair Choose One! )
   - [] Triplets with Smaller Sum (medium): LC #259
-  - [] Subarrays with Product Less than a Target (medium): LC #713 
+  - [x] Subarrays with Product Less than a Target (medium): LC #713 
   - [] Dutch National Flag Problem (medium): LC #75
 - Intro to "Fast & Slow Pointers" Pattern: Lecture & Discussion
-  - [] LinkedList Cycle (easy): LC #141
+  - [x] LinkedList Cycle (easy): LC #141
 
 
 #### 06/08 (Tues):
 - "Fast & Slow Pointers" Continued: P2P Mock Interview ( Each Pair Choose One! )
   - [] Start of LinkedList Cycle (medium): LC #142 
-  - [] Happy Number (medium): LC #202
+  - [x] Happy Number (medium): LC #202
   - [] Middle of the LinkedList (easy): LC #876 
 - Intro to "Merge Intervals" Pattern: Lecture & Discussion
-  - [] Merge Intervals (medium): LC #56
+  - [x] Merge Intervals (medium): LC #56
 
 #### 06/09 (Wed):
 - "Merge Intervals" Continued ( Each Pair Choose One! )
-  - [] Insert Interval (medium): LC #57
+  - [x] Insert Interval (medium): LC #57
   - [] Intervals Intersection (medium): LC #986 
   - [] Conflicting Appointments (medium): LC #252 
 - Intro to "Cyclic Sort" Pattern: Lecture & Discussion
-  - [] Cyclic Sort (easy)
+  - [x] Cyclic Sort (easy)
 
 #### 06/10 (Thur):
 - "Cyclic Sort" Continued ( Each Pair Choose Two! )
-  - [] Find the Missing Number (easy): LC #268 
+  - [x] Find the Missing Number (easy): LC #268 
   - [] Find all Missing Numbers (easy): LC #448 
   - [] Find the Duplicate Number (easy): LC #287 
   - [] Find all Duplicate Numbers (easy): LC #442 
 - Intro to "In Place Reversal of a LL" Pattern: Lecture & Discussion
-  - [] Reverse a LinkedList (easy): LC #206
+  - [x] Reverse a LinkedList (easy): LC #206
   
 ### .
 ### /// Week Three ///
 
 #### 06/14 (Mon):
 - "In Place Reversal of a LL" Continued ( Each Pair Choose One! )
-  - [] Reverse a LinkedList (easy): LC #206
-  - [] Reverse a Sub-list (medium): LC #92
+  - [x] Reverse a LinkedList (easy): LC #206
+  - [x] Reverse a Sub-list (medium): LC #92
   - [] Reverse every K-element Sub-list (medium): LC #25 
 - Intro to "Trees: BFS" Pattern & Discussion
-  - [] Binary Tree Level Order Traversal (easy): LC #102
+  - [x] Binary Tree Level Order Traversal (easy): LC #102
 
 
 #### 06/15 (Tues):
 - "Trees: BFS" Continued ( Each Pair Choose Two! )
   - [] Reverse Level Order Traversal (easy): LC #107
   - [] Zigzag Traversal (medium): LC #103
-  - [] Level Averages in a Binary Tree (easy): LC #637 
+  - [x] Level Averages in a Binary Tree (easy): LC #637 
 
 #### 06/16 (Wed):
 - "Trees: BFS" Continued ( Each Pair Choose One! )
-  - [] Minimum Depth of a Binary Tree (easy): LC #111 & LC #104 
+  - [x] Minimum Depth of a Binary Tree (easy): LC #111 & LC #104 
   - [] Level Order Successor (easy)
   - [] Connect Level Order Siblings (medium): LC #117
 - Intro to "Trees: DFS" Pattern & Discussion
-  - [] Binary Tree Path Sum (easy): LC #112
+  - [x] Binary Tree Path Sum (easy): LC #112
 
 #### 06/17 (Thur):
 - "Trees: DFS" Continued ( Each Pair Choose Two! )
-  - [] All Paths for a Sum (medium): LC #113 & LC #257 
+  - [x] All Paths for a Sum (medium): LC #113 & LC #257 
   - [] Sum of Path Numbers (medium): LC #129
   - [] Path With Given Sequence (medium): LC #1430
   - [] Count Paths for a Sum (medium): LC #437
@@ -186,7 +186,7 @@ program containing the following:
 
 #### 06/21 (Mon):
 - Intro to "Heaps" Pattern & Discussion
-  - [] Find the Median of a Number Stream (medium): LC #295
+  - [x] Find the Median of a Number Stream (medium): LC #295
 - "Heaps" Continued ( *No Luck This Time, Only One Problem To Choose From! )
   - [] Sliding Window Median (hard): LC #480
 - Intro to "Subsets" Pattern & Discussion
