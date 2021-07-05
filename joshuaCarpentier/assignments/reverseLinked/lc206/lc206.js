@@ -70,7 +70,10 @@ const reverse = function (head) {
     }
 
 
-    current.next = previous;
+    current.next = previous; // reverse the point value ->  now  null <- value 1 -> 2 -> 4  -> 5 -> null
+    // null <- value <- 1  2 -> 4  -> 5 -> null continue until 
+    // null <- value <- 1  <- 2 <- 4 <- 5  === 5 -> 4 -> 2  -> 1 -> value -> null  
+
     // try {
     //   console.log(`Next chain new value on iteration(${counter}): ${current.next.value} `);
     // } catch (e) {
@@ -83,14 +86,14 @@ const reverse = function (head) {
       console.log(`Previous value is null after chain on iteration(${counter})`);
     }
 
-    previous = current;
+    previous = current; // advancing position
     try {
       console.log(`Previous new value on iteration(${counter}): ${previous.value} `);
     } catch (e) {
       console.log(`Previous value is null on iteration(${counter}) after prev`);
     }
 
-    current = next;
+    current = next; // advancing position
     // try {
     //   console.log(`Current new value on iteration(${counter}): ${current.value} `);
     // } catch (e) {
@@ -162,3 +165,39 @@ console.log(`\n Nodes of reversed LinkedList are: ${reverse(head).get_list()}`);
 
 // Space complexity #
 // We only used constant space, therefore, the space complexity of our algorithm is O(1).
+
+
+
+// deconstruction es6
+// var reverseList = function(head) {
+//   let [prev, current] = [null, head]
+//   while(current) {
+//       [current.next, prev, current] = [prev, current, current.next]
+//   }
+//   return prev
+// }
+
+////////////////////////////////////
+// var reverseList = function(head, prev = null) {
+//   if (!head) return prev;
+
+//   const next = head.next;
+//   head.next = prev;
+//   return reverseList(next, head);
+// };
+
+//////////////////////////////////////
+
+// var reverseList = function(head) {
+// 	// base case
+//     if (head == null || head.next == null){
+//         return head;
+//     }
+// 	// go all the way to the end
+//     let reversedListHead = reverseList(head.next)
+// 	// add reverse myself
+//     head.next.next = head;
+//     head.next = null;
+// 	// go up
+//     return reversedListHead
+// };
