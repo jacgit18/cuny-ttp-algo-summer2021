@@ -16,6 +16,8 @@
    * then if the window intial end isnt greater then the target window -1  
    * 
    * set max Sum and ahead
+   * 
+   * could sort to make faster
    * */
 
 function max_subarray_size_k(k, arr) {

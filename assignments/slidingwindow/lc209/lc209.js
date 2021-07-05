@@ -28,8 +28,25 @@
  * 
  */
 
+  /**
+   * 
+   * Input: 
+   * Output: 
+   *  
+   * Naive Brute Force Approach
+   * --------------- 
+   * Variables: 
+   * 
+   * */
 
 function smallest_subarray_with_given_sum(s, arr) {
+  console.log(`------ Test Cases ------`)
+  // Properties: head, next pointer, Node value, null, current position, next position, last position
+  
+  // Pre-Condition: if list empty or only has null
+  // 
+  // Conditions: while current head not equal to null
+
   let winSum = 0, 
   minLength = Infinity,
   windowSizeStart = 0;
@@ -87,3 +104,11 @@ console.log(
   )}\n`
 );
 
+
+    /**
+   *  Optimal Approach
+   * -----------------
+   *  Variables: 
+   * 
+   * 
+   */
