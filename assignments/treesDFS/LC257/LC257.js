@@ -14,12 +14,12 @@ class TreeNode {
   
   /**
    * 
-   * Input: tree
-   * Output: All root to leaf paths
+   * Input: 
+   * Output: 
    *  
-   * Naive Approach
+   * Naive Brute Force Approach
    * --------------- 
-   * Variables: root, root. left, root.right, array to store the results 
+   * Variables:
    * 
    * 
    */
@@ -27,6 +27,12 @@ class TreeNode {
 
   
   const binaryTreePaths = (root) =>{
+    console.log(`------ Test Cases ------`)
+  // Properties: head, next pointer, Node value, null, current position, next position, last position
+  
+  // Pre-Condition: if list empty or only has null
+  // 
+  // Conditions: while current head not equal to null
     let result = [];
     const travel = (node, path) =>{
           // Pre-Condition: check if node os empty then push path
