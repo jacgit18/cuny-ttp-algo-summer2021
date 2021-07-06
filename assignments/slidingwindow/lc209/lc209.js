@@ -3,35 +3,12 @@
 // Given an array of positive numbers and a positive number ‘S,’ find the length 
 // of the smallest contiguous subarray whose sum is greater than or equal to ‘S’. Return 0 if no such subarray exists.
 
-/**
- * 
- * BRUTE Force (proably nested loop or mayb)
- * pre condition empty array
-  let windowSize = 2;
-  for loop {
-    iterate through array length 
-    // window condition if array[index] >= target return length of numbers in tha addition 
-    
-    or 
-    [prefered outcome because we want the smallest subarray]
-    if subarry is >=
-    // target return length basically if one number meets condition return that subarray length without addition
-    /
 
-  }
- 
-
-  alt 
-
-  loop while intial index and next index sum less than target ...
- * 
- * 
- */
 
   /**
    * 
-   * Input: 
-   * Output: 
+   * Input: array of pos nums and targetSum
+   * Output: least amount of numbers that is greater than or equal to targetSum when combined basically the smallest subarray
    *  
    * Naive Brute Force Approach
    * --------------- 
@@ -50,26 +27,42 @@ function smallest_subarray_with_given_sum(s, arr) {
   let winSum = 0, 
   minLength = Infinity,
   windowSizeStart = 0;
+  let counter = 0;
+  let subCounter = 0;
+
 
   for (let start = 0; start < arr.length; start++){
-    console.log(`\n winSum value ${winSum}`)
 
     winSum += arr[start];
-    console.log(`winSum value Before next for loop iteration ${winSum}`)
+    console.log(`winSum value Before while loop iteration ${winSum}, current iteration count: (${counter})`)
+    console.log(`\n`)
+
 
     while (winSum >= s){
-      console.log(`winSum value start of while ${winSum}`)
+      console.log(`winSum value start of while ${winSum}, current sub iteration count: (${subCounter})`)
 
-      console.log(`minLength value before ${minLength}`)
-      minLength = Math.min(minLength, start - windowSizeStart +1);
-      console.log(`minLength after ${minLength}`)
+      console.log(`minLength value before ${minLength}, current sub iteration count: (${subCounter})`)
+      let windowResize = start - windowSizeStart + 1;
+      minLength = Math.min(minLength, windowResize);
+      console.log(`Resize is  ${windowResize}, and the current sub iteration count: (${subCounter})`)
+
+      console.log(`minLength after ${minLength}, current sub iteration count: (${subCounter})`)
 
       winSum -= arr[windowSizeStart];
-      console.log(`winSum value before next start of while ${winSum}`)
+      console.log(`winSum value before next start of while ${winSum}, current sub iteration count: (${subCounter})`)
+      console.log(`minLength check ${minLength}, current sub iteration count: (${subCounter})`)
 
-      windowSizeStart += 1;
+
+      windowSizeStart++;
+      subCounter++;
+      console.log(`\n Current outer loop iteration count: (${counter})`)
 
     }
+
+    counter++;
+    console.log(`winSum value Before while loop iteration ${arr[start]}, current iteration count: (${counter})`)
+
+
 
   }
   console.log(`WinSum value end ${winSum}`)
@@ -88,21 +81,21 @@ return minLength;
 console.log(
   `Smallest subarray length: ${smallest_subarray_with_given_sum(
     7,
-    [2, 1, 5, 2, 3, 2]
+    [2, 1, 5, 2, 3, 1]
   )}\n`
 );
-console.log(
-  `Smallest subarray length: ${smallest_subarray_with_given_sum(
-    7,
-    [2, 1, 5, 2, 8]
-  )}\n`
-);
-console.log(
-  `Smallest subarray length should be: ${smallest_subarray_with_given_sum(
-    8,
-    [3, 4, 1, 1, 6]
-  )}\n`
-);
+// console.log(
+//   `Smallest subarray length: ${smallest_subarray_with_given_sum(
+//     7,
+//     [2, 1, 5, 2, 8]
+//   )}\n`
+// );
+// console.log(
+//   `Smallest subarray length should be: ${smallest_subarray_with_given_sum(
+//     8,
+//     [3, 4, 1, 1, 6]
+//   )}\n`
+// );
 
 
     /**
