@@ -6,13 +6,33 @@
 
 // Write a function to return the maximum number of fruits in both baskets.
 
+
+  /**
+   * 
+   * Input: 
+   * Output: 
+   * 
+   * Naive Brute Force Approach
+   * --------------- 
+   * Variables: 
+   * 
+   * */
+
 function fruits_into_baskets(fruits) {
   // TODO: Write code here
+  console.log(`------ Test Cases ------`)
+
+  // Pre-Condition: if list empty or only has null
+  // 
+  // Conditions: while current head not equal to null
 }
 
 console.log(
   `Maximum number of fruits: ${fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])}`
 );
+
+console.log(`------- Edge Cases ---------`)
+
 console.log(
   `Maximum number of fruits: ${fruits_into_baskets([
     'A',
@@ -23,6 +43,14 @@ console.log(
     'C',
   ])}`
 );
+
+    /**
+   *  Optimal Approach
+   * -----------------
+   *  Variables: 
+   * 
+   * 
+   */
 
 // Solution
 // -----

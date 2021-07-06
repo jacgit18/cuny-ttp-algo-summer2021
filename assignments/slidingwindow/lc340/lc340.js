@@ -4,7 +4,23 @@
 
 // You can assume that K is less than or equal to the length of the given string.
 
+  /**
+   * 
+   * Input: 
+   * Output: 
+   * 
+   * Naive Brute Force Approach
+   * --------------- 
+   * Variables: 
+   * 
+   * */
+
 function longest_substring_with_k_distinct(str, k) {
+  console.log(`------ Test Cases ------`)
+
+  // Pre-Condition: if list empty or only has null
+  // 
+  // Conditions: while current head not equal to null
   // TODO: Write code here
 }
 
@@ -14,6 +30,10 @@ console.log(
     2
   )}`
 );
+
+console.log(`------- Edge Cases ---------`)
+
+
 console.log(
   `Length of the longest substring: ${longest_substring_with_k_distinct(
     'araaci',
@@ -26,6 +46,16 @@ console.log(
     3
   )}`
 );
+
+
+    /**
+   *  Optimal Approach
+   * -----------------
+   *  Variables: 
+   * 
+   * 
+   */
+
 
 // Solution
 // -----
