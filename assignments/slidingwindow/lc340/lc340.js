@@ -16,12 +16,13 @@
    * */
 
 function longest_substring_with_k_distinct(str, k) {
-  console.log(`------ Test Cases ------`)
+  // console.log(`------ Test Cases ------`)
 
-  // Pre-Condition: if list empty or only has null
+  // Pre-Condition: 
   // 
-  // Conditions: while current head not equal to null
-  // TODO: Write code here
+  // Conditions: 
+
+
 }
 
 console.log(
