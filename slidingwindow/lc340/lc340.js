@@ -22,71 +22,64 @@ function longest_substring_with_k_distinct(str, k) {
     charFrequency = {};
 
   for (let windowEnd = 0; windowEnd < str.length; windowEnd++) {
-    // console.log(str[windowEnd]); // you can loop through substrings and lloping through strings vs array is better
+
 
     const rightChar = str[windowEnd];
-    // console.log(`test one ${!(rightChar in charFrequency)}`)
 
-    // console.log(`test two ${rightChar in charFrequency}`)
-    // console.log(charFrequency[rightChar])
-
-    // console.log(charFrequency)
 
     if (!(rightChar in charFrequency)) {
 
       charFrequency[rightChar] = 0; // appending array index current value to the object as a property with a intial value of 0
       // arrays are basically  at type of object where the index is like the property name and subarray is the key 
-      // console.log(charFrequency)
 
     }
-    // console.log(charFrequency)
 
     
     charFrequency[rightChar] += 1;
-    // console.log(Object.keys(charFrequency).length)
 
     while (Object.keys(charFrequency).length > k) {
-
       const leftChar = str[windowStart];
       charFrequency[leftChar] -= 1;
       if (charFrequency[leftChar] === 0) {
         delete charFrequency[leftChar];
       }
-      windowStart += 1; // shrink the window
+
+      windowStart += 1; 
+    
+
     }
 
     maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
-    // console.log(maxLength)
-    console.log(windowEnd)
-    // console.log(windowStart)
-
+  
 
   }
 
   return maxLength;
 }
 
-console.log(
-  `Length of the longest substring: ${longest_substring_with_k_distinct(
-    "araaci",
-    2
-  )}`
-);
+// console.log(
+//   `Length of the longest substring: ${longest_substring_with_k_distinct(
+//     "araaci",
+//     2
+//   )}`
+// );
+
+longest_substring_with_k_distinct("araaci",2)
 
 console.log(`------- Edge Cases ---------`);
 
-console.log(
-  `Length of the longest substring: ${longest_substring_with_k_distinct(
-    'araaci',
-    1
-  )}`
-);
-console.log(
-  `Length of the longest substring: ${longest_substring_with_k_distinct(
-    'cbbebi',
-    3
-  )}`
-);
+// console.log(
+//   `Length of the longest substring: ${longest_substring_with_k_distinct(
+//     'araaci',
+//     1
+//   )}`
+// );
+// console.log(
+//   `Length of the longest substring: ${longest_substring_with_k_distinct(
+//     'cbbebi',
+//     3
+//   )}`
+// );
 
 /**
  *  Optimal Approach
