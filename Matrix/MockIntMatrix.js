@@ -15,17 +15,20 @@ const matrix = (matrix) =>{
       
   for(let outerIndex = 0; outerIndex < matrix.length; outerIndex++ ){
         // console.log(matrix[0]);
+        // let innerIndex = 0;
     // row scope
     for(let i = 0; i<matrix.length; i++) {
-      counts[matrix[outerIndex + 1]] = 0
+      counts = matrix[i];
     }
     
     console.log(counts)
+  
     
     for(let innerIndex = 0; innerIndex < matrix.length; innerIndex++ ){
       // console.log(matrix[outerIndex][innerIndex] === matrix[outerIndex + 1][innerIndex + 1]);
       
-  
+    
+   
         
         if(outerIndex + 1 === matrix.length ){
         break
