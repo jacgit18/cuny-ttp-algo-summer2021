@@ -23,6 +23,8 @@ function remove_element(arr, key) {
       arr[nextElement] = arr[index];
       nextElement += 1;
     }
+    // console.log(arr[nextElement])
+
   }
   return nextElement;
 }
@@ -32,21 +34,4 @@ console.log(
 );
 console.log(`Array new length: ${remove_element([2, 11, 2, 2, 1], 2)}`);
 
-// Solution
-// -----
-// let nextElement = 0; // index of the next element which is not 'key'
-// for (i = 0; i < arr.length; i++) {
-//   if (arr[i] !== key) {
-//     arr[nextElement] = arr[i];
-//     nextElement += 1;
-//   }
-// }
-// return nextElement;
 
-//-----
-
-// Time Complexity #
-// The time complexity of the above algorithm will be O(N), where ‘N’ is the total number of elements in the given array.
-
-// Space Complexity #
-// The algorithm runs in constant space O(1).
