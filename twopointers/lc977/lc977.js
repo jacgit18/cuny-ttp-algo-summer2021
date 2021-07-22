@@ -2,15 +2,26 @@
 // Given a sorted array, create a new array containing squares of all the numbers of the input array in the sorted order.
 
 function make_squares(arr) {
-  let left = 0,
-  right = arr.length - 1;
- while (left < right) {
+  let left = 0;
+  let right = arr.length - 1;
+  let previous = right;
+  let result = [];
+
+
+ while (left <= right) {
  
+     if (arr[left] ** 2 > arr[right] ** 2) {
+         result[previous--] = arr[left++] ** 2;
+     } else {
+         result[previous--] = arr[right--] ** 2;
+     }
  }
+ 
+ return arr;
 }
 
 console.log(`Squares: ${make_squares([-2, -1, 0, 2, 3])}`);
-console.log(`Squares: ${make_squares([-3, -1, 0, 1, 2])}`);
+// console.log(`Squares: ${make_squares([-3, -1, 0, 1, 2])}`);
 
 // Solution
 // -----
