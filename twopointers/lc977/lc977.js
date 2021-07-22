@@ -1,23 +1,26 @@
 // Problem Statement #
 // Given a sorted array, create a new array containing squares of all the numbers of the input array in the sorted order.
 
-function make_squares(arr) {
+const make_squares = (arr) =>{
+  let result = [];
   let left = 0;
   let right = arr.length - 1;
-  let previous = right;
-  let result = [];
-
-
- while (left <= right) {
- 
-     if (arr[left] ** 2 > arr[right] ** 2) {
-         result[previous--] = arr[left++] ** 2;
-     } else {
-         result[previous--] = arr[right--] ** 2;
-     }
- }
- 
- return arr;
+  let i = right;
+  let num1; 
+  let num2;
+  while(left <= right){
+      num1 = arr[left] * arr[left]
+      num2 = arr[right] * arr[right]
+      if(num1 > num2){
+          result[i] = num1
+          left++
+      } else {
+          result[i] = num2
+          right--
+      }
+      i--
+  }
+  return result
 }
 
 console.log(`Squares: ${make_squares([-2, -1, 0, 2, 3])}`);
