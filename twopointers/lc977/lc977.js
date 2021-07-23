@@ -8,23 +8,35 @@ const make_squares = (arr) =>{
   let i = right;
   let num1; 
   let num2;
-  while(left <= right){
-      num1 = arr[left] * arr[left]
-      num2 = arr[right] * arr[right]
+//   while(left < right){
+    while(left <= right){
+
+      num1 = Math.pow(arr[left], 2)
+      num2 = Math.pow(arr[right], 2) 
       if(num1 > num2){
+        //   arr[left] = num1
           result[i] = num1
           left++
       } else {
+        //   arr[i] = num2
           result[i] = num2
           right--
       }
       i--
   }
-  return result
+//   return arr;
+//   return arr.sort();
+  return result;
+
 }
 
+// Squares: 0,1,4,4,9
+// Squares: 0,1,0,4,9
+
+
+
 console.log(`Squares: ${make_squares([-2, -1, 0, 2, 3])}`);
-// console.log(`Squares: ${make_squares([-3, -1, 0, 1, 2])}`);
+console.log(`Squares: ${make_squares([-3, -1, 0, 1, 2])}`);
 
 // Solution
 // -----
