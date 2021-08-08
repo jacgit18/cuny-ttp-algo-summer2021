@@ -28,7 +28,7 @@ const nestedArraysToObjects = (obj, identifier) => {
 
   Object.entries(obj).forEach(
     ([key, value]) => {
-      if (typeof(obj[value]) === typeof([]) ) {
+      if (typeof(obj[value]) === [...{}] ) {
        newdata = Object.assign({}, value);
        console.log(newdata)
     }
