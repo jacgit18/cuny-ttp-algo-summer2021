@@ -1,14 +1,45 @@
 // Problem Statement #
-// Given an array of unsorted numbers and a target number, find a triplet in the array whose sum is as close to the target number as possible, return the sum of the triplet. If there are more than one such triplet, return the sum of the triplet with the smallest sum.
+// Given an array of unsorted numbers and a target number, find a triplet in the array 
+// whose sum is as close to the target number as possible, return the sum of the triplet. 
+// If there are more than one such triplet, return the sum of the triplet with the smallest sum.
 
-const triplet_sum_close_to_target = function (arr, target_sum) {
-  // TODO: Write your code here
+/**
+ * 
+ * Input: array, targetSUm
+ * Output: 
+ *  
+ * Naive Approach
+ * --------------- 
+ * Variables: 
+ * 
+ 
+ * 
+ */
+
+const triplet_sum_close_to_target =  (arr, target_sum) =>{
+
+  // test cases
+
+
   return -1;
 };
 
 console.log(triplet_sum_close_to_target([-2, 0, 1, 2], 2));
+
+console.log(`Edge Cases`)
 console.log(triplet_sum_close_to_target([-3, -1, 1, 2], 1));
 console.log(triplet_sum_close_to_target([1, 0, 1, 1], 100));
+
+
+
+/**
+ *  Optimal Approach
+ * -----------------
+ *  Variables: root, root. left, root.right, index, array to store the root essentially a stack, TotalSum
+ * 
+ * 
+ */
+
 
 // Solution
 // -----
