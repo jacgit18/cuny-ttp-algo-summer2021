@@ -96,7 +96,7 @@ let result = insert(
 for (i = 0; i < result.length; i++) {
   result[i].print_interval();
 }
-console.log();
+
 
 // process.stdout.write('Intervals after inserting the new interval: ');
 // result = insert(

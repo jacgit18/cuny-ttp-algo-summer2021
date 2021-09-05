@@ -62,6 +62,7 @@ const merge = function(intervals) {
             start = interval.start;
             end = interval.end;
           }
+
         }
 
   // add the last interval
@@ -72,32 +73,34 @@ const merge = function(intervals) {
 
 
 
-merged_intervals = merge([new Interval(1, 4), new Interval(2, 5), new Interval(7, 9)]);
-console.log([new Interval(1, 4), new Interval(2, 5), new Interval(7, 9)]); // array of objects
-result = "";
+// merged_intervals = merge([new Interval(1, 4), new Interval(2, 5), new Interval(7, 9)]);
+// console.log([new Interval(1, 4), new Interval(2, 5), new Interval(7, 9)]); // array of objects
+// result = "";
 
-for(i=0; i < merged_intervals.length; i++) {
-  result += merged_intervals[i].get_interval() + " ";
-}
-console.log(`Merged intervals: ${result}`)
+// for(i=0; i < merged_intervals.length; i++) {
+//   result += merged_intervals[i].get_interval() + " ";
+// }
+// console.log(`Merged intervals: ${result}`)
 
 
 merged_intervals = merge([new Interval(6, 7), new Interval(2, 4), new Interval(5, 9)]);
-result = "";
-for(i=0; i < merged_intervals.length; i++) {
-  result += merged_intervals[i].get_interval() + " ";
-}
-console.log(`Merged intervals: ${result}`)
+console.log(merged_intervals)
+// result = "";
+// for(i=0; i < merged_intervals.length; i++) {
+//   result += merged_intervals[i].get_interval() + " ";
+// }
+// console.log(`Merged intervals: ${result}`)
 
 
-merged_intervals = merge([new Interval(1, 4), new Interval(2, 6), new Interval(3, 5)]);
-result = "";
-for(i=0; i < merged_intervals.length; i++) {
-  result += merged_intervals[i].get_interval() + " ";
-}
-console.log(`Merged intervals: ${result}`)
+// merged_intervals = merge([new Interval(1, 4), new Interval(2, 6), new Interval(3, 5)]);
+// result = "";
+// for(i=0; i < merged_intervals.length; i++) {
+//   result += merged_intervals[i].get_interval() + " ";
+// }
+// console.log(`Merged intervals: ${result}`)
 
 
+// console.log(merged_intervals)
 
 // Time complexity #
 // The time complexity of the above algorithm is O(N * logN), where ‘N’ is the total number of intervals. We are iterating the intervals only once which will take O(N), in the beginning though, since we need to sort the intervals, our algorithm will take O(N * logN).
