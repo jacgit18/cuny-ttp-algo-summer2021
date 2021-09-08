@@ -36,13 +36,16 @@
  * 
  */
 
+// j gets messed up and outside of array index range because some values in the are greater then length so condition isnt met and we increment index
+// until condition is met
+
 const find_missing_number = function (nums) {
   let index = 0;
   const CurrentIndex = nums.length;
   while (index < CurrentIndex) {
     let j = nums[index];
     if (nums[index] < CurrentIndex && nums[index] !== nums[j]) {
-      [nums[index], nums[j]] = [nums[j], nums[index]]; 
+      [nums[index], nums[j]] = [nums[j], nums[index]]; // swap indexs
     } else {
       index++;
     }
@@ -57,8 +60,9 @@ const find_missing_number = function (nums) {
   return CurrentIndex;
 };
 
-console.log(find_missing_number([4, 0, 3, 1]));
-console.log(find_missing_number([8, 3, 5, 2, 4, 6, 0, 1]));
+find_missing_number([4, 0, 3, 1]);
+// console.log(find_missing_number([4, 0, 3, 1]));
+// console.log(find_missing_number([8, 3, 5, 2, 4, 6, 0, 1]));
 
 // Solution
 // -----
