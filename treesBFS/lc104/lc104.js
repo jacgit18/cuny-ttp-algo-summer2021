@@ -72,5 +72,5 @@ console.log(`Tree Maximum Depth: ${find_maximum_depth(root)}`);
 
 
 console.log(`\n ------- Edge Case -------- `);
-console.log(`Tree has path: ${has_path(root, 16)}`);
+// console.log(`Tree has path: ${has_path(root, 16)}`);
 

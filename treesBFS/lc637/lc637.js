@@ -28,10 +28,11 @@ class TreeNode {
  */
 
 const find_level_averages = function(root) {
-  let result = [];
   if (!root ) return 0; 
 
+  let result = [];
   let queue = [root];
+
   while (queue.length){
 
     let sum = 0;
