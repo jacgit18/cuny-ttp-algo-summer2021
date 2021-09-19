@@ -32,8 +32,15 @@ insert_num(num) {
 find_median() {
     this.a.sort((x, y) => x - y);
     let n = this.a.length;
-    let m = n >> 1;
+    let m = n >> 1;// 3 is 011 so it is now 01 since were right shifting and 01 equals 1
+    // << this would append two zeros or something
     return n & 1 ? this.a[m] : (this.a[m - 1] + this.a[m]) / 2;
+
+    // 76543210 positions
+    // 00000000 = 0
+    // 00000001 = 1   1
+    // 00000010 = 2  10
+    // 00000011 = 3 011
 }
 }
 
@@ -41,12 +48,16 @@ var medianOfAStream = new MedianOfAStream();
 medianOfAStream.insert_num(3);
 medianOfAStream.insert_num(1);
 console.log(`The median is: ${medianOfAStream.find_median()}`);
+medianOfAStream.find_median();
 medianOfAStream.insert_num(5);
 console.log(`The median is: ${medianOfAStream.find_median()}`);
+medianOfAStream.find_median();
+
 medianOfAStream.insert_num(4);
 console.log(`The median is: ${medianOfAStream.find_median()}`);
+medianOfAStream.find_median();
 
-console.log(medianOfAStream)
+// console.log(medianOfAStream)
 console.log(`\n ------- Edge Cases ----------`)
 
 
