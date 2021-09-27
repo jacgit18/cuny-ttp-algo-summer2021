@@ -190,7 +190,7 @@ program containing the following:
 - "Heaps" Continued ( *No Luck This Time, Only One Problem To Choose From! )
   - [] Sliding Window Median (hard): LC #480
 - Intro to "Subsets" Pattern & Discussion
-  - [] Subsets (easy): LC #78
+  - [x] Subsets (easy): LC #78
 
 #### 06/22 (Tues):
 - "Subsets" Continued ( Each Pair Choose One! )
@@ -198,11 +198,11 @@ program containing the following:
   - [] Permutations (medium): LC #46
   - [] String Permutations by changing case (medium): LC #784
 - Intro to "Modified Binary Search" Pattern & Discussion
-  - [] Order-agnostic Binary Search (easy)
+  - [] Order-agnostic Binary Search (easy); LC #704
 
 #### 06/23 (Wed):
 - "Modified Binary Search" Continued ( Each Pair Choose One! )
-  - [] Ceiling of a Number (medium)
+  - [] Ceiling of a Number (medium): 
   - [] Next Letter (medium): LC #744
   - [] Number Range (medium): LC #34
 - Intro to "Bitwise XOR" Pattern & Discussion

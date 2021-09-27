@@ -3,9 +3,18 @@
 // Given a set with distinct elements, find all of its distinct subsets.
 
 const find_subsets = function(nums) {
-  subsets = [];
-  // TODO: Write your code here
-  return subsets;
+  const powerset = [];
+	generatePowerset([], 0);
+
+	function generatePowerset(path, index) {
+		powerset.push(path);
+    console.log(powerset) // weird behavior before 3
+		for (let i = index; i < nums.length; i++) {
+			generatePowerset([...path, nums[i]], i + 1);
+		}
+	}
+
+	return powerset;
 };
 
 
