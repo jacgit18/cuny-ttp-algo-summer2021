@@ -34,40 +34,40 @@ function smallest_subarray_with_given_sum(s, arr) {
   for (let start = 0; start < arr.length; start++){
 
     winSum += arr[start];
-    console.log(`winSum value Before while loop iteration ${winSum}, current iteration count: (${counter})`)
-    console.log(`\n`)
+    // console.log(`winSum value Before while loop iteration ${winSum}, current iteration count: (${counter})`)
+    // console.log(`\n`)
 
 
     while (winSum >= s){
-      console.log(`winSum value start of while ${winSum}, current sub iteration count: (${subCounter})`)
+      // console.log(`winSum value start of while ${winSum}, current sub iteration count: (${subCounter})`)
 
-      console.log(`minLength value before ${minLength}, current sub iteration count: (${subCounter})`)
+      // console.log(`minLength value before ${minLength}, current sub iteration count: (${subCounter})`)
       let windowResize = start - windowSizeStart + 1;
       minLength = Math.min(minLength, windowResize);
-      console.log(`Resize is  ${windowResize}, and the current sub iteration count: (${subCounter})`)
+      // console.log(`Resize is  ${windowResize}, and the current sub iteration count: (${subCounter})`)
 
-      console.log(`minLength after ${minLength}, current sub iteration count: (${subCounter})`)
+      // console.log(`minLength after ${minLength}, current sub iteration count: (${subCounter})`)
 
       winSum -= arr[windowSizeStart];
-      console.log(`winSum value before next start of while ${winSum}, current sub iteration count: (${subCounter})`)
-      console.log(`minLength check ${minLength}, current sub iteration count: (${subCounter})`)
+      // console.log(`winSum value before next start of while ${winSum}, current sub iteration count: (${subCounter})`)
+      // console.log(`minLength check ${minLength}, current sub iteration count: (${subCounter})`)
 
 
       windowSizeStart++;
       subCounter++;
-      console.log(`\n Current outer loop iteration count: (${counter})`)
+      // console.log(`\n Current outer loop iteration count: (${counter})`)
 
     }
 
     counter++;
-    console.log(`winSum value Before while loop iteration ${arr[start]}, current iteration count: (${counter})`)
+    // console.log(`winSum value Before while loop iteration ${arr[start]}, current iteration count: (${counter})`)
 
 
 
   }
-  console.log(`WinSum value end ${winSum}`)
+  // console.log(`WinSum value end ${winSum}`)
 
-  console.log(`minLength value end ${minLength}`)
+  // console.log(`minLength value end ${minLength}`)
 
   if(minLength === Infinity){
     return 0;
@@ -78,12 +78,16 @@ return minLength;
 
 }
 
+
+console.time("answer time");
+
 console.log(
   `Smallest subarray length: ${smallest_subarray_with_given_sum(
     7,
     [2, 1, 5, 2, 3, 1]
   )}\n`
 );
+console.timeEnd("answer time");
 
 console.log(`------- Edge Cases ---------`)
 // console.log(

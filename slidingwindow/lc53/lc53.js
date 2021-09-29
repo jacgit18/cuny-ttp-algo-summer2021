@@ -49,18 +49,28 @@ return maxSum;
 }
 
 console.log(`------ Edge Cases ------`)
+
+console.time("answer time");
+// alert("Click to continue");
+// console.timeLog("answer time"); // time in middle
+// alert("Do a bunch of other stuff...");
+
 console.log(
   `Maximum sum of a subarray of size K: ${max_subarray_size_k(
     3,
     [2, 1, 5, 1, 3, 2]
   )}`
 );
-console.log(
-  `Maximum sum of a subarray of size K: ${max_subarray_size_k(
-    2,
-    [2, 3, 4, 1, 5]
-  )}`
-);
+console.timeEnd("answer time");
+
+
+
+// console.log(
+//   `Maximum sum of a subarray of size K: ${max_subarray_size_k(
+//     2,
+//     [2, 3, 4, 1, 5]
+//   )}`
+// );
 
 
 

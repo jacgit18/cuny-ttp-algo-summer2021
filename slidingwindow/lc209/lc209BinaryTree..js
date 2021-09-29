@@ -34,6 +34,7 @@ var minSubArrayLen = function(target, nums) {
   }
 };
 
+console.time("answer time");
 
 console.log(
   `Smallest subarray length: ${minSubArrayLen(
@@ -41,15 +42,18 @@ console.log(
     [2, 1, 5, 2, 3, 2]
   )}\n`
 );
-console.log(
-  `Smallest subarray length: ${minSubArrayLen(
-    7,
-    [2, 1, 5, 2, 8]
-  )}\n`
-);
-console.log(
-  `Smallest subarray length should be: ${minSubArrayLen(
-    8,
-    [3, 4, 1, 1, 6]
-  )}\n`
-);
+
+console.timeEnd("answer time");
+
+// console.log(
+//   `Smallest subarray length: ${minSubArrayLen(
+//     7,
+//     [2, 1, 5, 2, 8]
+//   )}\n`
+// );
+// console.log(
+//   `Smallest subarray length should be: ${minSubArrayLen(
+//     8,
+//     [3, 4, 1, 1, 6]
+//   )}\n`
+// );
