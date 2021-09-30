@@ -1,6 +1,6 @@
 
 function smallest_subarray_with_given_sum(target, nums) {
-  
+  // you can basically use if and else statements or min max methods for these situations
   let start = 0
     let end = 0
     let sum = nums[0];
