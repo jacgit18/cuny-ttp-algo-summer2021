@@ -33,9 +33,13 @@ function fruits_into_baskets(fruits) {
   // Conditions: 
 }
 
+
+console.time("answer time");
+
 console.log(
   `Maximum number of fruits: ${fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])}`
 );
+console.timeEnd("answer time");
 
 console.log(`------- Edge Cases ---------`)
 
