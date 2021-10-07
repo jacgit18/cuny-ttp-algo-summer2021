@@ -40,8 +40,14 @@ class ListNode {
     // let foward =  printFoward = (node);
     // // use stack with push pop to get values or something
     // console.log(foward)
+
+    if(node === null) return;
+    // console.log(node.value); // foward
+
+    printBackward(node.next);
   
-    
+    console.log(node.value); // backward
+
   
   }
   
@@ -64,6 +70,6 @@ class ListNode {
   
   }
   
-  // console.log(reverse(linkedList))
+  console.log(reverse(linkedList))
   
-  reverse(linkedList)
+  // reverse(linkedList)
