@@ -71,4 +71,6 @@ function robotPaths(matrix) {
 
   return traverse(0,0);
 }
-robotPaths(matrix2);
+
+
+console.log(robotPaths(matrix2));

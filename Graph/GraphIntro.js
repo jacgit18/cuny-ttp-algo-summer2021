@@ -43,8 +43,8 @@ class Vertex{
     let result = [];
     let queue = [vertex];
     let current;
-  
     let visited = new Set();
+    
     visited.add(vertex);
   
     while(queue.length>0) {
