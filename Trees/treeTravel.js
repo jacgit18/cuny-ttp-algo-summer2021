@@ -8,7 +8,7 @@ class TreeNode {
     }
   }
   
-  // Generate tree from array
+  // Generate tree from array it follows bfs traversal rules
   function deserialize(arr) {
     if (arr.length === 0) { return null; }
     let root = new TreeNode(arr[0]);
