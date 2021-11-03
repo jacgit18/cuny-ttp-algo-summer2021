@@ -11,6 +11,12 @@ function deserialize(node, edges) {
   let vertices = {};
   while (node--) {
     vertices[node] = new Vertex(node);
+     try {
+      console.log( vertices[node])
+
+    } catch (error) {
+      
+    }
   }
   let v1;
   let v2;
