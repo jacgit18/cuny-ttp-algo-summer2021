@@ -15,6 +15,7 @@ function deserialize(node, edges) {
   let v1;
   let v2;
   edges.forEach((edge) => {
+    // console.log(`test ${edge}`)
     v1 = edge[0];
     v2 = edge[1];
     vertices[v1].edges.push(vertices[v2]);
