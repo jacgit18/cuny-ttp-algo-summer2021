@@ -11,22 +11,53 @@ function deserialize(node, edges) {
   let vertices = {};
   while (node--) {
     vertices[node] = new Vertex(node);
-     try {
-      console.log( vertices[node])
+    //  try {
+    //   console.log(vertices[node])
 
-    } catch (error) {
-      
-    }
+    // } catch (error) {
+
+    // }
   }
   let v1;
   let v2;
+
   edges.forEach((edge) => {
     // console.log(`test ${edge}`)
+
+    // The Coulmn goes left to right accross nested array and only two in this case
+    // in terms of edges and multiple rows up to down that represent there
+    // bidirectional relationship when it comes to array where dealing with
+
+    // Coulmn 1 or index 0
     v1 = edge[0];
+    // console.log(` First Y axis index ${v1}`)
+
+    // Coulmn 2 or index 1
     v2 = edge[1];
-    vertices[v1].edges.push(vertices[v2]);
+    // console.log(` Second Y axis index ${v2}`)
+
+    vertices[v1].edges.push(vertices[v2]); // edges is array propery we push into
+    // represents edge total relationships
+    // console.log(vertices[v1]) // prints nearest relationships like for 4
+    // console.log(vertices)
+    // console.log(vertices[v1].edges)
+
+    // we print id 3 times first relationship id 2 and 5
+    // then 2, 5, 6
+    // then 2, 5, 6, and 7 we follow the array order that is why seven last relationship added
+    // since we follow the order of the array we skip to 3 and 5 relationship at the end of the end
+    // Vertex { id: 3, edges: [ Vertex { id: 5, edges: [] } ] }
+
     vertices[v2].edges.push(vertices[v1]);
-  });
+    // console.log(vertices)
+    // console.log(vertices[v2])
+
+    // try {
+    //   console.log(vertices[v1].edges[0]);
+    // } catch (error) {}
+  }
+  
+  );
 
   return vertices[0];
 }
