@@ -56,7 +56,6 @@ function deserialize(node, edges) {
     //   console.log(vertices[v1].edges[0]);
     // } catch (error) {}
   }
-  
   );
 
   return vertices[0];
@@ -85,17 +84,32 @@ let array = [
 ];
 
 let graph = deserialize(num, array);
+console.log(graph)
 
 //1. Breadth First Search
 function bfs(vertex) {
+  console.log(vertex);
   let result = [];
   let queue = [vertex];
   let current;
   let visited = new Set();
-
   visited.add(vertex);
 
+  // try {
+  //   console.log(visited);
+
+  // } catch (error) {
+    
+  // }
+
+
   while (queue.length > 0) {
+    // try {
+    //   console.log(visited);
+  
+    // } catch (error) {
+      
+    // }
     current = queue.shift();
 
     current.edges.forEach((edge) => {
