@@ -1,4 +1,32 @@
+// Basic List Data Structures //
 
+// Arrays 
+
+// Stack LIFO(Last In First Out) - a Stack of plates 
+let Stack = [];
+Stack.push(1);
+Stack.push(3);
+Stack.pop(3);
+Stack.push(10);
+
+
+// Queue FIFO(First In First Out) - a line(queue)/ticket 
+let Queue = [];
+Queue.enqueue();
+Queue.dequeue();
+Queue.push(3);
+Queue.push(10);
+Queue.pop(3);
+// Queue.shift();
+
+// Set
+let Set = new Set();
+set.add(3);
+set.add(10);
+set.delete(3);
+
+
+// End of Section //
   class ListNode {
     constructor(value = null) {
       this.value = value;
