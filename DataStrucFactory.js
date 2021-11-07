@@ -10,6 +10,7 @@ Stack.pop(3);
 Stack.push(10);
 
 
+
 // Queue FIFO(First In First Out) - a line(queue)/ticket 
 let Queue = [];
 Queue.enqueue();
