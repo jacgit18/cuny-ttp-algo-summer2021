@@ -24,7 +24,7 @@
  *            from the top left corner to the bottom right corner, does not go
  *            off of the matrix, and does not travel back on itself
  */
-
+// dont see any terminating condition 
 let matrix1 = [[0,0,0],
              [0,0,0]];
 
@@ -37,7 +37,10 @@ function robotPaths(matrix) {
 
   function traverse(x,y) {
     //BC: Out of Bounds
-    if(x<0||y<0||x>=matrix[0].length||y>=matrix.length) {
+    // matrix[0].length proably num of zero values
+    let booleanCheck = x<0||y<0||x>=matrix[0].length||y>=matrix.length;
+    if(booleanCheck) {
+
       return 0;
     }
 
@@ -50,6 +53,8 @@ function robotPaths(matrix) {
     else if(x === matrix[0].length - 1 && y === matrix.length - 1) {
       return 1;
     }
+
+    
 
     //Mark coordintate as visited
     matrix[y][x] = 1;
