@@ -84,16 +84,15 @@ let array = [
 ];
 
 let graph = deserialize(num, array);
-console.log(graph)
+// console.log(graph)
 
 //1. Breadth First Search
 function bfs(vertex) {
-  console.log(vertex);
   let result = [];
-  let queue = [vertex];
+  let queue = [vertex]; // the whole graph is stored so queue is of length 1
   let current;
   let visited = new Set();
-  visited.add(vertex);
+  visited.add(vertex); // the whole graph is stored so set is of size 1
 
   // try {
   //   console.log(visited);
@@ -101,8 +100,7 @@ function bfs(vertex) {
   // } catch (error) {
     
   // }
-
-
+  let foreachCount = 0;
   while (queue.length > 0) {
     // try {
     //   console.log(visited);
@@ -111,15 +109,37 @@ function bfs(vertex) {
       
     // }
     current = queue.shift();
+    // console.log(current)
 
     current.edges.forEach((edge) => {
+        // console.log(`This iteration ${foreachCount}, ${!visited.has(edge)}`)
       if (!visited.has(edge)) {
+        // console.log(edge)
+        // console.log(queue);
+
         queue.push(edge);
+    
         visited.add(edge);
+        // try{
+        //   console.log(queue); // 2 vist prints ids twice
+        //   // otherwise one or 3 or greater vist prints once 
+        //   // depending on if we returned(vist) edges already 
+        //   // on previus vertex edges since we proably visted
+
+        // } catch(e) {}
+
+        // try{
+        //   console.log(edge); 
+
+        // } catch(e) {}
+
       }
+      // foreachCount++;
     });
 
-    result.push(current.id);
+    result. push(current.id);
+    // console.log(result)
+
   }
   return result;
 }
@@ -148,4 +168,4 @@ function dfs(vertex) {
   }
   return result;
 }
-console.log("DFS:", dfs(graph));
+// console.log("DFS:", dfs(graph));
