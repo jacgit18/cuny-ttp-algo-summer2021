@@ -25,8 +25,15 @@ function longest_substring_with_k_distinct(str, k) {
 
 
     const rightChar = str[windowEnd];
+    // notes
+    const a = 3;
+    const b = -2;
+    
+    console.log(!(a > 0 || b > 0));
+    // expected output: false
 
-
+    // without Grouping operator ( ) only rightchar would be negated
+    // not the boolean result of rightChar n charFrequency
     if (!(rightChar in charFrequency)) {
 
       charFrequency[rightChar] = 0; // appending array index current value to the object as a property with a intial value of 0
