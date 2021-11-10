@@ -66,8 +66,7 @@ function longest_substring_with_k_distinct(str, k) {
 
 console.time("answer time");
 
-longest_substring_with_k_distinct("araaci",2)
-
+console.log(longest_substring_with_k_distinct("araaci",2))
 console.timeEnd("answer time");
 
 
