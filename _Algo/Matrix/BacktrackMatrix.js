@@ -37,7 +37,7 @@ function robotPaths(matrix) {
 
   function traverse(x,y) {
     //BC: Out of Bounds
-    // matrix[0].length proably num of zero values
+    // matrix[0].length proably num of rows and matrix.length is column num
     let booleanCheck = x<0||y<0||x>=matrix[0].length||y>=matrix.length;
     if(booleanCheck) {
 
