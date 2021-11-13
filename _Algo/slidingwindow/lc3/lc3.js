@@ -16,10 +16,16 @@ let edgecase2 = "bbbbb"; // 1
 let edgecase3 = "pwwkew"; // 3
 let edgecase4 = ""; // 0
 
-console.log(`${lengthOfLongestSubstring(edgecase1)}`);
-console.log(`${lengthOfLongestSubstring(edgecase2)}`);
-console.log(`${lengthOfLongestSubstring(edgecase3)}`);
-console.log(`${lengthOfLongestSubstring(edgecase4)}`);
+// console.log(`${lengthOfLongestSubstring(edgecase1)}`);
+// console.log(`${lengthOfLongestSubstring(edgecase2)}`);
+// console.log(`${lengthOfLongestSubstring(edgecase3)}`);
+// console.log(`${lengthOfLongestSubstring(edgecase4)}`);
+
+lengthOfLongestSubstring(edgecase1);
+lengthOfLongestSubstring(edgecase2);
+lengthOfLongestSubstring(edgecase3);
+lengthOfLongestSubstring(edgecase4);
+
 
 
 module.exports = lengthOfLongestSubstring;
