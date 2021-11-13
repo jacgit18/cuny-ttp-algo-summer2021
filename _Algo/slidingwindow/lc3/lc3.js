@@ -1,11 +1,13 @@
+
 // Longest Substring Without Repeating Characters
 
 // Given a string s, find the length of the longest substring without repeating characters.
 
 
-let lengthOfLongestSubstring = (s) =>{
+const lengthOfLongestSubstring = (s) =>{
+    console.log(s)
 
-    
+   
 };
 
 
@@ -18,3 +20,6 @@ console.log(`${lengthOfLongestSubstring(edgecase1)}`);
 console.log(`${lengthOfLongestSubstring(edgecase2)}`);
 console.log(`${lengthOfLongestSubstring(edgecase3)}`);
 console.log(`${lengthOfLongestSubstring(edgecase4)}`);
+
+
+module.exports = lengthOfLongestSubstring;
