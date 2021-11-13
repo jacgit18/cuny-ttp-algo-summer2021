@@ -1,13 +1,13 @@
 {
   "name": "cuny-ttp-algo-summer2021",
   "version": "1.0.0",
-  "description": "",
+  "main": "index.js",
+  "repository": "https://github.com/jacgit18/cuny-ttp-algo-summer2021.git",
+  "author": "jacgit18 <jacdevgoo2020@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "test": "jest --watchAll"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "jest": "^27.3.1"
   },
