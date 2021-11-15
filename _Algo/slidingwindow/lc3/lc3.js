@@ -51,11 +51,11 @@ class LongestSubstring {
         dupFilter.add(char);
         maxSubarraySize = Math.max(dupFilter.size, maxSubarraySize);
         right++;
-           console.log(dupFilter)
+          //  console.log(dupFilter)
       }
-      console.log(dupcheck, count++)
+      // console.log(dupcheck, count++)
     }
-    console.log(maxSubarraySize)
+    // console.log(maxSubarraySize)
 
     return maxSubarraySize;
   };
