@@ -3,50 +3,70 @@
 
 // Given a string s, find the length of the longest substring without repeating characters.
 
+class LongestSubstring{
 
-const lengthOfLongestSubstring = (s) =>{
+ lengthOfLongestSubstring = (substring) =>{
     //iterate through string push to array or other string that if we passed we return current letter count
-    if(s.length < 2) return s.length;
-    let char_set = new Set(s[0]); // initially just add the first char to the set.
-    let left_char_index = 0;
-    let longest_substring_length = 0;
+    if(substring.length < 2) return substring.length; // because 1 character isnt enough
 
-    for (let right_char_index = 1; right_char_index < s.length; right_char_index++) {
+    let dupFilter = new Set(substring[0]); // initially just add the first char to the set.
+    let left = 0;
+    let maxSubarraySize = 0;
+    let count = 0;
+
+
+    for (let right = 1; right < substring.length; right++) {
         // Check for duplicates, remove them, update left pointer
-        while (char_set.has(s[right_char_index])) {
-            char_set.delete(s[left_char_index]);
-            left_char_index++;
+        let dupcheck = dupFilter.has(substring[right]);
+        while (dupFilter.has(substring[right])) {            
+            dupFilter.delete(substring[left]);
+            left++;
         }
-        char_set.add(s[right_char_index]); 
-        longest_substring_length = Math.max(longest_substring_length, char_set.size);
+        console.log(dupcheck, count++ )
+
+        dupFilter.add(substring[right]); 
+        console.log(dupFilter)
+
+        maxSubarraySize = Math.max(maxSubarraySize, dupFilter.size);
     }
-    return longest_substring_length;
+    console.log(maxSubarraySize)
+    return maxSubarraySize;
 
    
 };
 
+            
 
-const lengthOfLongestSubstring2 = function(s) {
-    const n = s.length
-    const set = new Set()
-    let l = 0
-    let r = 0
-    let max = 0
-    while(r < n) {
-        const char = s[r]
-        if(set.has(char)) {
-            set.delete(s[l++])
+ lengthOfLongestSubstring2 = function(substring) {
+    const stringSize = substring.length
+    const dupFilter = new Set()
+    let left = 0
+    let right = 0
+    let maxSubarraySize = 0
+    let count = 0;
+
+    while(right < stringSize) {
+        const char = substring[right]
+        let dupcheck = dupFilter.has(char);
+
+        if(dupFilter.has(char)) {
+            dupFilter.delete(substring[left++])
         } else {
-           set.add(char)
-           max = Math.max(set.size, max)
-           r++
+            dupFilter.add(char)
+            maxSubarraySize = Math.max(dupFilter.size, maxSubarraySize)
+           right++
+           console.log(dupFilter)
         }
+        console.log(dupcheck, count++)
+
     }
+    console.log(maxSubarraySize)
     
-    return max
+    return maxSubarraySize
 };
 
-let edgecase1 = "abcabcbb"; // 3
+ methodRunner = () =>{
+     let edgecase1 = "abcabcbb"; // 3
 let edgecase2 = "bbbbb"; // 1
 let edgecase3 = "pwwkew"; // 3
 let edgecase4 = ""; // 0
@@ -55,17 +75,30 @@ let edgecase4 = ""; // 0
 // console.log(`${lengthOfLongestSubstring(edgecase2)}`);
 // console.log(`${lengthOfLongestSubstring(edgecase3)}`);
 // console.log(`${lengthOfLongestSubstring(edgecase4)}`);
+
 console.time("Pair time");
-lengthOfLongestSubstring(edgecase1);
+
+this.lengthOfLongestSubstring(edgecase1);
 // lengthOfLongestSubstring(edgecase2);
 // lengthOfLongestSubstring(edgecase3);
 // lengthOfLongestSubstring(edgecase4);
+
 console.timeEnd("Pair time");
 
 console.time("Pair time2");
+console.log("------------------^");
 
-lengthOfLongestSubstring2(edgecase1);
+this.lengthOfLongestSubstring2(edgecase1);
 
 console.timeEnd("Pair time2");
+console.log("------------------^");
+}
 
-module.exports = lengthOfLongestSubstring;
+
+}
+
+const longClass = new LongestSubstring();
+longClass.methodRunner();
+
+// module.exports = longClass;
+module.exports = new LongestSubstring();
