@@ -16,4 +16,4 @@ const palVaidaor = (sen) => {
 }
 
 
-palVaidaor(Sentence);
+console.log(palVaidaor(Sentence))

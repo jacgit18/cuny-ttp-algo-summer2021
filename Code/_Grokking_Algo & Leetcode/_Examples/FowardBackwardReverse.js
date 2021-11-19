@@ -1,6 +1,6 @@
 // 1. LinkedLists
 // Node class for a linked list node
-const linkSetter = require("../DataStrucFactoryInterview");
+const linkSetter = require("../../_DataStructuresClasses/DataStrucFactoryInterview");
 const linkedGetter = new linkSetter();
 
 

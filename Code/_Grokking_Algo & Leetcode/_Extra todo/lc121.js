@@ -29,7 +29,7 @@ let Maxprofit = (prices) => {
     }
 
   }
-  return console.log(profit);
+  return profit
 };
 
-Maxprofit(PriceArray);
+console.log(Maxprofit(PriceArray))
