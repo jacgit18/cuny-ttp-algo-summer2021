@@ -5,71 +5,69 @@ class Queue {
       this.bottom = 0;
     }
   
-    enqueue = (e) => {
-      this.elements.push(e);
-    };
+    // enqueue = (e) => {
+    //   this.elements.push(e);
+    // };
+
+        enqueue = (val) =>{
+        this.elements[this.top] === val
+        this.top++;
+    }
   
       // Queue FIFO(First In First Out) - a line(queue)/ticket 
- queMaker = (waitingLine) => {
-    if(waitingLine.length <= 1 ){ 
-      this.elements.push(waitingLine[0]);
-    }
-    for (let i = 0; i < waitingLine.length; i++){
-      this.elements.push(waitingLine[i]);
-    }
+    queMaker = (waitingLine) => {
+      if(waitingLine.length <= 1 ){ 
+        this.elements.push(waitingLine[0]);
+        // this.elements.enqueue(waitingLine[0]);
+      }
+      for (let i = 0; i < waitingLine.length; i++){
+        this.elements.push(waitingLine[i]);
+        // this.elements.enqueue(waitingLine[i]);
+
+      }
     return this.elements;
   }
-  
+        dequeue = () =>{
+        if (!this.isEmpty()){
+         let removedElement = this.elements[this.bottom];
+         delete this.elements[this.bottom];
+         this.bottom++;
+         return removedElement;
+
+        }
+    }
     
-    dequeue = () => {
-      return this.elements.shift();
-    };
+    // isEmpty = () => {
+    //   return this.elements.length == 0;
+    // };
+    isEmpty = () =>{
+        return this.size() === 0;
+    }
     
-    isEmpty = () => {
-      return this.elements.length == 0;
-    };
-    
-   peek = () => {
-      return !this.isEmpty() ? this.elements[0] : undefined;
-    };
+    size = () =>{
+        return this.top - this.bottom;
+    }
 
-//     enqueue = (val) =>{
-//         this.storage[this.top] === val
-//         this.top++;
-//     }
+    peek = () =>{
+        return this.elements[this.bottom];
+    }
 
-//     dequeue = () =>{
-//         if (!this.isEmpty()){
-//          let removedElement = this.storage[this.bottom];
-//          delete this.storage[this.bottom];
-//          this.bottom++;
-//          return removedElement;
-
-//         }
-//     }
-
-//     peekaboo = () =>{
-//         return this.storage[this.bottom];
-//     }
-
-//     size = () =>{
-//         return this.top - this.bottom;
-//     }
-
-//     isEmpty = () =>{
-//         return this.size() === 0;
-//     }
   }
 
 
   let queue = new Queue();
 
-  queue.queMaker([2,3,1,4,3,2,6,5]);
+  // queue.queMaker([2,3,1,4,3,2,6,5]);
   // let dequeue = queue.shift();
+  queue.enqueue(11);
+  queue.enqueue(21);
+  queue.enqueue(31);
+
   console.log(queue)
+
   queue.dequeue();
   // queMaker(['new val'])
-  console.log(queue)
+  console.log(queue.peek())
 
 
 //   const mycon = new myque();
