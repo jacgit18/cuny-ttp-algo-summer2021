@@ -11,7 +11,7 @@ const stackMaker = (stackOfPlates) => {
 }
 let stack = stackMaker([2,3,1,4,3,2,6,5]);
 stack.pop();
-console.log(stack)
+// console.log(stack)
 
 
 
@@ -28,7 +28,7 @@ const queMaker = (waitingLine) => {
 }
 let queue = queMaker([2,3,1,4,3,2,6,5]);
 let dequeue = queue.shift();
-console.log(queue)
+// console.log(queue)
 
 
 
@@ -39,15 +39,15 @@ mySet.add(10);
 mySet.add(10);// wont be added
 mySet.delete(3);
 // mySet.delete(10); // will remove only 10
-console.log(mySet)
+// console.log(mySet)
 mySet.add(11);
 mySet.add(4);
 mySet.add(9);
 // console.log(!mySet.has(11))
 // console.log(mySet.size)
 // console.log(mySet)
-console.log(mySet.values())
-console.log(mySet.keys())
+// console.log(mySet.values())
+// console.log(mySet.keys())
 
 // Are these the same
 // class compare {
@@ -175,9 +175,9 @@ class Vertex {
 
 const stuructureMaker = new NodeConstructor();
 
-let linkedList = console.log(stuructureMaker.ArrayLinkListDeserialize(LinkListArray))
-let tree = console.log(stuructureMaker.ArrayTreeDeserialize((TreeArray)));
-let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
+// let linkedList = console.log(stuructureMaker.ArrayLinkListDeserialize(LinkListArray))
+// let tree = console.log(stuructureMaker.ArrayTreeDeserialize((TreeArray)));
+// let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
 
  
 

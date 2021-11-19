@@ -1,27 +1,11 @@
 // 1. LinkedLists
 // Node class for a linked list node
-class ListNode {
-    constructor(value = null) {
-      this.value = value;
-      this.next = null;
-    }
-  }
-  
-  // Generate a linked list from an array
-  function generateList(arr) {
-    if (arr.length === 0) { return null; }
-    let head = new ListNode(arr[0]);
-    let current = head;
-    for (let i = 1; i < arr.length; i++) {
-      current.next = new ListNode(arr[i]);
-      current = current.next;
-    }
-    return head;
-  }
-  
+const linkSetter = require("../DataStrucFactoryInterview");
+const linkedGetter = new linkSetter();
+
+
   let array1 = [1,5,7,10]
-  let linkedList = generateList(array1)
-  // console.log(linkedList)
+  let linkedList = linkedGetter.ArrayLinkListDeserialize(array1)
   
   
   
@@ -34,7 +18,8 @@ class ListNode {
     }
   }
   
-  // printFoward(linkedList);
+  printFoward(linkedList);
+  console.log()
   
   const printBackward = (node) =>{
     // let foward =  printFoward = (node);
@@ -52,7 +37,8 @@ class ListNode {
   }
   
   printBackward(linkedList);
-  
+  console.log()
+
   const reverse = (node) =>{
     if(node === null || node < 0) return null
     let current = node;
@@ -70,6 +56,6 @@ class ListNode {
   
   }
   
-  console.log(reverse(linkedList))
+  console.log(reverse(linkedList)) // this actually moves values as opposed to printing backwards
   
   // reverse(linkedList)

@@ -1,8 +1,8 @@
 // let treeMirror = [1,2,2,3,4,4,3];
 
 // comparing pairs of subtrees
-const BT = require("../_DataStructures/BinaryTree");
-const BinarySearchTree = require("../_DataStructures/BinarySearchTree");
+const BT = require("../../_DataStructuresClasses/BinaryTree");
+const BinarySearchTree = require("../../_DataStructuresClasses/BinarySearchTree");
 
 const myBT = new BT();
 const myBST = new BinarySearchTree();
