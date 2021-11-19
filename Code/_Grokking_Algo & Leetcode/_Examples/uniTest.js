@@ -11,7 +11,7 @@ const isUnique = (TheSringParam) =>{
 
     for (let i = 0; i < TheSringParam.length; i++) {
          let val = TheSringParam.charAt(i);
-
+         console.log(val);
          if (Ray[val]) {
          return false;
          }
@@ -21,4 +21,4 @@ const isUnique = (TheSringParam) =>{
          return true;
 }
 
-isUnique(theString);
+console.log(isUnique(theString))
