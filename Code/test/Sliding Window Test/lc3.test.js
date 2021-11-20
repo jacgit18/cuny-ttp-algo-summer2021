@@ -11,16 +11,18 @@ const LongestSubstring = require('../../_Grokking_Algo & Leetcode/Sliding Window
     //   return initializeFoodDatabase(); // like if db is need
     // });
     // beforeAll(() => console.log('1 - beforeAll'));
-    // let longestSubstring; // good practice tp avoid change in state
-    // beforeEach(() =>{ 
-    //   longestSubstring = new LongestSubstring();
-    // });
+    let longestSubstring; // good practice tp avoid change in state
+    beforeEach(() =>{ 
+      // longestSubstring = new LongestSubstring();
+      longestSubstring = LongestSubstring;
+
+    });
 
     test('Two Pointers', () => {
-      const edgecase1 = LongestSubstring.twoPointerLongestSubstring("abcabcbb");
-      const edgecase2 = LongestSubstring.twoPointerLongestSubstring("bbbbb");
-      const edgecase3 = LongestSubstring.twoPointerLongestSubstring("pwwkew");
-      const edgecase4 = LongestSubstring.twoPointerLongestSubstring("");
+      const edgecase1 = longestSubstring.twoPointerLongestSubstring("abcabcbb");
+      const edgecase2 = longestSubstring.twoPointerLongestSubstring("bbbbb");
+      const edgecase3 = longestSubstring.twoPointerLongestSubstring("pwwkew");
+      const edgecase4 = longestSubstring.twoPointerLongestSubstring("");
   
       expect(edgecase1).toBe(3);
       expect(edgecase2).toBe(1);
@@ -30,10 +32,10 @@ const LongestSubstring = require('../../_Grokking_Algo & Leetcode/Sliding Window
     });
   
     test('Sliding Windows', () => {
-      const edgecase1 = LongestSubstring.slidingWindowLongestSubstring("abcabcbb");
-      const edgecase2 = LongestSubstring.slidingWindowLongestSubstring("bbbbb");
-      const edgecase3 = LongestSubstring.slidingWindowLongestSubstring("pwwkew");
-      const edgecase4 = LongestSubstring.slidingWindowLongestSubstring("");
+      const edgecase1 = longestSubstring.slidingWindowLongestSubstring("abcabcbb");
+      const edgecase2 = longestSubstring.slidingWindowLongestSubstring("bbbbb");
+      const edgecase3 = longestSubstring.slidingWindowLongestSubstring("pwwkew");
+      const edgecase4 = longestSubstring.slidingWindowLongestSubstring("");
   
       expect(edgecase1).toEqual(3);
       expect(edgecase2).toEqual(1);
