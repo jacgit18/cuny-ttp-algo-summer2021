@@ -33,15 +33,15 @@ function fruits_into_baskets(fruits) {
   // Conditions: 
 }
 
+module.exports = fruits_into_baskets;
 
-console.time("answer time");
+
 
 console.log(
   `Maximum number of fruits: ${fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])}`
 );
-console.timeEnd("answer time");
 
-console.log(`------- Edge Cases ---------`)
+console.time("answer time");
 
 console.log(
   `Maximum number of fruits: ${fruits_into_baskets([
@@ -53,6 +53,7 @@ console.log(
     'C',
   ])}`
 );
+console.timeEnd("answer time");
 
     /**
    *  Optimal Approach

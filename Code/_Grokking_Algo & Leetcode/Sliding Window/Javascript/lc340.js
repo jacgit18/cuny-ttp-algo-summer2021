@@ -14,7 +14,13 @@
  * Variables:
  *
  * */
-
+/**
+ *  Optimal Approach
+ * -----------------
+ *  Variables:
+ *
+ *
+ */
 function longest_substring_with_k_distinct(str, k) {
   // console.log(`------ Test Cases ------`)
   let windowStart = 0,
@@ -29,7 +35,7 @@ function longest_substring_with_k_distinct(str, k) {
     const a = 3;
     const b = -2;
     
-    console.log(!(a > 0 || b > 0));
+    // console.log(!(a > 0 || b > 0));
     // expected output: false
 
     // without Grouping operator ( ) only rightchar would be negated
@@ -64,6 +70,9 @@ function longest_substring_with_k_distinct(str, k) {
   return maxLength;
 }
 
+module.exports = longest_substring_with_k_distinct;
+
+
 // console.log(
 //   `Length of the longest substring: ${longest_substring_with_k_distinct(
 //     "araaci",
@@ -71,13 +80,10 @@ function longest_substring_with_k_distinct(str, k) {
 //   )}`
 // );
 
-console.time("answer time");
 
-console.log(longest_substring_with_k_distinct("araaci",2))
-console.timeEnd("answer time");
+// console.log(longest_substring_with_k_distinct("araaci",2))
 
 
-console.log(`------- Edge Cases ---------`);
 
 // console.log(
 //   `Length of the longest substring: ${longest_substring_with_k_distinct(
@@ -92,13 +98,7 @@ console.log(`------- Edge Cases ---------`);
 //   )}`
 // );
 
-/**
- *  Optimal Approach
- * -----------------
- *  Variables:
- *
- *
- */
+
 
 // Solution
 // -----

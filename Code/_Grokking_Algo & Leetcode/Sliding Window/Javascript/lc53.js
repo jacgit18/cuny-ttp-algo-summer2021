@@ -20,8 +20,16 @@
    * could sort to make faster
    * */
 
+
+     /**
+   *  Optimal Approach
+   * -----------------
+   *  Variables: 
+   * Sliding Window
+   * 
+   */
   function max_subarray_size_k(k, arr) {
-  console.log(`------ Test Cases ------`)
+  // console.log(`------ Test Cases ------`)
   // Properties: head, next pointer, Node value, null, current position, next position, last position
   
   // Pre-Condition: if list empty or only has null
@@ -48,37 +56,22 @@ return maxSum;
 
 }
 
-console.log(`------ Edge Cases ------`)
 
 // console.time("answer time");
-// alert("Click to continue");
 // console.timeLog("answer time"); // time in middle
-// alert("Do a bunch of other stuff...");
 
-// console.log(
-//   `Maximum sum of a subarray of size K: ${max_subarray_size_k(
-//     3,
-//     [2, 1, 5, 1, 3, 2]
-//   )}`
-// );
+console.log(
+  `Maximum sum of a subarray of size K: ${max_subarray_size_k(
+    3,
+    [2, 1, 5, 1, 3, 2]
+  )}`
+);
 // console.timeEnd("answer time");
 
 module.exports = max_subarray_size_k;
 
 
-// console.log(
-//   `Maximum sum of a subarray of size K: ${max_subarray_size_k(
-//     2,
-//     [2, 3, 4, 1, 5]
-//   )}`
-// );
 
 
 
-    /**
-   *  Optimal Approach
-   * -----------------
-   *  Variables: 
-   * 
-   * 
-   */
+ 
