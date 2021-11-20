@@ -224,7 +224,7 @@ program containing the following:
 ### /// Week Five & Beyond /// --> Class is over, but, the work is just beginning!
 
 #### /// Sliding Window ///
-- [] No-repeat Substring (hard): LC #3
+- [x] No-repeat Substring (hard): LC #3
 - [] Longest Substring with Same Letters after Replacement (hard)
 - [] Longest Subarray with Ones after Replacement (hard): LC #424 
 - [] Find Permutation (hard): LC #567 & LC #1004 

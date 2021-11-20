@@ -1,33 +1,50 @@
-// let treeMirror = [1,2,2,3,4,4,3];
+// Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+
 
 // comparing pairs of subtrees
-const BT = require("../../_DataStructuresClasses/BinaryTree");
-const BinarySearchTree = require("../../_DataStructuresClasses/BinarySearchTree");
+// const BT = require("../../_DataStructuresClasses/BinaryTree");
+// const BinarySearchTree = require("../../_DataStructuresClasses/BinarySearchTree");
 
-const myBT = new BT();
-const myBST = new BinarySearchTree();
+// const myBT = new BT();
+// const myBST = new BinarySearchTree();
 
 
 const isSymmetric = (root) =>{
 
-console.log(root)
+// console.log(root)
 }
 
 
 // console.log(isSymmetric([1,2,2,3,4,4,3]));
-// isSymmetric([1,2,2,3,4,4,3]);
-// isSymmetric([1,2,2,null,3,null,3]);
+isSymmetric([1,2,2,null,3,null,3]);
 
-myBT.add(1);
-myBT.add(2);
-myBT.add(2);
-myBT.add(3);
-myBT.add(4);
-myBT.add(4);
-myBT.add(3);
-console.log(myBT.isBalanced());
-console.log(myBT.inOrder());
-console.log(myBT);
+// [1,2,2,3,4,4,3]
+// [1,2,2,null,3,null,3]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// myBT.add(1);
+// myBT.add(2);
+// myBT.add(2);
+// myBT.add(3);
+// myBT.add(4);
+// myBT.add(4);
+// myBT.add(3);
+// console.log(myBT.isBalanced());
+// console.log(myBT.inOrder());
+// console.log(myBT);
 
 
 

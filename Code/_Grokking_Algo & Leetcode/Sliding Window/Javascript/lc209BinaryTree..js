@@ -57,3 +57,10 @@ console.timeEnd("answer time");
 //     [3, 4, 1, 1, 6]
 //   )}\n`
 // );
+
+try {
+  module.exports = smallest_subarray_with_given_sum;
+
+} catch (error) {
+  
+}

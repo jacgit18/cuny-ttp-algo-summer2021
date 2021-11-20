@@ -12,7 +12,7 @@ const FruitsIntoBaskets = require('../../_Grokking_Algo & Leetcode/Sliding Windo
      
       console.time("answer time");
 
-      expect(edgecase1).toBe(9);
+      expect(edgecase1).toBe(3);
       console.timeEnd("answer time");
 
     });
@@ -21,7 +21,7 @@ const FruitsIntoBaskets = require('../../_Grokking_Algo & Leetcode/Sliding Windo
       const edgecase1 = fruitsIntoBaskets(['A', 'B', 'C', 'B', 'B', 'B']);
      
 
-      expect(edgecase1).toBe(9);
+      expect(edgecase1).toBe(5);
 
     });
 
