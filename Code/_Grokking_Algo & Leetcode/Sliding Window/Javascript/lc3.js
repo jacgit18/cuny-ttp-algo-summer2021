@@ -2,7 +2,7 @@
 
 // Given a string s, find the length of the longest substring without repeating characters.
 
-class LongestSubstring {
+ class LongestSubstring {
   twoPointerLongestSubstring = (substring) => {
     //iterate through string push to array or other string that if we passed we return current letter count
     if (substring.length < 2) return substring.length; // because 1 character isnt enough
@@ -83,8 +83,8 @@ class LongestSubstring {
   };
 }
 
-const longClass = new LongestSubstring();
-longClass.methodRunner();
+// const longClass = new LongestSubstring();
+// longClass.methodRunner();
 
 // module.exports = longClass;
 module.exports = new LongestSubstring();
