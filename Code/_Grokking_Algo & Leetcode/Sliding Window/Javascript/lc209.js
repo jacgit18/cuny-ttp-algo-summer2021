@@ -15,7 +15,13 @@
    * Variables: 
    * 
    * */
-
+    /**
+   *  Optimal Approach
+   * -----------------
+   *  Variables: 
+   * 
+   * 
+   */
 function smallest_subarray_with_given_sum(s, arr) {
   console.log(`------ Test Cases ------`)
   // Properties: head, next pointer, Node value, null, current position, next position, last position
@@ -89,25 +95,13 @@ console.log(
 );
 console.timeEnd("answer time");
 
-console.log(`------- Edge Cases ---------`)
-// console.log(
-//   `Smallest subarray length: ${smallest_subarray_with_given_sum(
-//     7,
-//     [2, 1, 5, 2, 8]
-//   )}\n`
-// );
-// console.log(
-//   `Smallest subarray length should be: ${smallest_subarray_with_given_sum(
-//     8,
-//     [3, 4, 1, 1, 6]
-//   )}\n`
-// );
 
 
-    /**
-   *  Optimal Approach
-   * -----------------
-   *  Variables: 
-   * 
-   * 
-   */
+try {
+  module.exports = smallest_subarray_with_given_sum;
+
+} catch (error) {
+  
+}
+
+
