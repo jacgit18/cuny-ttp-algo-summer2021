@@ -1,4 +1,4 @@
-const ConLoggerFuncParam = require("../../Basics/ConLoggerFUnc.js");
+const ConLoggerFuncParam = require("../../../Basics/ConLoggerFUnc.js");
 const consoleItem = new ConLoggerFuncParam();
 
 
