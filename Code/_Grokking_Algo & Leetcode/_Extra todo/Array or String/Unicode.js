@@ -30,3 +30,28 @@ for (let i = start; i< end; i++){
 }
 
 
+let theString = "sbfksbfkf fbefj 32v%$#@&/? "
+
+
+const isUnique = (arr) =>{
+
+    if (arr.length > 128){
+        return false;
+    }
+    let Ray = [128];
+
+
+    for (let i = 0; i < arr.length; i++) {
+         let val = arr.charAt(i);
+         console.log(val);
+         if (Ray[val]) {
+         return false;
+         }
+         Ray[val] = true;
+         }
+
+         return true;
+}
+
+console.log(isUnique(theString))
+
