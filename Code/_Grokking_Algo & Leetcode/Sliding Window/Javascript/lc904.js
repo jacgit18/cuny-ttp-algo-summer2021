@@ -26,8 +26,8 @@
    * */
 
 function fruits_into_baskets(fruits) {
-  console.log(`------ Test Cases ------`)
-
+  // Test Cases 
+  
    
 }
 
