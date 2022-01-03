@@ -14,8 +14,8 @@ const countSubstrings = (subStringEx) => {
   
   let count = 0;
   for (let start = 0; start < subStringEx.length; start++) {
-    helper(start, start);
-    helper(start, start + 1);
+   let callOne = helper(start, start);// odd length
+   let callTwo = helper(start, start + 1);// even length
   }
   return count;
 };
