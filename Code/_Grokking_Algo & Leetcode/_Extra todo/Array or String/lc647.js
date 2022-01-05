@@ -21,6 +21,17 @@
 // };
 
 
+
+// First off, I did not come up with this by myself. After seeing this solution I had this big "duh" moment. Anyways, before we go on there are two important things to point out:
+
+// A palindrome can start from a single letter
+// A single letter by itself is a palindrome
+// A palinfrome can start from two letters
+// So for this code, we are going from i to s.length - 1. Each time we are fanning out from the single letter, then from the double letter. Each time we find a new palindrome 
+// (it's the same forward and backwords), we add to our count.
+
+// For the last iterations where i === s.length - 1, it's important to point out that the double letter fan-out case will not happen since the while loop in fanOut will never execute.
+
 const countSubstrings = (s) => {
 	let total = 0;
 
