@@ -1,4 +1,4 @@
-const ValidPalindrome = require('../../_Grokking_Algo & Leetcode/_Extra todo/Array or String/lc125');
+const ValidPalindrome = require('../../_Grokking_Algo & Leetcode/TwoPointers/Javascript/lc125');
 
   describe('Test suite for checking palindrome ', () => {
   

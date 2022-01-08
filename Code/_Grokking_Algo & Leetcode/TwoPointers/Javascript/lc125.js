@@ -17,3 +17,7 @@ const palVaidaor = (sen) => {
 
 
 console.log(palVaidaor(Sentence))
+
+try {
+    module.exports = palVaidaor;
+  } catch (error) {}
