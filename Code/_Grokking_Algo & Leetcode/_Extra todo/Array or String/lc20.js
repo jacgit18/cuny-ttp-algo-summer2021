@@ -7,39 +7,27 @@
 
 
 const isValid = (s) =>{
-  let stack = []
-
-  for (let i = 0; i < s.length; i++) {
-      
-      if(s[i] === "{" || s[i] === "[" || s[i] === "(") {
-          stack.push(s[i])
-      } 
-      
-      if (s[i] === "}") {
-          if (stack.pop() === "{") {
-              
-          } else return false
-      }
-      
-      if (s[i] === "]") {
-          if (stack.pop() === "[") {
-              
-          } else return false
-      }
-      
-      if (s[i] === ")") {
-          if (stack.pop() === "(") {
-              
-          } else return false
-      }
+  const stack = [];
+  const map = {
+    '(': ')',
+    '[': ']',
+    '{': '}'
   }
-  if (stack.length === 0) {
-      return true
-  } else return false
+  
+  for (let i = 0 ; i < s.length ; i++) {
+      let c = s[i];
+      if (map[c]) {
+        stack.push(map[c])
+      } else if (c !== stack.pop()) {
+        return false;
+      } 
+  }
+  
+  return !stack.length;
 }
 
 
-console.log(isValid("()"));
+console.log(isValid("(]"));
 
 try {
   module.exports = isValid;
