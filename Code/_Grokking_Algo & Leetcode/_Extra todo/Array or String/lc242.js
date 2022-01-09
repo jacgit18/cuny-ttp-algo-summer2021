@@ -8,14 +8,16 @@
 // After loop return true if there are no remaining in a or b else return false
 
 const isAnagram = (s, t) =>{
-  const a = s.split('').sort(),
-        b = t.split('').sort();
-    while (a.length && b.length) {
-        if (a.pop() !== b.pop()) {
-            return false;
-        }
-    }
-    return a.length || b.length ? false : true;
+  let hash = {};
+  for (let char of s) {
+      hash[char] = hash[char]+1||1;
+  }
+  for (let char of t) {
+      if (!hash[char]) return false;
+      hash[char]--;
+      if (hash[char] == 0) delete hash[char];
+  }
+  return [...Object.keys(hash)].length==0
 }
 
 
