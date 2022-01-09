@@ -4,11 +4,21 @@
 // typically using all the original letters exactly once.
 
 const groupAnagrams = (s) =>{
+  const anagrams = new Map();
+    for(str of s) {
 
+        const sortedLetters = str.split('').sort().join('');
+
+        if(anagrams.has(sortedLetters)) anagrams.get(sortedLetters).push(str);
+        else anagrams.set(sortedLetters, [str]);
+        console.log(anagrams);
+    }
+    return Array.from(anagrams.values());
 }
 
+// [ [ 'eat', 'tea', 'ate' ], [ 'tan', 'nat' ], [ 'bat' ] ]
 
-console.log(groupAnagrams("()"));
+console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]));
 
 try {
   module.exports = groupAnagrams;

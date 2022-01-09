@@ -12,7 +12,7 @@ const GroupAnagrams = require('../../_Grokking_Algo & Leetcode/_Extra todo/Array
      
       console.time("answer time");
 
-      expect(edgecase1).toBe([["bat"],["nat","tan"],["ate","eat","tea"]]);
+      expect(edgecase1).toStrictEqual([["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]);
       console.timeEnd("answer time");
 
     });
@@ -21,7 +21,7 @@ const GroupAnagrams = require('../../_Grokking_Algo & Leetcode/_Extra todo/Array
       const edgecase2 = groupAnagrams([""]);
      
 
-      expect(edgecase2).toBe([[""]]);
+      expect(edgecase2).toStrictEqual([[""]]);
 
     });
 
@@ -29,7 +29,7 @@ const GroupAnagrams = require('../../_Grokking_Algo & Leetcode/_Extra todo/Array
       const edgecase3 = groupAnagrams(["a"]);
      
 
-      expect(edgecase3).toBe([["a"]]);
+      expect(edgecase3).toStrictEqual([["a"]]);
 
     });
 
