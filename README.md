@@ -7,10 +7,10 @@
   - [x] Maximum Sum Subarray of Size K (easy) LC #53
   - [x] Smallest Subarray with a given sum (easy): LC #209
   - [x] Longest Substring with K Distinct Characters (medium): LC #340
-  - [] Fruits into Baskets (medium): LC 904
-  - [] Longest Substring with Same Letters after Replacement (hard)
-  - [] Longest Subarray with Ones after Replacement (hard): LC #424
-  - [] Find Permutation (hard): LC #567 & LC #1004
+  - [] Fruits into Baskets (medium): LC #904
+  - [] Longest Repeating Character Replacement (hard): LC #424
+  - [] Find Permutation in string (hard): LC #567
+  - [] Max Consecutive Ones III (hard): LC #1004
   - [] Find String Anagrams (hard): LC #438
   - [] Smallest Window Containing Substring (hard): LC #76
   - [] Words Concatenation (hard): LC #30
@@ -43,7 +43,7 @@
   - [] Intervals Intersection (medium): LC #986
   - [] Conflicting Appointments (medium): LC #252
   - [] Minimum Meeting Rooms (hard): LC #253
-  - [] Maximum CPU Load (hard)
+  - [] Maximum CPU Load(Task Scheduler) (hard): LC proably #621
   - [] Employee Free Time (hard): LC #759
   
 - Cyclic Sort
@@ -54,29 +54,31 @@
   - [] Find all Duplicate Numbers (easy): LC #442
   - [] Find the Corrupt Pair (easy): LC #645
   - [] Find the Smallest Missing Positive Number (medium): LC #41
-  - [] Find the First K Missing Positive Numbers (hard)
+  - [] Find the First K Missing Positive Numbers (hard): LC proably #1539
   
 - In Place Reversal of a LL
   - [x] Reverse a LinkedList (easy): LC #206
   - [x] Reverse a Sub-list (medium): LC #92
   - [] Reverse every K-element Sub-list (medium): LC #25
-  - [] Reverse Alternating K-element Sub-list (medium)
+  - [] Reverse Alternating K-element Sub-list (medium): LC #
   - [] Rotate a LinkedList (medium): LC #61
 
 - Trees: BFS
   - [x] Binary Tree Level Order Traversal (easy): LC #102
-  - [x] Minimum Depth of a Binary Tree (easy): LC #111 & LC #104
+  - [x] Minimum Depth of a Binary Tree (easy): LC #111
+  - [ ] Maximum Depth of a Binary Tree (easy): LC #104
   - [x] Level Averages in a Binary Tree (easy): LC #637
-  - [] Reverse Level Order Traversal (easy): LC #107
+  - [] Reverse Level Order Traversal II (easy): LC #107
   - [] Zigzag Traversal (medium): LC #103
-  - [] Level Order Successor (easy)
+  - [] Level Order Successor (easy): LC #
   - [] Connect Level Order Siblings (medium): LC #117
-  - [] Connect All Level Order Siblings (medium)
+  - [] Connect All Level Order Siblings (medium): LC maybe #116
   - [] Right View of a Binary Tree (easy): LC #199  
   
 - Trees: DFS
   - [x] Binary Tree Path Sum (easy): LC #112
-  - [x] All Paths for a Sum (medium): LC #113 & LC #257
+  - [x] Path Sum II (medium): LC #113
+  - [x] Binary Tree Paths (medium): LC #257
   - [] Sum of Path Numbers (medium): LC #129
   - [] Path With Given Sequence (medium): LC #1430
   - [] Count Paths for a Sum (medium): LC #437
@@ -101,16 +103,18 @@
   - [] Count of Structurally Unique Binary Search Trees (hard): LC #96
   
 - Modified Binary Search
-  - [] Order-agnostic Binary Search (easy); LC #704
-  - [] Ceiling of a Number (medium):
+  - [] Order-agnostic Binary Search (easy): LC #704
+  - [] Ceiling of a Number (medium): LC #??
   - [] Next Letter (medium): LC #744
   - [] Number Range (medium): LC #34
   - [] Search in a Sorted Infinite Array (medium): LC #702
   - [] Minimum Difference Element (medium): LC #658 (k == 1)
-  - [] Bitonic Array Maximum (easy)
-  - [] Search Bitonic Array (medium)
-  - [] Search in Rotated Array (medium): LC #33 & LC #81
-  - [] Rotation Count (medium): LC #153 & LC #154
+  - [] Bitonic Array Maximum (easy): LC #1671 or #162
+  - [] Search Bitonic Array (medium): LC #
+  - [] Search in Rotated Array (medium): LC #33
+  - [] Search in Rotated Array II (medium): LC #81
+  - [] Find Minimum in Rotated Sorted Array (medium): LC #153
+  - [] Find Minimum in Rotated Sorted Array II (medium): LC #154
 
 - Bitwise XOR
   - [] Single Number (easy): LC #136
