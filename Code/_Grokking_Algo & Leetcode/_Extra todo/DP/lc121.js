@@ -6,42 +6,18 @@
 // Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
 
-let PriceArray = [2, 7, 1, 5, 3, 6, 4];// 2
+let PriceArray = [7,1,5,3,6,4]; // 6-1 = 5 made 5 dollar
+//      -6 <-  -1 0 1 2 3 4 5 
 
-// [7,1,5,3,6,4] 5
-
-
-// [7,6,4,3,1] 0
-
-let Maxprofit = (prices) => {
-  // prices.sort();
-  let minPrice = Math.max.apply(Math, prices);
-  let maxPrice = Math.max.apply(Math, prices);
-
-  let profit = 0;
-
-  //   console.log(max_of_array)
-  //   console.log(min_of_array)
-
-  // var maxPrice =  Math.max(prices);
-  // var minPrice =  Math.min(prices);
-
-
-  // debug wont go throught rest of for loop
-  for (let i = 0; i < prices.length; i++) {
-    // console.log(Math.min.apply(Math, prices))
-    // console.log(Math.max.apply(Math, prices))
-
-    // buy at min first
-    if (prices[i] < minPrice) {
-      minPrice = prices[i];
-     return minPrice
-    } else if (prices[i] - minPrice > profit) {
-      profit = prices[i] - minPrice;
-      return profit
-    }
+const maxProfit = (prices) => {
+  let arrLen = prices.length;
+  let sell = 0;
+  let buy = Infinity;
+  for (let i = 0; i < arrLen - 1; i++) {
+    buy = Math.min(buy, prices[i]);
+    sell = Math.max(sell, prices[i + 1] - buy);
   }
-  return profit
+  return sell;
 };
 
-console.log(Maxprofit(PriceArray))
+console.log(maxProfit(PriceArray))
