@@ -79,21 +79,13 @@ var totalFruit = function (fruits) {
   return maxCount;
 };
 
-console.time("meth one");
 
-console.log(
-  `Maximum number of fruits: ${fruits_into_baskets([1,2,1])}`
-);
 
-console.timeEnd("meth one");
-
-console.time("meth two");
 
 console.log(
   `Maximum number of fruits: ${totalFruit([1,2,1])}`
 );
 
-console.timeEnd("meth two");
 
 
 // console.log(
