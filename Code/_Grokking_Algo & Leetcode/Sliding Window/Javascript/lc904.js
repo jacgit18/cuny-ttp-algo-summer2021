@@ -25,25 +25,8 @@
    * 
    * */
 
-function fruits_into_baskets(array) {
-  let map = new Map(), max = -1
-    for(let start = 0, end = 0; end < array.length; end++){
-        let currElement = array[end]
-        map.set(currElement, map.get(currElement)+1 || 1 )
-        while(map.size > 2){
-            let char = array[start]
-            let charCount = map.get(char)
-            if(charCount-1 === 0)map.delete(char)
-            else map.set(char, charCount-1)
-            start++
-        }
-        if(map.size >= 1)max = Math.max(max, end + 1 - start)
-    }
-    return max  
-   
-}
 
-var totalFruit = function (fruits) {
+const fruits_into_baskets = (fruits) => {
   let startPoint = 0;
   let endPoint = 0;
   let fruitBucket = new Map();
@@ -82,36 +65,25 @@ var totalFruit = function (fruits) {
 
 
 
+
 console.log(
-  `Maximum number of fruits: ${totalFruit([1,2,1])}`
+  `Maximum number of fruits: ${fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])}`
 );
 
+console.log(
+  `Maximum number of fruits: ${fruits_into_baskets(['A', 'B', 'X', 'Y', 'C', 'A', 'A', 'A'])}`
+);
 
-
-// console.log(
-//   `Maximum number of fruits: ${fruits_into_baskets([0,1,2,2])}`
-// );
-
-// console.log(
-//   `Maximum number of fruits: ${fruits_into_baskets([1,2,3,2,2])}`
-// );
-// console.log(
-//   `Maximum number of fruits: ${fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])}`
-// );
-
-// console.time("answer time");
-
-// console.log(
-//   `Maximum number of fruits: ${fruits_into_baskets([
-//     'A',
-//     'B',
-//     'C',
-//     'B',
-//     'B',
-//     'C',
-//   ])}`
-// );
-// console.timeEnd("answer time");
+console.log(
+  `Maximum number of fruits: ${fruits_into_baskets([
+    'A',
+    'B',
+    'C',
+    'B',
+    'B',
+    'C',
+  ])}`
+);
 
     /**
    *  Optimal Approach
@@ -132,7 +104,7 @@ console.log(
     // maxLength = 0,
     // fruitFrequency = {};
 
-    // // try to extend the range [windowStart, windowEnd]
+    // try to extend the range [windowStart, windowEnd]
     // for (let windowEnd = 0; windowEnd < fruits.length; windowEnd++) {
     // const rightFruit = fruits[windowEnd];
     // if (!(rightFruit in fruitFrequency)) {
@@ -140,7 +112,7 @@ console.log(
     // }
     // fruitFrequency[rightFruit] += 1;
 
-    // // shrink the sliding window, until we are left with '2' fruits in the fruit frequency dictionary
+    // shrink the sliding window, until we are left with '2' fruits in the fruit frequency dictionary
     // while (Object.keys(fruitFrequency).length > 2) {
     //   const leftFruit = fruits[windowStart];
     //   fruitFrequency[leftFruit] -= 1;

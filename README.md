@@ -7,7 +7,7 @@
   - [x] Maximum Sum Subarray of Size K (easy) LC #53
   - [x] Smallest Subarray with a given sum (easy): LC #209
   - [x] Longest Substring with K Distinct Characters (medium): LC #340
-  - [] Fruits into Baskets (medium): LC #904
+  - [x] Fruits into Baskets (medium): LC #904
   - [] Longest Repeating Character Replacement (hard): LC #424
   - [] Find Permutation in string (hard): LC #567
   - [] Max Consecutive Ones III (hard): LC #1004
