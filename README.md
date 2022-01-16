@@ -2,32 +2,34 @@
 
 ## Syllabus
 
+Two pointer and Sliding window can be interchangeable solution but one would just be more efficient then the other depending on the what the problem solution demands typically pointer is used for comparison while window is used for other action like adding or doing some other action with the elements in the range of the window but not specifically compariosn
+
 - Sliding Window
   - [x] No-repeat Substring (hard): LC #3
+  - [] Words Concatenation (hard): LC #30
   - [x] Maximum Sum Subarray of Size K (easy) LC #53
+  - [] Smallest Window Containing Substring (hard): LC #76
   - [x] Smallest Subarray with a given sum (easy): LC #209
   - [x] Longest Substring with K Distinct Characters (medium): LC #340
-  - [x] Fruits into Baskets (medium): LC #904
-  - [] Longest Repeating Character Replacement (hard): LC #424
-  - [] Find Permutation in string (hard): LC #567
-  - [] Max Consecutive Ones III (hard): LC #1004
   - [] Find String Anagrams (hard): LC #438
-  - [] Smallest Window Containing Substring (hard): LC #76
-  - [] Words Concatenation (hard): LC #30
+  - [] Find Permutation in string (hard): LC #567
+  - [x] Fruits into Baskets (medium): LC #904
+  - [] Max Consecutive Ones III (hard): LC #1004
   
 - Two Pointers
   - [x] Pair with Target Sum (easy): LC #1
-  - [x] Remove Duplicates (easy): LC #26
-  - [x] Squaring a Sorted Array (easy): LC #977
   - [x] Triplet Sum Close to Target (medium): LC #16
-  - [x] Subarrays with Product Less than a Target (medium): LC #713
   - [] Triplet Sum to Zero (medium): LC #15
   - [] Quadruple Sum to Target (medium): LC #18
-  - [] Comparing Strings containing Backspaces (medium): LC #844
-  - [] Minimum Window Sort (medium): LC #581
-  - [] Triplets with Smaller Sum (medium): LC #259
+  - [x] Remove Duplicates (easy): LC #26
   - [] Dutch National Flag Problem (medium): LC #75
-  
+  - [] Triplets with Smaller Sum (medium): LC #259
+  - [x] Longest Repeating Character Replacement (hard): LC #424
+  - [] Minimum Window Sort (medium): LC #581
+  - [x] Subarrays with Product Less than a Target (medium): LC #713
+  - [] Comparing Strings containing Backspaces (medium): LC #844
+  - [x] Squaring a Sorted Array (easy): LC #977
+
 - Fast & Slow Pointers
   - [x] LinkedList Cycle (easy): LC #141
   - [x] Happy Number (medium): LC #202
