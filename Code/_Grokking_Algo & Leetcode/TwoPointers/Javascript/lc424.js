@@ -91,7 +91,9 @@ function characterReplacement(s, k) {
 // At each iteration, we are not concerned with the actual substring that matches the criteria, we are just concerned to get the max length
   while(right < s.length) {
       const rightCharIdx = s.charCodeAt(right) - 'A'.charCodeAt(0);
-      ++charFreq[rightCharIdx];
+      ++charFreq[rightCharIdx]
+      // console.log(charFreq[rightCharIdx]++)
+
       maxCharFreq = Math.max(maxCharFreq, charFreq[rightCharIdx]);
       
   // chars replaced equals the length of substring subtracted by the max freq of a char in the substring
