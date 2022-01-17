@@ -55,11 +55,11 @@ try {
 } catch (error) {}
 
 
-const length_of_longest_substring = function (str, k) {
+const length_of_longest_substring = function (s, k) {
 
   let windowStart = 0, maxLength = 0, charCount = {}, maxRepeat = 0;
-  for (let windowEnd = 0; windowEnd < str.length; windowEnd++) {
-      const rightChar = str[windowEnd];
+  for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
+      const rightChar = s[windowEnd];
 
       if (!(rightChar in charCount)) {
           charCount[rightChar] = 0;
@@ -69,7 +69,7 @@ const length_of_longest_substring = function (str, k) {
       maxRepeat = Math.max(maxRepeat, charCount[rightChar]);
 
       if ((windowEnd - windowStart + 1 - maxRepeat) > k) {
-          const leftChar = str[windowStart];
+          const leftChar = s[windowStart];
           charCount[leftChar] -= 1;
           windowStart += 1;
       }
@@ -110,16 +110,16 @@ function characterReplacement(s, k) {
   return maxLen;
 }
 
-
+// 74 steps
 console.time("Sliding")
-console.log(length_of_longest_substring("ABAB",2)); // 4
-// console.log(length_of_longest_substring("AABABBA",1)); // 4
+// console.log(length_of_longest_substring("ABAB",2)); // 4
+console.log(length_of_longest_substring("AABABBA",1)); // 4
 console.timeEnd("Sliding")
 
-
+// 72 steps
 console.time("Pointer")
-console.log(characterReplacement("ABAB",2)); // 4
-// console.log(characterReplacement("AABABBA",1)); // 4
+// console.log(characterReplacement("ABAB",2)); // 4
+console.log(characterReplacement("AABABBA",1)); // 4
 console.timeEnd("Pointer")
 
 
