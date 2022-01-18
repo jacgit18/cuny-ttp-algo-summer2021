@@ -19,7 +19,7 @@ function characterReplacement(s, k) {
       
       if(charReplaced > k) {
           const leftCharIdx = s.charCodeAt(left) - 'A'.charCodeAt(0);
-          --charFreq[leftCharIdx];
+          --charFreq[leftCharIdx]; // accessing the value and decrementing the value at that index not going back
           ++left;
       }
       maxLen = Math.max(maxLen, right - left + 1);
