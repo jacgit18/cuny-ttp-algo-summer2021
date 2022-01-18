@@ -1,7 +1,25 @@
-// You are given a string s and an integer k. You can choose any character of the string and change it to any 
+// You are given a string s and an integer k. You can choose any character of the string
+// and change it to any 
 // other uppercase English character. You can perform this operation at most k times.
 
-// Return the length of the longest substring containing the same letter you can get after performing the above operations.
+// Return the length of the longest substring containing the same letter you can
+//  get after performing the above operations.
+
+// given string to change substring to so that the substring repeat and limited to k 
+// amount of changes in the string return max amount of repeated substring 
+
+/// count characters several ways of doing that use an array with a length of 26 elements
+// with an intial subarray of 0 or empty object were we track count 
+// by passing current subarray value to object and giving intitial value of 0 or
+
+
+
+// follow length of string comparing the windowEnd or rightPointer->  
+// subtract current character code which alts betwwen two values so in this case the diff alts between 0 to 1
+// increment 1 to subarray or 
+
+
+
 
 
 const characterReplacementOne = (s,k) =>{
@@ -41,10 +59,10 @@ let count = 0;
 }
 
 
-console.log(characterReplacement("ABAB",2)); // 4
-console.log(characterReplacement("AABABBA",1)); // 4
-AABABBA
-AABBBBA
+// console.log(characterReplacement("ABAB",2)); // 4
+// console.log(characterReplacement("AABABBA",1)); // 4
+// AABABBA
+// AABBBBA
 
 
 try {
@@ -54,24 +72,49 @@ try {
 
 const length_of_longest_substring = function (s, k) {
 
-  let windowStart = 0, maxLength = 0, charCount = {}, maxRepeat = 0;
-  for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
-      const rightChar = s[windowEnd];
+  let windowEnd = 0;
+  let windowStart = 0;
+  let maxLength = 0;
+   let charCount = {};
+   let  maxRepeat = 0;
+
+   while (windowEnd < s.length) {
+    let rightChar = s[windowEnd];
 
       if (!(rightChar in charCount)) {
           charCount[rightChar] = 0;
       }
 
-      charCount[rightChar] += 1;
+      ++charCount[rightChar];
       maxRepeat = Math.max(maxRepeat, charCount[rightChar]);
+    
+    
+      const charReplaced = (windowEnd - windowStart + 1 - maxRepeat);
 
-      if ((windowEnd - windowStart + 1 - maxRepeat) > k) {
+      if ( charReplaced > k) {
           const leftChar = s[windowStart];
-          charCount[leftChar] -= 1;
-          windowStart += 1;
+          --charCount[leftChar];
+          ++windowStart;
       }
       maxLength = Math.max(windowStart, windowEnd - windowStart + 1);
+       ++windowEnd;
+      
   }
+
+  // console.log(charCount)
+
+  let count = Object.keys(charCount).map(function(key, index){
+    if(charCount[index] <= maxRepeat && windowEnd >= s.length - 1 ) {
+
+      return maxLength 
+    }
+  })
+ 
+
+
+      // if(charCount[rightChar] < 1){
+      //     return maxLength - 1
+      // }
   return maxLength;
 }
 
@@ -80,7 +123,9 @@ const length_of_longest_substring = function (s, k) {
 // 74 steps pointer approach 72 steps
 console.time("Sliding")
 // console.log(length_of_longest_substring("ABAB",2)); // 4
-console.log(length_of_longest_substring("AABABBA",1)); // 4
+// console.log(length_of_longest_substring("AABABBA",1)); // 4
+console.log(length_of_longest_substring("ABCDE",1)); // 2
+
 console.timeEnd("Sliding")
 
 
