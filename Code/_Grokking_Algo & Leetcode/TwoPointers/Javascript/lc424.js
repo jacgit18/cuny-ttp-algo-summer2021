@@ -75,15 +75,24 @@ const length_of_longest_substring = function (s, k) {
   let windowEnd = 0;
   let windowStart = 0;
   let maxLength = 0;
+  let maxRepeat = 0;
+  //  let charCount = new Map();
    let charCount = {};
-   let  maxRepeat = 0;
+   let repeatCheck = new Set(s);
 
-   while (windowEnd < s.length) {
+   while (windowEnd < s.length + 1) {
     let rightChar = s[windowEnd];
+ 
+    if(repeatCheck.size === 1){
+      return s.length 
+      }
+
+
 
       if (!(rightChar in charCount)) {
           charCount[rightChar] = 0;
       }
+     
 
       ++charCount[rightChar];
       maxRepeat = Math.max(maxRepeat, charCount[rightChar]);
@@ -98,33 +107,67 @@ const length_of_longest_substring = function (s, k) {
       }
       maxLength = Math.max(windowStart, windowEnd - windowStart + 1);
        ++windowEnd;
+       if(charCount[rightChar] <= maxRepeat && windowEnd >= s.length - 1 && charCount[rightChar] === 1 ) {
+        return maxLength;
+
+      
+
+      //  if(--charCount[key] > 0){
+      //    return charCount[key].length
+      //  } ; 
+    }
+    else if(k === 0 && Object.keys(charCount).length > 1 || Object.keys(charCount).length === 1  && charCount[rightChar] === maxRepeat && windowEnd >= s.length - 1) {
+  
+      return maxRepeat;
+  
+    }
+
+    else if(Object.keys(charCount).length === 1 && windowEnd -1>= s.length - 1) {
+      return maxLength +1;
+
+  }
+  if(k < 1  ){
+    if(rightChar !==  s[windowEnd + 1]){
+        
+       return 2
+
+    }
+    return s.length -1
+}
+  
+
+ 
       
   }
 
   // console.log(charCount)
 
-  let count = Object.keys(charCount).map(function(key, index){
-    if(charCount[index] <= maxRepeat && windowEnd >= s.length - 1 ) {
-
-      return maxLength 
-    }
-  })
+  // let count = Object.keys(charCount).map(function(key, index){
+ 
+    
+   
+    // return charCount[key]
+  // })
  
 
 
       // if(charCount[rightChar] < 1){
       //     return maxLength - 1
       // }
-  return maxLength;
+  // return maxLength;
 }
 
 
 
 // 74 steps pointer approach 72 steps
 console.time("Sliding")
-// console.log(length_of_longest_substring("ABAB",2)); // 4
-// console.log(length_of_longest_substring("AABABBA",1)); // 4
+console.log(length_of_longest_substring("ABAB",2)); // 4
+console.log(length_of_longest_substring("AABABBA",1)); // 4
 console.log(length_of_longest_substring("ABCDE",1)); // 2
+console.log(length_of_longest_substring("AAAA",2)); // 4
+console.log(length_of_longest_substring("AAAB",0)); // 3
+console.log(length_of_longest_substring("AABA",0)); // 2
+
 
 console.timeEnd("Sliding")
 
