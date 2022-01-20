@@ -72,12 +72,9 @@ try {
 
 const length_of_longest_substring = function (s, k) {
 
-  let windowEnd = 0;
-  let windowStart = 0;
-  let maxLength = 0;
-  let maxRepeat = 0;
+  let [windowEnd, windowStart, maxLength, maxRepeat, charCount] = [0, 0, 0, 0, {}];
   //  let charCount = new Map();
-   let charCount = {};
+  //  let charCount = {};
    let repeatCheck = new Set(s);
 
    while (windowEnd < s.length + 1) {
