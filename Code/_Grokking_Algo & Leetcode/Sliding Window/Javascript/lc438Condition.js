@@ -10,7 +10,8 @@ const findAnagrams = (s, p) => {
  }
  
  let res = [];
- let left = 0, right = 0;
+ let left = 0;
+ let right = 0;
  for (right;right<s.length;right++) {
      if (hash[s[right]]!=null) hash[s[right]]--;
      if (hash[s[right]]==0) uniqueChars--;
