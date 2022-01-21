@@ -11,8 +11,9 @@
  * @returns [all start indices of short string anagram in long string ]
  * anagram a word or sequence of letters Rearrange in different order but contains same letters index returned order doesnt matter
  */
-const findAnagrams = (s,p) =>{
-  let [longString, shortString] = [s, p]
+const findAnagramsOG = (s,p) =>{
+  // let [longString, shortString] = [s, p];
+  let [longString, shortString] = [new Array(26).fill(0), new Array (26).fill(0)];
   let [ windowStart, windowEnd ] = [0,0];
   let sequence = [];
   let [longSequenceLength, shortSequenceLength] = [longString.length, shortString.length];
@@ -65,8 +66,8 @@ const findAnagrams = (s,p) =>{
 // 
 
 
-console.log(findAnagrams("cbaebabacd","abc")); //  [0,6]
-console.log(findAnagrams("abab","ab")); //  [0,1,2]
+// console.log(findAnagramsOG("cbaebabacd","abc")); //  [0,6]
+// console.log(findAnagramsOG("abab","ab")); //  [0,1,2]
 
 
 // The substring with start index = 0 is "cba", which is an anagram of "abc".
@@ -80,6 +81,61 @@ console.log(findAnagrams("abab","ab")); //  [0,1,2]
 // The substring with start index = 1 is "ba", which is an anagram of "ab".
 // The substring with start index = 2 is "ab", which is an anagram of "ab".
 
+
+const findAnagrams = (s, p) =>{
+  let [longStringAlpha, shortStringAlpha] = [new Array(26).fill(0), new Array (26).fill(0)];
+  let [winStart, ch] = [0];
+  let [longString, shortString] = [s, p];
+  let [longSequenceLength, shortSequenceLength] = [s.length, p.length];
+
+  
+  for (let start = 0; start <shortSequenceLength; ++start) {
+      let index = shortString[start].charCodeAt(0) - 97;
+      ++shortStringAlpha[index];
+  }
+  
+  let result = [];
+  
+  for (let start = 0; start< longSequenceLength; ++start) {
+      let index = longString[start].charCodeAt(0) - 97;
+      ++longStringAlpha[index];
+      
+      if((start-winStart) >= shortSequenceLength) {
+          ch = longString.charAt(winStart).charCodeAt(0) - 97;
+           if(longStringAlpha[ch] === 1) {
+            longStringAlpha[ch] = 0;
+           } else {
+            --longStringAlpha[ch];
+           }
+           ++winStart;
+      }
+      
+      if(areArrayEqual(longStringAlpha, shortStringAlpha)) {
+          result.push(start - shortSequenceLength + 1);
+      }
+  }
+  
+  return result;
+}
+
+ const areArrayEqual = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) return false;
+  let parallelStart = 0;
+  let bool = true;
+  for (let start = 0; start < arr1.length; ++start) {
+          if (arr1[start] !== arr2[parallelStart]) {
+              bool = false;
+          }
+      ++parallelStart;
+  }
+  return bool;
+}
+
+
+
+
+
+console.log(findAnagrams("cbaebabacd","abc")); //  [0,6]
 
 try {
   module.exports = findAnagrams;
