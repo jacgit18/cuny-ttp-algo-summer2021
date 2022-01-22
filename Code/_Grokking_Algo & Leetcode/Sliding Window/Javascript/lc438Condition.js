@@ -1,32 +1,41 @@
 const findAnagrams = (s, p) => {
-    let hash = {},  uniqueChars = 0;
- for (let c of p) {
-     if (hash[c]==null) {
-         uniqueChars++;
-         hash[c] = 1;
+    let hash = new Map();
+    // let hash = {};
+
+      let uniqueChars = 0;
+ for (let char of p) {
+     if (hash[char]==null) {
+         ++uniqueChars;
+         hash[char] = 1;
      } else {
-         hash[c]++;
+         ++hash[char];
      }
  }
  // === considers type & value == considers only value
  let res = [];
- let left = 0;
- let right = 0;
+ let windowStart = 0;
+ let windowEnd = 0;
  let count = 0;
- for (right;right<s.length;right++) {
-     if (hash[s[right]]!==null) hash[s[right]]--;
-     if (hash[s[right]]===0) uniqueChars--;
-     if (uniqueChars===0) res.push(left);
-     if (right - left + 1 === p.length) {
-         if (hash[s[left]]!==null) hash[s[left]]++;
-        //  console.log(count++, " sec " ,hash[s[left++]])
-        //  console.log(count++, " sec " ,s[left++])
-        //  console.log(count++, " sec " ,s[left])
-        //  console.log(count++, " sec " ,left++)
+ for (windowEnd;windowEnd<s.length;++windowEnd) {
+    //  if (hash[s[windowEnd]]!==null) hash[s[windowEnd]]--;
+
+     if (hash.has(s[windowEnd])!==null) --hash[s[windowEnd]];
+     if (hash[s[windowEnd]]===0) --uniqueChars;
+
+
+    //  if (hash[s[windowEnd]]===0) uniqueChars--;
+     if (uniqueChars===0) res.push(windowStart);
+     
+     if (windowEnd - windowStart + 1 === p.length) {
+         if (hash.has(s[windowStart])!==null) ++hash[s[windowStart]];
+        //  console.log(count++, " sec " ,hash[s[windowStart++]])
+        //  console.log(count++, " sec " ,s[windowStart++])
+        //  console.log(count++, " sec " ,s[windowStart])
+        //  console.log(count++, " sec " ,windowStart++)
 
 
 
-         if (hash[s[left++]]===1) uniqueChars++;
+         if (hash[s[windowStart++]]===1) ++uniqueChars;
      }
  }
  return res;

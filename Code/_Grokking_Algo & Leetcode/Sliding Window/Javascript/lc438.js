@@ -84,7 +84,7 @@ const findAnagramsOG = (s,p) =>{
 
 const findAnagrams = (s, p) =>{
   let [longStringAlpha, shortStringAlpha] = [new Array(26).fill(0), new Array (26).fill(0)];
-  let [winStart, ch] = [0];
+  let [winEnd, ch] = [0];
   let [longString, shortString] = [s, p];
   let [longSequenceLength, shortSequenceLength] = [s.length, p.length];
 
@@ -100,14 +100,14 @@ const findAnagrams = (s, p) =>{
       let index = longString[start].charCodeAt(0) - 97;
       ++longStringAlpha[index];
       
-      if((start-winStart) >= shortSequenceLength) {
-          ch = longString.charAt(winStart).charCodeAt(0) - 97;
+      if((start-winEnd) >= shortSequenceLength) {
+          ch = longString.charAt(winEnd).charCodeAt(0) - 97;
            if(longStringAlpha[ch] === 1) {
             longStringAlpha[ch] = 0;
            } else {
             --longStringAlpha[ch];
            }
-           ++winStart;
+           ++winEnd;
       }
       
       if(areArrayEqual(longStringAlpha, shortStringAlpha)) {
