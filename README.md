@@ -11,7 +11,7 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Smallest Window Containing Substring (hard): LC #76
   - [x] Smallest Subarray with a given sum (easy): LC #209
   - [x] Longest Substring with K Distinct Characters (medium): LC #340
-  - [] Find String Anagrams (hard): LC #438
+  - [x] Find String Anagrams (hard): LC #438
   - [] Find Permutation in string (hard): LC #567
   - [x] Fruits into Baskets (medium): LC #904
   - [] Max Consecutive Ones III (hard): LC #1004

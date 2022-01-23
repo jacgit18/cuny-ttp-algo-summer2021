@@ -1,6 +1,6 @@
 // 1. LinkedLists
 // Node class for a linked list node
-const linkSetter = require("../../_DataStructuresClasses/DataStrucFactoryInterview");
+const linkSetter = require("../../../_DataStructuresBuiltUpClasses/DataStrucFactoryInterview");
 const linkedGetter = new linkSetter();
 
 
@@ -23,15 +23,17 @@ const linkedGetter = new linkSetter();
   
   const printBackward = (node) =>{
     // let foward =  printFoward = (node);
-    // // use stack with push pop to get values or something
+    // use stack with push pop to get values or something
     // console.log(foward)
 
     if(node === null) return;
     // console.log(node.value); // foward
 
-    printBackward(node.next);
+    printBackward(node.next)
   
     console.log(node.value); // backward
+
+    
 
   
   }

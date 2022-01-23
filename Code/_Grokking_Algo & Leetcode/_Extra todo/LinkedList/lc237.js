@@ -1,7 +1,7 @@
-const LinkedList = require("../../../_DataStructuresClasses/DataStrucFactoryInterview");
+const LinkedList = require("../../../_DataStructuresBuiltUpClasses/DataStrucFactoryInterview");
 const myLK = new LinkedList();
 
-let LinkListArray = [9,1,5,4];
+let LinkListArray = [4,5,1,9];
 let head = myLK.ArrayLinkListDeserialize(LinkListArray)
 
 //  console.log(head); // full list
@@ -13,14 +13,22 @@ let head = myLK.ArrayLinkListDeserialize(LinkListArray)
 //   console.log(head.next.next.next.next); // return null
 
 
-let node = head; 
+// let node = 5; 
 
-let deleteNode = function (node) {
+
+const deleteNode = (head, node) => {
+    // console.log(head.next.value )
  
+    head.next.value = head.value // points 4 -> 5 -> 1 -> 9 -> null
+    // console.log(head)
+    
+    head.next = head.next.next;
 
+    return head;
 
 };
+let node = head.next.value
 
-deleteNode(node);
+console.log(deleteNode(head, node))
 
 
