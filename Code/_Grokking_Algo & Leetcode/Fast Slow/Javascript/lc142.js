@@ -1,34 +1,86 @@
+const LinkedList = require("../../../_DataStructuresBuiltUpClasses/DataStrucFactoryInterview");
+const myLK = new LinkedList();
+
+let LinkListArray = [3,2,0,-4];
+// let head = myLK.ArrayLinkListDeserialize(LinkListArray);
 // Problem Statement #
 
 // Given the head of a Singly LinkedList that contains a cycle, write a function to find the starting node of the cycle.
 
-class Node {
+class ListNode {
   constructor(value, next=null){
     this.value = value;
     this.next = next;
   }
 }
 
-const find_cycle_start = function(head){
-  // TODO: Write your code here
+const ArrayLinkListDeserialize = (arr) =>{
+  if (arr.length === 0) { return null; }
+  let head = new ListNode(arr[0]);
+  let current = head;
+  for (let i = 1; i < arr.length; i++) {
+    // Path − Path represents a sequence of edges between the two vertices. In the following example, ABCD represents a path from A to D
+    current.next = new ListNode(arr[i]);
+    current = current.next;
+  }
   return head;
+}
+let head = ArrayLinkListDeserialize(LinkListArray);
+
+
+
+const find_cycle_start = (head) =>{
+
+  let slow = head,
+  fast = head;
+
+while(fast && fast.next) {
+  slow = slow.next;
+  fast = fast.next.next;
+
+  if(slow === fast) {
+      break;
+  }
+}
+if(fast === null) {
+  fast = head.next;
+}
+// if fast pointer reaches NULL, that means no cycle detected
+if(!fast || !fast.next) {
+  return null;
+}
+// let curr = head;
+while(slow !== fast) {
+  slow = curr.next;
+  fast = fast.next;
+}
+// console.log(curr.next.next)
+return curr;
+
 };
 
+try{
+  console.log(  find_cycle_start(head))
 
-head = new Node(1)
-head.next = new Node(2)
-head.next.next = new Node(3)
-head.next.next.next = new Node(4)
-head.next.next.next.next = new Node(5)
-head.next.next.next.next.next = new Node(6)
+}catch(e){
 
-head.next.next.next.next.next.next = head.next.next
-console.log(`LinkedList cycle start: ${find_cycle_start(head).value}`)
+}
 
-head.next.next.next.next.next.next = head.next.next.next
-console.log(`LinkedList cycle start: ${find_cycle_start(head).value}`)
 
-head.next.next.next.next.next.next = head
+// head = new Node(1)
+// head.next = new Node(2)
+// head.next.next = new Node(3)
+// head.next.next.next = new Node(4)
+// head.next.next.next.next = new Node(5)
+// head.next.next.next.next.next = new Node(6)
+
+// head.next.next.next.next.next.next = head.next.next
+// console.log(`LinkedList cycle start: ${find_cycle_start(head).value}`)
+
+// head.next.next.next.next.next.next = head.next.next.next
+// console.log(`LinkedList cycle start: ${find_cycle_start(head).value}`)
+
+// head.next.next.next.next.next.next = head
 
 
 

@@ -63,14 +63,34 @@ const has_cycle = function(head) {
   return false
 }
 
+const insertLast = (data) => {
+  let node = new Node(data);
+  let current;
+
+  // If empty, make head
+  if (!this.head) {
+    this.head = node;
+  } else {
+    current = this.head;
+
+    while (current.next) {
+      current = current.next;
+    }
+
+    current.next = node;
+  }
+
+  this.size++;
+}
 // head is global vairiable since were not declaring with keywords like
 // let, const, or var which isnt recommend 
-console.log(head = new Node(1)) // adding intial node 
+console.log(head = new Node(3)) // adding intial node 
 console.log(head.next = new Node(2))
-head.next.next = new Node(3)
-head.next.next.next = new Node(4)
-head.next.next.next.next = new Node(5)
-head.next.next.next.next.next = new Node(6)
+head.next.next = new Node(0)
+head.next.next.next = new Node(-4)
+console.log(head.next)
+// head.next.next.next.next = new Node(5)
+// head.next.next.next.next.next = new Node(6)
 
 // try {
 //   console.log(`Curr head: ${head} `);
@@ -79,13 +99,16 @@ head.next.next.next.next.next = new Node(6)
 // }
 
 // console.log(head)
-// console.log(`LinkedList has cycle: ${has_cycle(head)}`)
-try {
-  head.next.next.next.next.next.next = head.next.next
-  console.log(head)
-} catch (e) {
-  console.log(`value is null `);
-}
+// // console.log(`LinkedList has cycle: ${has_cycle(head)}`)
+// try {
+//   head.next.next.next.next.next.next = head.next.next
+//   while(head.value !== null){
+//     console.log(head.next.value)
+
+//   }
+// } catch (e) {
+//   console.log(`value is null `);
+// }
 console.log(`LinkedList has cycle: ${has_cycle(head)}`)
 
 // head.next.next.next.next.next.next = head.next.next.next

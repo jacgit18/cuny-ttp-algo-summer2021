@@ -7,22 +7,21 @@ let head = myLK.ArrayLinkListDeserialize(LinkListArray);
 
 
 const removeElements = (head, val)  =>{
-
-    if (!head) {
-        return head;
-    }
-    if (head.val === val) {
-        return removeElements(head.next, val);
-    }
-    head.next = removeElements(head.next, val)
-    return head;
+    if (!head || !val) return head;
+    head.next = removeElements(head.next, val);
+    return (head.val === val) ? head.next : head;
 
 };
 
 let nodeVal = head.next.next.value
 
 
-try {
     console.log(removeElements(head, nodeVal))// [1,2,3,4,5]
 
- } catch (e) {}
+
+    try {
+        module.exports = removeElements;
+      
+      } catch (error) {
+    
+      }
