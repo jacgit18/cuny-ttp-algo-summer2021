@@ -30,24 +30,26 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Comparing Strings containing Backspaces (medium): LC #844
   - [x] Squaring a Sorted Array (easy): LC #977
 
-- Fast & Slow Pointers
-  - [x] LinkedList Cycle (easy): LC #141
-  - [x] Happy Number (medium): LC #202
-  - [] Start of LinkedList Cycle (medium): LC #142
-  - [] Middle of the LinkedList (easy): LC #876
-  - [] Palindrome LinkedList (medium): LC #234
-  - [] Rearrange a LinkedList (medium): LC #143
-  - [] Cycle in a Circular Array (hard): LC #457
-  
 - Merge Intervals
   - [x] Merge Intervals (medium): LC #56
   - [x] Insert Interval (medium): LC #57
-  - [] Intervals Intersection (medium): LC #986
+  - [x] Intervals Intersection (medium): LC #986
   - [] Conflicting Appointments (medium): LC #252
   - [] Minimum Meeting Rooms (hard): LC #253
   - [] Maximum CPU Load(Task Scheduler) (hard): LC proably #621
   - [] Employee Free Time (hard): LC #759
-  
+
+- Subsets
+  - [x] Subsets (easy): LC #78
+  - [] Subsets With Duplicates (easy): LC #90
+  - [] Permutations (medium): LC #46
+  - [] String Permutations by changing case (medium): LC #784
+  - [] Balanced Parentheses (hard): LC #22
+  - [] Unique Generalized Abbreviations (hard): LC #320
+  - [] Evaluate Expression (hard): LC #241
+  - [] Structurally Unique Binary Search Trees (hard): LC #95(Binary Tree)
+  - [] Count of Structurally Unique Binary Search Trees (hard): LC #96(Binary Tree)
+
 - Cyclic Sort
   - [x] Cyclic Sort (easy)
   - [x] Find the Missing Number (easy): LC #268
@@ -57,6 +59,27 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Find the Corrupt Pair (easy): LC #645
   - [] Find the Smallest Missing Positive Number (medium): LC #41
   - [] Find the First K Missing Positive Numbers (hard): LC proably #1539
+
+- Bitwise XOR
+  - [] Single Number (easy): LC #136
+  - [] Two Single Numbers (medium): LC #260
+  - [] Complement of Base 10 Number (medium): LC #476
+  - [] Problem Statement (hard): LC #832
+
+- Heaps
+  - [x] Find the Median of a Number Stream (medium): LC #295
+  - [] Sliding Window Median (hard): LC #480
+  - [] Maximize Capital (hard): LC #502
+  - [] Next Interval (hard): LC #436
+  
+- Fast & Slow Pointers
+  - [x] LinkedList Cycle (easy): LC #141
+  - [x] Happy Number (medium): LC #202
+  - [] Start of LinkedList Cycle (medium): LC #142
+  - [] Middle of the LinkedList (easy): LC #876
+  - [] Palindrome LinkedList (medium): LC #234
+  - [] Rearrange a LinkedList (medium): LC #143
+  - [] Cycle in a Circular Array (hard): LC #457
   
 - In Place Reversal of a LL
   - [x] Reverse a LinkedList (easy): LC #206
@@ -87,23 +110,6 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Tree Diameter (medium): LC #543
   - [] Path with Maximum Sum (hard): LC #124
 
-- Heaps
-  - [x] Find the Median of a Number Stream (medium): LC #295
-  - [] Sliding Window Median (hard): LC #480
-  - [] Maximize Capital (hard): LC #502
-  - [] Next Interval (hard): LC #436
-
-- Subsets
-  - [x] Subsets (easy): LC #78
-  - [] Subsets With Duplicates (easy): LC #90
-  - [] Permutations (medium): LC #46
-  - [] String Permutations by changing case (medium): LC #784
-  - [] Balanced Parentheses (hard): LC #22
-  - [] Unique Generalized Abbreviations (hard): LC #320
-  - [] Evaluate Expression (hard): LC #241
-  - [] Structurally Unique Binary Search Trees (hard): LC #95
-  - [] Count of Structurally Unique Binary Search Trees (hard): LC #96
-  
 - Modified Binary Search
   - [] Order-agnostic Binary Search (easy): LC #704
   - [] Ceiling of a Number (medium): LC #??
@@ -118,11 +124,14 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Find Minimum in Rotated Sorted Array (medium): LC #153
   - [] Find Minimum in Rotated Sorted Array II (medium): LC #154
 
-- Bitwise XOR
-  - [] Single Number (easy): LC #136
-  - [] Two Single Numbers (medium): LC #260
-  - [] Complement of Base 10 Number (medium): LC #476
-  - [] Problem Statement (hard): LC #832
+- Topological Sort (Graphs)
+  - [] Topological Sort (medium)
+  - [] Tasks Scheduling (medium): LC #207
+  - [] Tasks Scheduling Order (medium): LC #210
+  - [] All Tasks Scheduling Orders (hard): LC #210 (output all possible solutions)
+  - [] Alien Dictionary (hard): LC #269
+  - [] Reconstructing a Sequence (hard): LC #444
+  - [] Minimum Height Trees (hard): LC #310
 
 - Top K Elements
   - [] Top 'K' Numbers (easy)
@@ -135,9 +144,9 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] 'K' Closest Numbers (medium): LC #658
   - [] Maximum Distinct Elements (medium)
   - [] Sum of Elements (medium)
-  - [] Rearrange String (hard): LC #767
+  - [] Rearrange String (hard): LC #767(Greedy)
   - [] Rearrange String K Distance Apart (hard): LC #358
-  - [] Scheduling Tasks (hard): LC #621
+  - [] Scheduling Tasks (hard): LC #621(Greedy)
   - [] Frequency Stack (hard): LC #895
   
 - K-way Merge
@@ -154,12 +163,3 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Minimum Subset Sum Difference (hard)
   - [] Count of Subset Sum (hard)
   - [] Target Sum (hard): LC #494
-
-- Topological Sort (Graphs)
-  - [] Topological Sort (medium)
-  - [] Tasks Scheduling (medium): LC #207
-  - [] Tasks Scheduling Order (medium): LC #210
-  - [] All Tasks Scheduling Orders (hard): LC #210 (output all possible solutions)
-  - [] Alien Dictionary (hard): LC #269
-  - [] Reconstructing a Sequence (hard): LC #444
-  - [] Minimum Height Trees (hard): LC #310

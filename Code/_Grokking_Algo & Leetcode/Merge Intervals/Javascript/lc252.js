@@ -1,41 +1,46 @@
-// Problem Statement #
+// Problem Statement 
 
-// Given an array of intervals representing ‘N’ appointments, find out if a person can attend all the appointments.
+// Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] 
+// (si < ei), determine if a person could attend all meetings.
 
+//
 class Interval {
   constructor(start, end) {
     this.start = start;
     this.end = end;
   }
 
-  print_interval() {
-    process.stdout.write(`[${this.start}, ${this.end}]`);
-  }
+//   print_interval() {
+//     process.stdout.write(`[${this.start}, ${this.end}]`);
+//   }
 }
 
-const can_attend_all_appointments = function(intervals) {
-  // TODO: Write your code here
-  return false;
+const can_attend_all_appointments = (intervals) => {
+  console.log(intervals)
+
+  // return false;
 };
 
+let testCaseOne = [[0,30],[5,10],[15,20]]; // false
+let testCaseTwo = [[7,10],[2,4]]; // true
 
-console.log(`Can attend all appointments: ${can_attend_all_appointments([
-  new Interval(1, 4),
-  new Interval(2, 5),
-  new Interval(7, 9),
-])}`);
 
-console.log(`Can attend all appointments: ${can_attend_all_appointments([
-  new Interval(6, 7),
-  new Interval(2, 4),
-  new Interval(8, 12),
-])}`);
 
-console.log(`Can attend all appointments: ${can_attend_all_appointments([
-  new Interval(4, 5),
-  new Interval(2, 3),
-  new Interval(3, 6),
-])}`);
+// console.log(`Can attend all appointments: ${can_attend_all_appointments([
+//   new Interval(0, 30),
+//   new Interval(5, 10),
+//   new Interval(15, 20),
+// ])}`);
+
+// console.log(`Can attend all appointments: ${can_attend_all_appointments([
+//   new Interval(7, 10),
+//   new Interval(2, 4),
+// ])}`);
+
+
+console.log(`Can attend all appointments: ${can_attend_all_appointments(testCaseOne)}`);
+
+console.log(`Can attend all appointments: ${can_attend_all_appointments(testCaseTwo)}`);
 
 
 

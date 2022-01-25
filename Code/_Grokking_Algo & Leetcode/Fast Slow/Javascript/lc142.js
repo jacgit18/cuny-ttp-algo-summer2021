@@ -25,6 +25,7 @@ const ArrayLinkListDeserialize = (arr) =>{
   }
   return head;
 }
+
 let head = ArrayLinkListDeserialize(LinkListArray);
 
 
@@ -42,11 +43,13 @@ while(fast && fast.next) {
       break;
   }
 }
-if(fast === null) {
-  fast = head.next;
-}
+// if(fast === null) {
+//   fast = head.next;
+// }
 // if fast pointer reaches NULL, that means no cycle detected
 if(!fast || !fast.next) {
+  // fast = head.next;
+
   return null;
 }
 // let curr = head;
