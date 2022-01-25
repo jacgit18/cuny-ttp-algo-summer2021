@@ -1,6 +1,6 @@
-// Problem Statement 
+// Problem Statement
 
-// Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] 
+// Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...]
 // (si < ei), determine if a person could attend all meetings.
 
 //
@@ -10,21 +10,39 @@ class Interval {
     this.end = end;
   }
 
-//   print_interval() {
-//     process.stdout.write(`[${this.start}, ${this.end}]`);
-//   }
+  //   print_interval() {
+  //     process.stdout.write(`[${this.start}, ${this.end}]`);
+  //   }
 }
 
 const can_attend_all_appointments = (intervals) => {
-  console.log(intervals)
+  // console.log(intervals)
+  let intervalOneIdx = 0;
+  let result = [];
 
-  // return false;
+  while (intervalOneIdx < intervals.length) {
+    const [start, end] = intervals[intervalOneIdx];
+    if (start >= end) {
+      result.push(Math.max(start, end));
+    }
+
+    ++intervalOneIdx;
+
+    if (start < end) {
+      return false;
+    }
+  }
 };
 
-let testCaseOne = [[0,30],[5,10],[15,20]]; // false
-let testCaseTwo = [[7,10],[2,4]]; // true
-
-
+let testCaseOne = [
+  [0, 30],
+  [5, 10],
+  [15, 20],
+]; // false
+let testCaseTwo = [
+  [7, 10],
+  [2, 4],
+]; // true
 
 // console.log(`Can attend all appointments: ${can_attend_all_appointments([
 //   new Interval(0, 30),
@@ -37,13 +55,13 @@ let testCaseTwo = [[7,10],[2,4]]; // true
 //   new Interval(2, 4),
 // ])}`);
 
+console.log(
+  `Can attend all appointments: ${can_attend_all_appointments(testCaseOne)}`
+);
 
-console.log(`Can attend all appointments: ${can_attend_all_appointments(testCaseOne)}`);
-
-console.log(`Can attend all appointments: ${can_attend_all_appointments(testCaseTwo)}`);
-
-
-
+console.log(
+  `Can attend all appointments: ${can_attend_all_appointments(testCaseTwo)}`
+);
 
 // Solution
 // -----
@@ -68,4 +86,4 @@ console.log(`Can attend all appointments: ${can_attend_all_appointments(testCase
 // The time complexity of the above algorithm is O(N*logN), where ‘N’ is the total number of appointments. Though we are iterating the intervals only once, our algorithm will take O(N * logN) since we need to sort them in the beginning.
 
 // Space complexity #
-// The space complexity of the above algorithm will be O(N), which we need for sorting. For Java, Arrays.sort() uses Timsort, which needs O(N) space.
+// The space complexity of the above algorithm will be O(N), which we need for sorting. For Java, Arrays.sort() uses Timsort, which needs O(N) space
