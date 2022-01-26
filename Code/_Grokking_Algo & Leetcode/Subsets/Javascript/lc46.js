@@ -13,11 +13,24 @@
 
 // If a set has ‘n’ distinct elements it will have n!n! permutations.
 
-const find_permutations = function(nums) {
-  result = [];
-  // TODO: Write your code here
-  return result;
-};
+
+const find_permutations =(nums) => {
+  let res = [];
+  dfs(nums, new Set(), res);
+  return res;
+}
+const dfs = (nums, curr, res) =>{
+  if (curr.size == nums.length) {
+      res.push(Array.from(curr));
+      return;
+  }
+  for (let i = 0; i < nums.length; i++) {
+      if (curr.has(nums[i])) continue;
+      curr.add(nums[i]);
+      dfs(nums, curr, res);
+      curr.delete(nums[i]);
+  }
+}
 
 
-console.log(`Here are all the permutations: ${find_permutations([1, 3, 5])}`)
+console.log(`Here are all the permutations: ${find_permutations([1, 2, 3])}`)

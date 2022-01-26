@@ -87,3 +87,12 @@ console.log(
 
 // Space complexity #
 // The space complexity of the above algorithm will be O(N), which we need for sorting. For Java, Arrays.sort() uses Timsort, which needs O(N) space
+
+// let space = [2,3,54,63,2,5,3]
+
+// while (i < space.length) {
+//   let i = 0
+//   console.log(space[i])
+
+//   i++;
+// }
