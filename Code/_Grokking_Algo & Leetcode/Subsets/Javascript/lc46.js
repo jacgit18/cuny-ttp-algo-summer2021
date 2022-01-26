@@ -24,7 +24,7 @@ const dfs = (nums, curr, res) =>{
       res.push(Array.from(curr));
       return;
   }
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; ++i) {
       if (curr.has(nums[i])) continue;
       curr.add(nums[i]);
       dfs(nums, curr, res);
