@@ -37,5 +37,7 @@ function swap(array, firstIndex, secondIndex){
 }
 
 //Select first and last index as 2nd and 3rd parameters
-quickSort(numbers, 0, numbers.length - 1);
-console.log(numbers);
+
+console.time("quick");
+console.log(quickSort(numbers, 0, numbers.length - 1));
+console.timeEnd("quick");

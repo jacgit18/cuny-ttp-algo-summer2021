@@ -38,5 +38,7 @@ function merge(left, right){
 }
 
 
-const answer = mergeSort(numbers);
-console.log(answer);
+
+console.time("merge");
+console.log(mergeSort(numbers));
+console.timeEnd("merge");
