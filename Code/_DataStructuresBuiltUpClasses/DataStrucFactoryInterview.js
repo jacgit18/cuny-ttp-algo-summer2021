@@ -72,6 +72,17 @@ mySet.add(9);
     }
   }
 
+  class DoubleLLNode {
+    constructor(value) {
+      this.head = {
+          value: value,
+          next: null
+      };
+      this.tail = this.head;
+      // this.length = 1;
+  }
+  }
+
 
   class TreeNode {
     constructor(value){
@@ -104,10 +115,24 @@ class Vertex {
     let head = new ListNode(arr[0]);
     let current = head;
     for (let i = 1; i < arr.length; i++) {
-      // Path − Path represents a sequence of edges between the two vertices. In the following example, ABCD represents a path from A to D
       current.next = new ListNode(arr[i]);
       current = current.next;
     }
+    return head;
+  }
+
+  // fix
+  ArrayLinkListDoubleDeserialize(arr) {
+    if (arr.length === 0) { return null; }
+    let head = new DoubleLLNode(arr[0]);
+    let current = head;
+    // tail
+
+    for (let i = 1; i < arr.length; i++) {
+      current.next = new ListNode(arr[i]);
+      current = current.next;
+    }
+    // this.tail = head;
     return head;
   }
   
@@ -176,6 +201,7 @@ class Vertex {
 const stuructureMaker = new NodeConstructor();
 
 // let linkedList = console.log(stuructureMaker.ArrayLinkListDeserialize(LinkListArray))
+let linkedListDD = console.log(stuructureMaker.ArrayLinkListDoubleDeserialize(LinkListArray))
 // let tree = console.log(stuructureMaker.ArrayTreeDeserialize((TreeArray)));
 // let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
 
