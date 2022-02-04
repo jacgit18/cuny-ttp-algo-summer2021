@@ -114,4 +114,5 @@ mylinkList.delete(2);
 
 // mylinkList.printList();
 
-consoleItem.ConsoleDebuggerParamOneLinkList(mylinkList);
+// consoleItem.ConsoleDebuggerParamOneLinkList(mylinkList);
+console.log(mylinkList)
