@@ -78,3 +78,12 @@ class Heap {
       }
   }
 }
+
+const hp = new Heap();
+
+hp.add(7);
+hp.add(9);
+hp.add(54);
+console.log(hp)
+
+

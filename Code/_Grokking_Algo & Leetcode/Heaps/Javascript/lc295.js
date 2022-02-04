@@ -48,6 +48,8 @@ find_median() {
 var medianOfAStream = new MedianOfAStream();
 medianOfAStream.insert_num(3);
 medianOfAStream.insert_num(1);
+// console.log(`The median is: ${medianOfAStream}`);
+
 console.log(`The median is: ${medianOfAStream.find_median()}`);
 medianOfAStream.find_median();
 medianOfAStream.insert_num(5);
