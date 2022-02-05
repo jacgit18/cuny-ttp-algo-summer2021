@@ -25,6 +25,7 @@ class DoublyLinkedList {
     }
 
     this.head = this.tail = newNode;
+    // console.log(newNode);
     return newNode;
   }
 
