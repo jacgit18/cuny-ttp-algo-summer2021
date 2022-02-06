@@ -209,7 +209,8 @@ class Node {
     return list;
   }
   
-  
+  module.exports = BinarySearchTree;
+
   const tree = new BinarySearchTree();
   tree.insert(9)
   tree.insert(4)
@@ -220,6 +221,11 @@ class Node {
   tree.insert(1)
   // tree.remove(170);
   // JSON.stringify(traverse(tree.root))
+
+  // tree.lookup(15);
+// tree.lookup(7);
+// tree.lookup(20);
+// tree.lookup(170);
   
   console.log('BFS', tree.BreadthFirstSearch()); // iterative
   console.log('BFS', tree.BreadthFirstSearchR([tree.root], [])) // recursive
