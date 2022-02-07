@@ -1,5 +1,5 @@
 // Trees
-const treeGrower = require('../../../_DataStructuresClasses/DataStrucFactoryInterview')
+const treeGrower = require('../../../_DataStructuresBuiltUpClasses/DataStrucFactoryInterview')
 const tree = new treeGrower();
   
   /*  Let's build the following tree with deserialize:

@@ -205,8 +205,8 @@ class Vertex {
 const stuructureMaker = new NodeConstructor();
 
 // let linkedList = console.log(stuructureMaker.ArrayLinkListDeserialize(LinkListArray))
-let linkedListDD = console.log(stuructureMaker.ArrayLinkListDoubleDeserialize(LinkListArray))
-// let tree = console.log(stuructureMaker.ArrayTreeDeserialize((TreeArray)));
+// let linkedListDD = console.log(stuructureMaker.ArrayLinkListDoubleDeserialize(LinkListArray))
+let tree = console.log(stuructureMaker.ArrayTreeDeserialize((TreeArray)));
 // let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
 
  

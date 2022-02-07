@@ -168,4 +168,4 @@ function dfs(vertex) {
   }
   return result;
 }
-// console.log("DFS:", dfs(graph));
+console.log("DFS:", dfs(graph));
