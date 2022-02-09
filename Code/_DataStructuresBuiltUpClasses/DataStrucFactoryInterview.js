@@ -120,7 +120,6 @@ class Vertex {
     for (let i = 1; i < arr.length; i++) {
       current.next = new ListNode(arr[i]);
       current = current.next;
-      // see if works with lc Question
       if(current.next === null){
         current.next = null;
       }
@@ -135,9 +134,8 @@ class Vertex {
     for (let i = 1; i < arr.length; i++) {
       current.next = new Node(arr[i]);
       current = current.next;
-      // see if works with lc Question
       if(current.next === null){
-        current.next = head;
+        current.next = head; //fix
       }
     }
     return head;
