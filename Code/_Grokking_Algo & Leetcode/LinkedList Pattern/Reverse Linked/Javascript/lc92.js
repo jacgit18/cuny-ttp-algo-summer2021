@@ -118,62 +118,57 @@ head.next.next = new Node(3)
 head.next.next.next = new Node(4)
 head.next.next.next.next = new Node(5)
 
+// head = new Node(5)
+
+
 // console.log(`Nodes of original LinkedList are: ${head.get_list()}`)
-console.log(`Nodes of reversed LinkedList are: ${reverse_sub_list(head, 2, 4).get_list()}`)
+// console.log(`Nodes of reversed LinkedList are: ${reverse_sub_list(head, 2, 4).get_list()}`)
 // reverse_sub_list(head, 2, 4).get_list()
 
-// Solution
-// -----
-// function reverse_sub_list(head, p, q) {
-//   if (p === q) {
-//     return head;
-//   }
+const reverse_sub_listNoCom = function(head, left, right) {
+  if (left === right) {
+    return head;
+  }
 
-//   // after skipping 'p-1' nodes, current will point to 'p'th node
-//   let current = head,
-//     previous = null;
-//   let i = 0;
-//   while (current !== null && i < p - 1) {
-//     previous = current;
-//     current = current.next;
-//     i += 1;
-//   }
+  let current = head;
+  let previous = null;
 
-//   // we are interested in three parts of the LinkedList, the part before index 'p',
-//   // the part between 'p' and 'q', and the part after index 'q'
-//   const last_node_of_first_part = previous;
-//   // after reversing the LinkedList 'current' will become the last node of the sub-list
-//   const last_node_of_sub_list = current;
-//   let next = null; // will be used to temporarily store the next node
+  let i = 0;
+  while (current !== null && i < left - 1) {
+    previous = current;
+    current = current.next;
+    i += 1;
+  }
 
-//   i = 0;
-//   // reverse nodes between 'p' and 'q'
-//   while (current !== null && i < q - p + 1) {
-//     next = current.next;
-//     current.next = previous;
-//     previous = current;
-//     current = next;
-//     i += 1;
-//   }
+  
+  const last_node_of_first_part = previous;
+  const last_node_of_sub_list = current;
+  let next = null;
+  i = 0;
 
-//   // connect with the first part
-//   if (last_node_of_first_part !== null) {
-//     // 'previous' is now the first node of the sub-list
-//     last_node_of_first_part.next = previous;
-//     // this means p === 1 i.e., we are changing the first node (head) of the LinkedList
-//   } else {
-//     head = previous;
-//   }
+  // reverse nodes between 'p' and 'q'
+  while (current !== null && i < right - left + 1) {
+    next = current.next;
+    current.next = previous;
 
-//   // connect with the last part
-//   last_node_of_sub_list.next = current;
-//   return head;
-// }
+    previous = current;
 
-// -----
+    current = next;
 
-// Time complexity #
-// The time complexity of our algorithm will be O(N) where ‘N’ is the total number of nodes in the LinkedList.
+    i += 1;
+  }
 
-// Space complexity #
-// We only used constant space, therefore, the space complexity of our algorithm is O(1).
+  if (last_node_of_first_part !== null) {
+    last_node_of_first_part.next = previous;
+  } else {
+    head = previous;
+  }
+
+  last_node_of_sub_list.next = current;
+  return head;
+};
+
+console.log(`Nodes of reversed LinkedList are: ${reverse_sub_listNoCom(head, 2, 4).get_list()}`)
+// console.log(`Nodes of reversed LinkedList are: ${reverse_sub_listNoCom(head, 1, 1).get_list()}`)
+
+// console.log(`Nodes of reversed LinkedList are: ${reverse_sub_listNoCom(headTwo, 2, 4).get_list()}`)

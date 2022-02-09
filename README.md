@@ -83,7 +83,7 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   
 - In Place Reversal of a LL
   - [x] Reverse a LinkedList (easy): LC #206
-  - [x] Reverse a Sub-list (medium): LC #92
+  - [x] Reverse a Sub-list (medium): LC #92 //go Over again
   - [] Reverse every K-element Sub-list( Reverse Nodes in k-Group) (hard): LC #25
   - [] Rotate a LinkedList (medium): LC #61
 
