@@ -75,7 +75,7 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
 - Fast & Slow Pointers
   - [x] LinkedList Cycle (easy): LC #141
   - [x] Happy Number (medium): LC #202
-  - [] Start of LinkedList Cycle (medium): LC #142
+  - [x] Start of LinkedList Cycle (medium): LC #142
   - [] Middle of the LinkedList (easy): LC #876
   - [] Palindrome LinkedList (medium): LC #234
   - [] Rearrange a LinkedList (medium): LC #143
@@ -84,9 +84,17 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
 - In Place Reversal of a LL
   - [x] Reverse a LinkedList (easy): LC #206
   - [x] Reverse a Sub-list (medium): LC #92
-  - [] Reverse every K-element Sub-list (medium): LC #25
-  - [] Reverse Alternating K-element Sub-list (medium): LC #
+  - [] Reverse every K-element Sub-list( Reverse Nodes in k-Group) (hard): LC #25
   - [] Rotate a LinkedList (medium): LC #61
+
+- Doubly-Linked List(PERSONAl Review)
+  - [] LRU Cache (medium): LC #146
+  - [] All O`one Data Structure (Hard): LC #432
+  - [] LFU Cache (Hard): LC #460
+  - [] Max Stack (easy): LC #716
+  - [] Convert Binary Search Tree to Sorted Doubly Linked List(medium): LC #426
+  - [] Flatten a Multilevel Doubly Linked List (medium): LC #430
+  - [] Design Browser History (medium): LC #1472
 
 - Trees: BFS
   - [x] Binary Tree Level Order Traversal (easy): LC #102

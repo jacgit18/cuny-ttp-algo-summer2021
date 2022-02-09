@@ -7,26 +7,30 @@ let LinkListArray = [3,2,0,-4];
 
 // Given the head of a Singly LinkedList that contains a cycle, write a function to find the starting node of the cycle.
 
-class ListNode {
+class Node {
   constructor(value, next=null){
     this.value = value;
     this.next = next;
   }
 }
-
-const ArrayLinkListDeserialize = (arr) =>{
+const ArrayCyclicLinkListDeserialize = (arr) => {
   if (arr.length === 0) { return null; }
-  let head = new ListNode(arr[0]);
+  let head = new Node(arr[0]);
   let current = head;
   for (let i = 1; i < arr.length; i++) {
-    // Path − Path represents a sequence of edges between the two vertices. In the following example, ABCD represents a path from A to D
-    current.next = new ListNode(arr[i]);
+    current.next = new Node(arr[i]);
     current = current.next;
+    // see if works with lc Question
+    if(current.next === null){
+      current.next = head;
+    }
   }
   return head;
 }
 
-let head = ArrayLinkListDeserialize(LinkListArray);
+let head = ArrayCyclicLinkListDeserialize([3,2,0,-4])
+let headTwo = ArrayCyclicLinkListDeserialize([1,2])
+let headThree = ArrayCyclicLinkListDeserialize([1])
 
 
 
@@ -43,31 +47,24 @@ while(fast && fast.next) {
       break;
   }
 }
-// if(fast === null) {
-//   fast = head.next;
-// }
-// if fast pointer reaches NULL, that means no cycle detected
-if(!fast || !fast.next) {
-  // fast = head.next;
 
-  return null;
+if(!fast || !fast.next) {
+  return "no cycle";
 }
-// let curr = head;
-while(slow !== fast) {
-  slow = curr.next;
+let curr = head;
+while(curr !== fast) {
+  curr = curr.next;
   fast = fast.next;
 }
-// console.log(curr.next.next)
 return curr;
 
 };
-
-try{
+console.log()
   console.log(  find_cycle_start(head))
+  console.log(  find_cycle_start(headTwo))
+  console.log(  find_cycle_start(headThree))
 
-}catch(e){
 
-}
 
 
 // head = new Node(1)

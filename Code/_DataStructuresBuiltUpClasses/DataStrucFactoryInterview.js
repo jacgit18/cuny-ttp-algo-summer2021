@@ -72,11 +72,14 @@ mySet.add(9);
     }
   }
 
+
+
   class DoubleLLNode {
     constructor(value) {
       this.head = {
           value: value,
-          next: null
+          next: null,
+          prev: null
       };
       this.tail = this.head;
       // this.length = 1;
@@ -125,15 +128,34 @@ class Vertex {
     return head;
   }
 
+   ArrayCyclicLinkListDeserialize(arr) {
+    if (arr.length === 0) { return null; }
+    let head = new Node(arr[0]);
+    let current = head;
+    for (let i = 1; i < arr.length; i++) {
+      current.next = new Node(arr[i]);
+      current = current.next;
+      // see if works with lc Question
+      if(current.next === null){
+        current.next = head;
+      }
+    }
+    return head;
+  }
+
   // fix
   ArrayLinkListDoubleDeserialize(arr) {
     if (arr.length === 0) { return null; }
     let head = new DoubleLLNode(arr[0]);
     let current = head;
-    // tail
+    let tail = head;
+    let pre = current;
+    let nex = head.next;
+
 
     for (let i = 1; i < arr.length; i++) {
-      current.next = new ListNode(arr[i]);
+      current.next = new DoubleLLNode(arr[i]);
+      prev = current
       current = current.next;
     }
     // this.tail = head;
@@ -205,6 +227,7 @@ class Vertex {
 const stuructureMaker = new NodeConstructor();
 
 // let linkedList = console.log(stuructureMaker.ArrayLinkListDeserialize(LinkListArray))
+// let linkedListCyclic = console.log(stuructureMaker.ArrayCyclicLinkListDeserialize(LinkListArray))
 // let linkedListDD = console.log(stuructureMaker.ArrayLinkListDoubleDeserialize(LinkListArray))
 let tree = console.log(stuructureMaker.ArrayTreeDeserialize((TreeArray)));
 // let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))

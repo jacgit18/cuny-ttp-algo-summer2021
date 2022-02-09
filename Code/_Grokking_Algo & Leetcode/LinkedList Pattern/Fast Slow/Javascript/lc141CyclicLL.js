@@ -46,70 +46,62 @@ class Node {
     this.next = next;
   }
 }
+const ArrayCyclicLinkListDeserialize = (arr) => {
+  if (arr.length === 0) { return null; }
+  let head = new Node(arr[0]);
+  let current = head;
+  for (let i = 1; i < arr.length; i++) {
+    current.next = new Node(arr[i]);
+    current = current.next;
+    // see if works with lc Question
+    if(current.next === null){
+      current.next = head;
+      // current.next = head.next;
 
-const has_cycle = function(head) {
-  let slow = head,
-      fast = head;
-
-      while (fast !== null && fast.next !== null){
-        fast = fast.next.next;
-        slow = slow.next;
-        if (slow === fast){
-          return true;
-        }
-      }
-
-// dont necessarly need to have else when just returning boolean value
-  return false
-}
-
-const insertLast = (data) => {
-  let node = new Node(data);
-  let current;
-
-  // If empty, make head
-  if (!this.head) {
-    this.head = node;
-  } else {
-    current = this.head;
-
-    while (current.next) {
-      current = current.next;
     }
-
-    current.next = node;
   }
-
-  this.size++;
+  return head;
 }
-// head is global vairiable since were not declaring with keywords like
-// let, const, or var which isnt recommend 
-console.log(head = new Node(3)) // adding intial node 
-console.log(head.next = new Node(2))
-head.next.next = new Node(0)
-head.next.next.next = new Node(-4)
-console.log(head.next)
-// head.next.next.next.next = new Node(5)
-// head.next.next.next.next.next = new Node(6)
 
-// try {
-//   console.log(`Curr head: ${head} `);
-// } catch (e) {
-//   console.log(`value is null `);
-// }
+  const has_cycle = (head) =>{
+    if(!head) return false
+    slowPointer = head
+    fastPointer = head.next
+    while(Infinity) {
+        if(!fastPointer || !fastPointer.next) return false
+        if(slowPointer == fastPointer || slowPointer == fastPointer.next) return true
+        slowPointer = slowPointer.next
+        fastPointer = fastPointer.next.next
+    }   
+}
 
+
+let head = ArrayCyclicLinkListDeserialize([3,2,0,-4])
+// console.log(head.next.next.next)
+// cyclic linked list
+// head = new Node(3) // adding intial node true
+// head.next = new Node(2)
+// head.next.next = new Node(0)
+// head.next.next.next = new Node(-4)
+// head.next.next.next.next = head.next
+
+let headTwo = ArrayCyclicLinkListDeserialize([1,2])
+// head = new Node(1)  true
+// head.next = new Node(2)
+// head.next = head
 // console.log(head)
-// // console.log(`LinkedList has cycle: ${has_cycle(head)}`)
-// try {
-//   head.next.next.next.next.next.next = head.next.next
-//   while(head.value !== null){
-//     console.log(head.next.value)
 
-//   }
-// } catch (e) {
-//   console.log(`value is null `);
-// }
+let headThree = ArrayCyclicLinkListDeserialize([1])
+// head = new Node(1)  false
+
+
+
+
 console.log(`LinkedList has cycle: ${has_cycle(head)}`)
+console.log(`LinkedList has cycle: ${has_cycle(headTwo)}`)
+console.log(`LinkedList has cycle: ${has_cycle(headThree)}`)
+
+
 
 // head.next.next.next.next.next.next = head.next.next.next
 // console.log(`LinkedList has cycle: ${has_cycle(head)}`)

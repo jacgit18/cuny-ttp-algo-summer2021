@@ -1,3 +1,5 @@
+const linkSetter = require("../../../_DataStructuresBuiltUpClasses/DataStrucFactoryInterview");
+const linkedGetter = new linkSetter();
 // Problem Statement #
 
 // Given the head of a Singly LinkedList, reverse the LinkedList. Write a function to return the new head of the reversed LinkedList.
@@ -140,64 +142,52 @@ let nullval = head.next.next.next.next.next;
 // head = new Node();
 // console.log(head);
 
+// console.log(`Nodes of original LinkedList are: ${head.get_list()}`);
+// console.log(`\n Nodes of reversed LinkedList are: ${reverse(head).get_list()}`);
+
+
+let array1 = [1,5,7,10]
+let linkedList = linkedGetter.ArrayLinkListDeserialize(array1)
+
+
+let printFoward = (node) =>{
+  let current = node;
+  while(current!== null){
+      console.log(current.value)
+      current = current.next  // equvivalent to i++ in a loop
+  
+    }
+  }
+  
+  const printBackward = (node) =>{
+
+    if(node === null) return;
+    // console.log(node.value); // foward
+    printBackward(node.next)
+    console.log(node.value); // backward
+  }
+
+const reverseNoComments = function (head) {
+  if (head == null || head < 0) return null;
+  let current = head;
+  let previous = null;
+
+  while (current !== null) {
+
+    let next = current.next;
+    current.next = previous; 
+    previous = current; 
+    current = next; 
+    
+  }
+  return previous;
+};
+
+
+printFoward(linkedList);
+console.log()
+printBackward(linkedList); // prints values backwards not reverse
+console.log()
 console.log(`Nodes of original LinkedList are: ${head.get_list()}`);
-console.log(`\n Nodes of reversed LinkedList are: ${reverse(head).get_list()}`);
 
-// Solution
-// -----
-// const reverse = function(head) {
-//   let previous = null;
-//   let current = head;
-
-//   while (current !== null) {
-//     next = current.next;
-//     current.next = previous;
-//     previous = current;
-//     current = next;
-//   }
-//   return previous;
-// };
-
-// -----
-
-// Time complexity #
-// The time complexity of our algorithm will be O(N) where ‘N’ is the total number of nodes in the LinkedList.
-
-// Space complexity #
-// We only used constant space, therefore, the space complexity of our algorithm is O(1).
-
-
-
-// deconstruction es6
-// var reverseList = function(head) {
-//   let [prev, current] = [null, head]
-//   while(current) {
-//       [current.next, prev, current] = [prev, current, current.next]
-//   }
-//   return prev
-// }
-
-////////////////////////////////////
-// var reverseList = function(head, prev = null) {
-//   if (!head) return prev;
-
-//   const next = head.next;
-//   head.next = prev;
-//   return reverseList(next, head);
-// };
-
-//////////////////////////////////////
-
-// var reverseList = function(head) {
-// 	// base case
-//     if (head == null || head.next == null){
-//         return head;
-//     }
-// 	// go all the way to the end
-//     let reversedListHead = reverseList(head.next)
-// 	// add reverse myself
-//     head.next.next = head;
-//     head.next = null;
-// 	// go up
-//     return reversedListHead
-// };
+console.log(`Nodes of reversed LinkedList are: ${reverseNoComments(head).get_list()}`);
