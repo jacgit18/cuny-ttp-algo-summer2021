@@ -211,14 +211,14 @@ class Node {
   
   module.exports = BinarySearchTree;
 
-  const tree = new BinarySearchTree();
-  tree.insert(9)
-  tree.insert(4)
-  tree.insert(6)
-  tree.insert(20)
-  tree.insert(170)
-  tree.insert(15)
-  tree.insert(1)
+  // const tree = new BinarySearchTree();
+  // tree.insert(9)
+  // tree.insert(4)
+  // tree.insert(6)
+  // tree.insert(20)
+  // tree.insert(170)
+  // tree.insert(15)
+  // tree.insert(1)
   // tree.remove(170);
   // JSON.stringify(traverse(tree.root))
 
@@ -227,11 +227,11 @@ class Node {
 // tree.lookup(20);
 // tree.lookup(170);
   
-  console.log('BFS', tree.BreadthFirstSearch()); // iterative
-  console.log('BFS', tree.BreadthFirstSearchR([tree.root], [])) // recursive
-  console.log('DFSpre', tree.DFTPreOrder());
-  console.log('DFSin', tree.DFTInOrder());
-  console.log('DFSpost', tree.DFTPostOrder());
+  // console.log('BFS', tree.BreadthFirstSearch()); // iterative
+  // console.log('BFS', tree.BreadthFirstSearchR([tree.root], [])) // recursive
+  // console.log('DFSpre', tree.DFTPreOrder());
+  // console.log('DFSin', tree.DFTInOrder());
+  // console.log('DFSpost', tree.DFTPostOrder());
   
   //     9
   //  4     20

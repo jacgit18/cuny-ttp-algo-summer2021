@@ -212,15 +212,15 @@ class Node {
   
   module.exports = BT
   
-  const tree = new BT();
-  tree.add(9)
-  tree.add(4)
-  tree.add(6)
-  tree.add(20)
-  tree.add(170)
-  tree.add(15)
-  tree.add(1)
-  console.log(tree)
+  // const tree = new BT();
+  // tree.add(9)
+  // tree.add(4)
+  // tree.add(6)
+  // tree.add(20)
+  // tree.add(170)
+  // tree.add(15)
+  // tree.add(1)
+  // console.log(tree)
 
   // bst.add(9);
   // bst.add(4);
@@ -232,15 +232,15 @@ class Node {
   // bst.add(7);
   // bst.add(20);
 
-  console.log(tree.findMinHeight());
-  console.log(tree.findMaxHeight());
-  console.log(tree.isBalanced());
-  tree.add(10);
-  console.log(tree.findMinHeight());
-  console.log(tree.findMaxHeight());
-  console.log(tree.isBalanced());
-  console.log('inOrder: ' + tree.inOrder());
-  console.log('preOrder: ' + tree.preOrder());
-  console.log('postOrder: ' + tree.postOrder());
+  // console.log(tree.findMinHeight());
+  // console.log(tree.findMaxHeight());
+  // console.log(tree.isBalanced());
+  // tree.add(10);
+  // console.log(tree.findMinHeight());
+  // console.log(tree.findMaxHeight());
+  // console.log(tree.isBalanced());
+  // console.log('inOrder: ' + tree.inOrder());
+  // console.log('preOrder: ' + tree.preOrder());
+  // console.log('postOrder: ' + tree.postOrder());
   
-  console.log('levelOrder: ' + tree.levelOrder());
+  // console.log('levelOrder: ' + tree.levelOrder());
