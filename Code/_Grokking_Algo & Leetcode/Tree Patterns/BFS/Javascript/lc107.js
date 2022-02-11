@@ -48,7 +48,7 @@ const traverse = (root) =>{
              })}`)
 
               console.log(`currentNode : ${currentNode.value}`);
-             currentLevel.push(currentNode.value);
+             currentLevel.push([currentNode.value]);
              console.log(`New Level ${currentLevel.length}`)
 
 
@@ -63,16 +63,40 @@ const traverse = (root) =>{
   
   }
 
+  const traverse2 = (root) =>{
+    let result = [];
+    let queue = [root];
+    
+    while(queue.length) {
+        let levelSize = queue.length;
+        let currentLevel = [];
+        for (let i = 0; i < levelSize; i += 1) {
+            let currentNode = queue.shift();
+            if (currentNode.left) queue.push(currentNode.left)
+        
+
+            if (currentNode.right) queue.push(currentNode.right)
+            
+
+             currentLevel.push(currentNode.value);
 
 
-var root = new TreeNode(12)
-root.left = new TreeNode(7)
-root.right = new TreeNode(1)
-root.left.left = new TreeNode(9)
-root.right.left = new TreeNode(10)
-root.right.right = new TreeNode(5)
+        }
+        result.unshift(currentLevel)
+    }
+    return result;
+
+  
+  }
+
+
+var root = new TreeNode(3)
+root.left = new TreeNode(9)
+root.right = new TreeNode(20)
+root.right.left = new TreeNode(15)
+root.right.right = new TreeNode(7)
 console.time('doSomething')
-console.log(`Reverse level order traversal: ${traverse(root)}`)
+console.log(`Reverse level order traversal: ${traverse2(root)}`)
 console.timeEnd('doSomething')
 
 console.log(`\n ------- Edge Case -------- `);

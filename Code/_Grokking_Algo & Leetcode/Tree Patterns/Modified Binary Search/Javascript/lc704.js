@@ -5,8 +5,12 @@
 
 
 
+
+
 const search = (nums, target) =>{
     
 };
 
-console.log(search([-1,0,3,5,9,12], 9)); // output index were 9 is 
+console.log(search([-1,0,3,5,9,12], 9)); // output index were 9 is  so 4
+
+console.log(search([-1,0,3,5,9,12], 2)); // output no 2 so return - 1

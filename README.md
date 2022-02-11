@@ -83,7 +83,7 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   
 - In Place Reversal of a LL
   - [x] Reverse a LinkedList (easy): LC #206
-  - [x] Reverse a Sub-list (medium): LC #92 //go Over again
+  - [x] Reverse a Sub-list (medium): LC #92
   - [] Reverse every K-element Sub-list( Reverse Nodes in k-Group) (hard): LC #25
   - [] Rotate a LinkedList (medium): LC #61
 
@@ -99,7 +99,7 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
 - Trees: BFS
   - [x] Binary Tree Level Order Traversal (easy): LC #102
   - [x] Minimum Depth of a Binary Tree (easy): LC #111
-  - [ ] Maximum Depth of a Binary Tree (easy): LC #104
+  - [x] Maximum Depth of a Binary Tree (easy): LC #104
   - [x] Level Averages in a Binary Tree (easy): LC #637
   - [] Reverse Level Order Traversal II (easy): LC #107
   - [] Zigzag Traversal (medium): LC #103
