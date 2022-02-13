@@ -119,7 +119,7 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Path with Maximum Sum (hard): LC #124
 
 - Modified Binary Search
-  - [] Order-agnostic Binary Search (easy): LC #704
+  - [x] Order-agnostic Binary Search (easy): LC #704
   - [] Ceiling of a Number (medium): LC #??
   - [] Next Letter (medium): LC #744
   - [] Number Range (medium): LC #34

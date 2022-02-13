@@ -25,9 +25,10 @@ const treeGetter = new treeSetter();
    
 
 const search = (nums, target) =>{
+
     let lo = 0, hi = nums.length-1;
     while (lo < hi) {
-        let mid = lo + Math.floor((hi-lo+1)/2);
+        let mid = lo + Math.floor((hi-lo+1)/2); // why 1
         if (target < nums[mid]) {
             hi = mid - 1
         } else {

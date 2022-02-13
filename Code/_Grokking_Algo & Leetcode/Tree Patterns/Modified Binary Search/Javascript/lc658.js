@@ -7,6 +7,14 @@
 // |a - x| == |b - x| and a < b
 
 
+// Constraints:
+
+// 1 <= k <= arr.length
+// 1 <= arr.length <= 104
+// arr is sorted in ascending order.
+// -104 <= arr[i], x <= 104
+
+
 var findClosestElements = function(arr, k, x) {
     
 };
