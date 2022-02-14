@@ -118,10 +118,10 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Tree Diameter (medium): LC #543
   - [] Path with Maximum Sum (hard): LC #124
 
-- Modified Binary Search
+- Modified Binary Search(Applies to Arrays)
   - [x] Order-agnostic Binary Search (easy): LC #704
   - [] Ceiling of a Number (medium): LC #??
-  - [] Next Letter (medium): LC #744
+  - [x] Next Letter (medium): LC #744
   - [] Number Range (medium): LC #34
   - [] Search in a Sorted Infinite Array (medium): LC #702
   - [] Minimum Difference Element (medium): LC #658 (k == 1)
