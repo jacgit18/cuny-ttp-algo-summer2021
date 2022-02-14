@@ -28,7 +28,11 @@ const search = (nums, target) =>{
 
     let lo = 0, hi = nums.length-1;
     while (lo < hi) {
-        let mid = lo + Math.floor((hi-lo+1)/2); // why 1
+        // when even num you can set mid left lower or right upper mid
+        // let mid = lo + Math.floor((hi - lo) / 2); // left/lower mid
+
+        let mid = lo + Math.floor((hi - lo + 1)/2); // right upper
+        // identify which side of the boundary does the target belong
         if (target < nums[mid]) {
             hi = mid - 1
         } else {
