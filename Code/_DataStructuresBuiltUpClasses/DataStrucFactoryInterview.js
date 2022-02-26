@@ -252,8 +252,8 @@ const stuructureMaker = new NodeConstructor();
 // let linkedList = console.log(stuructureMaker.ArrayLinkListDeserialize(LinkListArray))
 // let linkedListCyclic = console.log(stuructureMaker.ArrayCyclicLinkListDeserialize(LinkListArray))
 // let linkedListDD = console.log(stuructureMaker.ArrayLinkListDoubleDeserialize(LinkListArray))
-let tree = console.log(stuructureMaker.ArrayTreeDeserialize((TreeArray)));
-// let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
+// let tree = console.log(stuructureMaker.ArrayTreeDeserialize((TreeArray)));
+let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
 
  
 
