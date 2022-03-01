@@ -1,13 +1,36 @@
-const graph = require('../../_DataStructuresBuiltUpClasses/Tree&Graph Traversal(BFS/Graphs')
+// const graph = require('../../_DataStructuresBuiltUpClasses/Tree&Graph Traversal(BFS/Graphs')
+class Node { 
+         constructor(val, neighbors) {
 
-class Node {
-    constructor(id) {
-
-      this.id = id !== undefined ? id : null;
-      this.edges = [];
+      this.val = val === undefined ? 0 : val;
+      this.neighbors = neighbors === undefined ? [] : neighbors; // edges
 
     }
-  }
+    addVertex(node)  { 
+      this.neighbors[node] = []; 
+      this.numberOfNodes++;
+    } 
+    addEdge(node1, node2) { 
+      //uniderected Graph 
+      this.neighbors[node1].push(node2); 
+      this.neighbors[node2].push(node1); 
+    } 
+  
+  } 
+
+// class Node {
+//     constructor(val, neighbors) {
+
+//       this.val = val === undefined ? 0 : val;
+//       this.neighbors = neighbors === undefined ? [] : neighbors; // edges
+
+//     }
+//   }
+
+//    function Node(val, neighbors) {
+//       this.val = val === undefined ? 0 : val;
+//       this.neighbors = neighbors === undefined ? [] : neighbors;
+//    };
 
 var cloneGraph = function(node) {
       let start = node; 
@@ -25,6 +48,7 @@ var cloneGraph = function(node) {
       
       while (queue.length > 0) {
           const currentVertex = queue.shift(); 
+        //   console.log(currentVertex)
           for (const neighbor of currentVertex.neighbors) {
               if (!vertexMap.has(neighbor)) {
                  
@@ -70,7 +94,7 @@ var cloneGraph = function(node) {
 //       ];
 
 // let adjList = ArrayGraphDeserialize(idGraphIndex,GraphRelationshipArray)
-const myGraph = new graph();
+const myGraph = new Node();
 
   myGraph.addVertex('1');
   myGraph.addVertex('2');
