@@ -1,15 +1,73 @@
 // Problem Statement #
 
-// We are given an unsorted array containing ‘n+1’ numbers taken from the range 1 to ‘n’. The array has only one duplicate but it can be repeated multiple times. Find that duplicate number without using any extra space. You are, however, allowed to modify the input array.
+// We are given an unsorted array containing ‘n+1’ numbers taken from the range 1 to ‘n’.
+//  The array has only one duplicate but it can be repeated multiple times. Find that duplicate 
+//  number without using any extra space. You are, however, allowed to modify the input array.
+
+
+
+/* 
+
+Problem/Notes:
+
+
+I/O:
+
+EdgeCase:{
+
+}
+
+Naïve-Approach:
+
+
+Constraints:
+
+
+Variables:
+
+
+Control flow
+         TestCase: {
+
+          Pre-Condition:
+
+         Conditions:
+
+         Termination-Conditions:
+
+         Post-Conditions:
+
+}        switch case()
+
+
+
+ Steps:
+ 1.
+ 2.
+
+
+To Leverage & Rule out
+
+ DataStructure&Algo :
+
+
+ Functions:
+
+
+
+
+
+ 
+ 
+*/
 
 const find_duplicate = function(nums) {
   // TODO: Write your code here
   return -1;
 };
 
-console.log(find_duplicate([1, 4, 4, 3, 2]));
-console.log(find_duplicate([2, 1, 3, 3, 5, 4]));
-console.log(find_duplicate([2, 4, 1, 4, 4]));
+console.log(find_duplicate([1,3,4,2,2]));// 2
+console.log(find_duplicate([3,1,3,4,2]));// 3
 
 
 // Solution

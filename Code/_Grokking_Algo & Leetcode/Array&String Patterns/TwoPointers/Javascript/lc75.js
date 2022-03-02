@@ -1,20 +1,73 @@
 // Problem Statement #
 
-// Given an array containing 0s, 1s and 2s, sort the array in-place. You should treat numbers of the array as objects, hence, we can’t count 0s, 1s, and 2s to recreate the array.
+// Given an array containing 0s, 1s and 2s, sort the array in-place. You should treat numbers of the array as objects, hence, 
+// we can’t count 0s, 1s, and 2s to recreate the array.The flag of the Netherlands consists of three colors: red, white 
+// and blue; and since our input array also consists of three different numbers that is why it is called Dutch National Flag problem.
 
-// The flag of the Netherlands consists of three colors: red, white and blue; and since our input array also consists of three different numbers that is why it is called Dutch National Flag problem.
+/* 
+
+Problem/Notes:
+
+
+I/O:
+
+EdgeCase:{
+
+}
+
+Naïve-Approach:
+
+
+Constraints:
+
+
+Variables:
+
+
+Control flow
+         TestCase: {
+
+          Pre-Condition:
+
+         Conditions:
+
+         Termination-Conditions:
+
+         Post-Conditions:
+
+}        switch case()
+
+
+
+ Steps:
+ 1.
+ 2.
+
+
+To Leverage & Rule out
+
+ DataStructure&Algo :
+
+
+ Functions:
+
+
+
+
+
+ 
+ 
+*/
 
 const dutch_flag_sort = function (arr) {
-  // TODO: Write your code here
+
+
 };
 
-let arr = [1, 0, 2, 1, 0];
-dutch_flag_sort(arr);
-console.log(arr);
 
-arr = [2, 2, 0, 1, 2, 0];
-dutch_flag_sort(arr);
-console.log(arr);
+console.log(dutch_flag_sort([2,0,2,1,1,0])); 
+
+console.log(dutch_flag_sort([2, 0, 1]));
 
 // Solution
 // -----
