@@ -65,9 +65,17 @@ To Leverage & Rule out
 
 const backspaceCompare = (s, t) =>{
     // replace # with /b
-    
+    const regexExp = new RegExp('ab\b');
+    console.log(regexExp)
 
-    console.log(s.match(/a\b/))
+
+    // console.log(s.match(/#\b/))
+    console.log(s.replace(/#\b/))
+
+
+    // const regexExp = new RegExp('#\b');
+    // console.log(s.match(regexExp))
+
 
 };
 
@@ -76,13 +84,13 @@ console.log(backspaceCompare("ab#c", "ad#c")); // true
 
 // console.log(backspaceCompare("ab##", "c#d#")); // true
 // console.log(backspaceCompare("a#c", "b")); // false
-console.log("Hello, Java!".match(/\bJava\b/))
-console.log( "Breakfast at 09:00 in the room 123:456.".match( /\b\d\d:\d\d\b/ ) )// 09:00
+// console.log("Hello, Java!".match(/\bJava\b/))
+// console.log( "Breakfast at 09:00 in the room 123:456.".match( /\b\d\d:\d\d\b/ ) )// 09:00
 
 
 let regex = /[a-z]/
 const fill = new Array(26).fill(regex)
-console.log( fill)
+// console.log( fill)
 
 // console.log(`c\bd\b`)
 // console.log(`ab\b\b`)
