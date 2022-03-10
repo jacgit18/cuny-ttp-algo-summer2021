@@ -23,7 +23,64 @@ const permut = (string) => {
 
 // console.log(permut("ab"))
 
+/* 
+
+Problem/Notes:
+
+
+I/O:
+
+EdgeCase:{
+
+}
+
+Naïve-Approach:
+
+
+Constraints:
+
+
+Variables:
+
+
+Control flow
+         TestCase: {
+
+          Pre-Condition:
+
+         Conditions:
+
+         Termination-Conditions:
+
+         Post-Conditions:
+
+}        switch case()
+
+
+
+ Steps:
+ 1.
+ 2.
+
+
+To Leverage & Rule out
+
+ DataStructure&Algo :
+
+
+ Functions:
+
+
+
+
+
+ 
+ 
+*/
+
+
 const checkInclusion = (s1, s2) =>{
+// <<<<<<< Updated upstream
   // let permutation=  permut(s1).slice(1)
   if(s1.length > s2.length) return false;
     
@@ -56,6 +113,23 @@ const checkInclusion = (s1, s2) =>{
       start++;
   }
   return false;
+// =======
+//   let permutation=  permut(s1).slice(1)
+//   for(let i=0; i<s2.length-1; i++){
+//     let partOne = s2[i].startsWith(permutation[0].substring(0,1));
+//     let partTwo = s2[i+1].startsWith(permutation[1].substring(1,1))
+//     // console.log(permutation)
+
+//     if(partOne && partTwo){
+//       return true
+//       // if(s2[i]=== permutation[0]){
+
+//       // }
+//     }
+//     // console.log( s2[i])
+     
+//   }
+// >>>>>>> Stashed changes
 
   
    
