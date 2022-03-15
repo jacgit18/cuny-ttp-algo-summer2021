@@ -31,11 +31,10 @@ class CrazyQueue {
   
   const myQueue = new CrazyQueue();
   myQueue.enqueue('Joy');
-  console.log(myQueue.peek())
-
   myQueue.enqueue('Matt');
   myQueue.enqueue('Pavel');
   myQueue.dequeue();
-  myQueue.dequeue();
-  myQueue.dequeue();
-  myQueue.peek();
+  // myQueue.dequeue();
+  // myQueue.dequeue();
+  // myQueue.peek();
+  console.log(myQueue)

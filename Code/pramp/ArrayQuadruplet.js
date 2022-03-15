@@ -58,13 +58,7 @@ function findArrayQuadruplet(arr, s) {
     arr.sort()
     // [2, 7, 4, 0, 9, 5, 1, 3]
     // 0 1 2 3 4 5 7 9 
-    // r = s - (a[i] + a[j])  
-    // low = j+1, high = n-1
-    // while(low < high){
-    /*1 (low < high): a[low] + a[high] < r -> low++
-    2 (low > high): a[low] + a[high] > r -> high--
-    3 else return (a[i],a[j]),a[low],a[high]*/
-//   }
+    
     if(arr.length < 1){
      return arr
     }
@@ -74,9 +68,13 @@ function findArrayQuadruplet(arr, s) {
     let right = arr.length
     
     
-//   while(){
-        
-//         }
+// r = s - (a[i] + a[j])  
+    // low = j+1, high = n-1
+    // while(low < high){
+    /*1 (low < high): a[low] + a[high] < r -> low++
+    2 (low > high): a[low] + a[high] > r -> high--
+    3 else return (a[i],a[j]),a[low],a[high]*/
+//   }
     
     for(let left = 0; left < arr.length; ++left){
      
