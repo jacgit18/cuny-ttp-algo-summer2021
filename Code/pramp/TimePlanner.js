@@ -77,28 +77,28 @@ Identify Control flow(Break, Continue) based on defined steps
 
 
 
-function meetingPlanner(slotsA, slotsB, dur) {
+function meetingPlanner(slotsA, slotsB, MeetingDuration) {
     const result = [];
     
-    let [PersonOne, PersonTwo] = [0, 0]
-    let [PersonOneTimeLength, PersonTwoTimeLength] = [slotsA.length, slotsB.length]
+    let [PersonOneCurrentBlockIdx, PersonTwoCurrentBlockIdx] = [0, 0]
+    let [PersonOneTimeBlockLength, PersonTwoTimeBlockLength] = [slotsA.length, slotsB.length]
 
     
-    while(PersonOne < PersonOneTimeLength && PersonTwo < PersonTwoTimeLength) {
-        const [firstIntStart, firstIntEnd] = slotsA[PersonOne];
-      const [secondIntStart, secondIntEnd] = slotsB[PersonTwo];
-      let firstCompare =  (firstIntStart >= secondIntStart && firstIntStart <= secondIntEnd);
-      let secondCompare = (secondIntStart >= firstIntStart && secondIntStart <= firstIntEnd);
+    while(PersonOneCurrentBlockIdx < PersonOneTimeBlockLength && PersonTwoCurrentBlockIdx < PersonTwoTimeBlockLength) {
+        const [PersonOneStartTime, PersonOneEndTime] = slotsA[PersonOneCurrentBlockIdx];
+      const [PersonTwoStartTime, PersonTwoEndTime] = slotsB[PersonTwoCurrentBlockIdx];
+      let firstCompare =  (PersonOneStartTime >= PersonTwoStartTime && PersonOneStartTime <= PersonTwoEndTime);
+      let secondCompare = (PersonTwoStartTime >= PersonOneStartTime && PersonTwoStartTime <= PersonOneEndTime);
 
       // if first list's ith and second list's jth intervals intersect, add the intersection to the result
       if( firstCompare || secondCompare ) {
-        result.push([Math.max(firstIntStart, secondIntStart),Math.min(firstIntEnd, secondIntEnd)]);
+        result.push([Math.max(PersonOneStartTime, PersonTwoStartTime),Math.min(PersonOneEndTime, PersonTwoEndTime)]);
     }
 // if first interval is ended before second interval, move to the next interval of the first list
-    if(firstIntEnd < secondIntEnd) {
-        ++PersonOne;
+    if(PersonOneEndTime < PersonTwoEndTime) {
+        ++PersonOneCurrentBlockIdx;
     } else {    // if the second interval is ended before the first interval, move to the next interval of the second list
-        ++PersonTwo;
+        ++PersonTwoCurrentBlockIdx;
     }
 
     }
