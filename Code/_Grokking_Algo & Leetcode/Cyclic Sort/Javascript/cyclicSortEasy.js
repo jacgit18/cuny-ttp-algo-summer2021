@@ -25,25 +25,33 @@
 
 // using pointers sort for when you no were things are espicially for a range of numbers
 
+const log = (arg) => console.log(arg)
+const info = (arg) => console.info(arg)
+const warn = (arg) => console.warn(arg)
+const error = (arg) => console.error(arg)
+const table = (arg) => console.table(arg)
+
+
+
 const cyclic_sort = function (nums) {
 let index = 0;
 
 while (index < nums.length){
   let y = nums[index] -1; 
   if (y != index){
-    console.log(`index atfer if ${nums[index]}`)
+    log(`index atfer if ${nums[index]}`)
     let nextIndex = nums[index] - 1; 
-    console.log(`index atfer nextIndex ${nums[index] - 1}`)
+    log(`index atfer nextIndex ${nums[index] - 1}`)
 
     let x = nums[index];
 
 
     nums[index] = nums[nextIndex];
-    console.log(`index update ${nums[index]}`)
+    log(`index update ${nums[index]}`)
 
     nums[nextIndex] = x; 
-    console.log(`nextIndex atfer update ${nums[nextIndex]}`)
-    console.log(`\n`)
+    log(`nextIndex atfer update ${nums[nextIndex]}`)
+    log(`\n`)
 
   } else{
     index++;
