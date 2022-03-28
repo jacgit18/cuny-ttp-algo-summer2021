@@ -25,7 +25,29 @@
 
 // using pointers sort for when you no were things are espicially for a range of numbers
 
-const log = (arg) => console.log(arg)
+// const log = (preString, arg, postString) => {
+//   preString?.length ||postString?.length ||  preString?.length && postString?.length 
+//   ?  console.log(`${preString + arg + postString}`)
+//   : false
+
+
+// }
+
+// const log = (preString="", arg, postString="") => {
+//   preString?.length ||postString?.length 
+//   ?   console.log(`${preString + arg + postString}`)
+//   : false
+
+
+// }
+
+
+const log = (preString="", arg="", postString="") => {
+    console.log(`${preString} ${arg} ${postString} `)
+
+
+}
+
 const info = (arg) => console.info(arg)
 const warn = (arg) => console.warn(arg)
 const error = (arg) => console.error(arg)
@@ -35,28 +57,40 @@ const table = (arg) => console.table(arg)
 
 const cyclic_sort = function (nums) {
 let index = 0;
+let count = 0;
 
 while (index < nums.length){
   let y = nums[index] -1; 
+  // log(y)
   if (y != index){
-    log(`index atfer if ${nums[index]}`)
+    // log("index atfer if", nums[index])
+
     let nextIndex = nums[index] - 1; 
-    log(`index atfer nextIndex ${nums[index] - 1}`)
+    // log("index atfer nextIndex", nums[index] - 1)
+
 
     let x = nums[index];
 
 
     nums[index] = nums[nextIndex];
-    log(`index update ${nums[index]}`)
+    // log("index update", nums[index])
+    // log("nextIndex before update", nums[nextIndex])
+    // log("x before update", x)
+    
 
     nums[nextIndex] = x; 
-    log(`nextIndex atfer update ${nums[nextIndex]}`)
-    log(`\n`)
+    // log("nextIndex atfer update", nums[nextIndex])
+    // log(`\n`)
+    // log("Pre", nums, "Post")
+
 
   } else{
-    index++;
-  }
 
+    index++;
+
+  }
+  // log("Pre", nums, "Post")
+// log("", ++count, "")
 }
  
 
@@ -64,7 +98,8 @@ while (index < nums.length){
 };
 
 
-cyclic_sort([3, 1, 5, 4, 2]);
+log(cyclic_sort([3, 1, 5, 4, 2]))
+
 // console.log(`${cyclic_sort([3, 1, 5, 4, 2])}`);
 // console.log(`${cyclic_sort([2, 6, 4, 3, 1, 5])}`);
 // console.log(`${cyclic_sort([1, 5, 6, 4, 3, 2])}`);
