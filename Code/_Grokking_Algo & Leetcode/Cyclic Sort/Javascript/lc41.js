@@ -2,13 +2,11 @@
 
 Problem Statement #
 
-Given an integer array nums of length n where all the
-integers of nums are in the range [1, n] and each 
-integer appears once or twice, return an array of 
-all the integers that appears twice.
+Given an unsorted integer array nums, return the smallest 
+missing positive integer.
 
-You must write an algorithm that runs in O(n) time and 
-uses only constant extra space.
+You must implement an algorithm that runs in O(n) time and 
+uses constant extra space.
 
 
 
@@ -101,46 +99,12 @@ const table = (pre="", arg="", post="") => {console.table(`${pre} ${arg} ${post}
 const runTimeStart = (arg) => console.time(arg)
 const runTimeEnd = (arg) => console.timeEnd(arg)
 
-const find_all_duplicates = function(nums) {
-  duplicateNumbers = [];
-
-  return duplicateNumbers;
+const firstMissingPositive = function(nums) {
+ 
 };
 
 runTimeStart("Runtime")
-log(find_all_duplicates([4,3,2,7,8,2,3,1])); // [2,3]
-log(find_all_duplicates([1, 1, 2])); // [1]
-log(find_all_duplicates([1])); // []
+log(firstMissingPositive([1,2,0])); // 3
+log(firstMissingPositive([3, 4, -1, 1])); // 2
+log(firstMissingPositive([7,8,9,11,12])); // 1
 runTimeEnd("Runtime")
-
-
-// Solution
-// -----
-// function find_all_duplicates(nums) {
-//   let i = 0;
-//   while (i < nums.length) {
-//     j = nums[i] - 1;
-//     if (nums[i] != nums[j]) {
-//       [nums[i], nums[j]] = [nums[j], nums[i]]; // swap
-//     } else {
-//       i++;
-//     }
-//   }
-
-//   duplicateNumbers = [];
-//   for (i = 0; i < nums.length; i++) {
-//     if (nums[i] !== i + 1) {
-//       duplicateNumbers.push(nums[i]);
-//     }
-//   }
-
-//   return duplicateNumbers;
-// }
-
-// -----
-
-// Time complexity #
-// The time complexity of the above algorithm is O(n).
-
-// Space complexity #
-// Ignoring the space required for storing the duplicates, the algorithm runs in constant space O(1).

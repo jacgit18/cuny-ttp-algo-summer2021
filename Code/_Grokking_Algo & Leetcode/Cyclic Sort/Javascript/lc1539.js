@@ -2,13 +2,11 @@
 
 Problem Statement #
 
-Given an integer array nums of length n where all the
-integers of nums are in the range [1, n] and each 
-integer appears once or twice, return an array of 
-all the integers that appears twice.
+Given an array arr of positive integers sorted in a strictly
+increasing order, and an integer k.
 
-You must write an algorithm that runs in O(n) time and 
-uses only constant extra space.
+Find the kth positive integer that is missing from this array.
+ 
 
 
 
@@ -101,46 +99,11 @@ const table = (pre="", arg="", post="") => {console.table(`${pre} ${arg} ${post}
 const runTimeStart = (arg) => console.time(arg)
 const runTimeEnd = (arg) => console.timeEnd(arg)
 
-const find_all_duplicates = function(nums) {
-  duplicateNumbers = [];
-
-  return duplicateNumbers;
+const firstMissingPositive = function(arr, k) {
+ 
 };
 
 runTimeStart("Runtime")
-log(find_all_duplicates([4,3,2,7,8,2,3,1])); // [2,3]
-log(find_all_duplicates([1, 1, 2])); // [1]
-log(find_all_duplicates([1])); // []
+log(firstMissingPositive([2,3,4,7,11], 5)); // 9
+log(firstMissingPositive([1,2,3,4], 2)); // 6
 runTimeEnd("Runtime")
-
-
-// Solution
-// -----
-// function find_all_duplicates(nums) {
-//   let i = 0;
-//   while (i < nums.length) {
-//     j = nums[i] - 1;
-//     if (nums[i] != nums[j]) {
-//       [nums[i], nums[j]] = [nums[j], nums[i]]; // swap
-//     } else {
-//       i++;
-//     }
-//   }
-
-//   duplicateNumbers = [];
-//   for (i = 0; i < nums.length; i++) {
-//     if (nums[i] !== i + 1) {
-//       duplicateNumbers.push(nums[i]);
-//     }
-//   }
-
-//   return duplicateNumbers;
-// }
-
-// -----
-
-// Time complexity #
-// The time complexity of the above algorithm is O(n).
-
-// Space complexity #
-// Ignoring the space required for storing the duplicates, the algorithm runs in constant space O(1).
