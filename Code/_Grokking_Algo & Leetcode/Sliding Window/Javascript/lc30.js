@@ -4,29 +4,70 @@
 
 // You can return the answer in any order.
 
-/* 
-
-Problem/Notes:
-get every variation of the concatenated string
-divide word array length by word length 
-
-I/O: string and array of strings words of the same length/ 
-     return array of starting indices of substring in string that are concantenations
-
-EdgeCase:{
-
-}
-
-Naïve-Approach:
+/*
+Identify Built in Functions(Array, String, Math) & Data Structure or Sorting Algorithms that can be Leveraged or ruled out as you render down problem
 
 
-Constraints:
+|  
+V Identify I/O & Break down problem into English & Identify Constraints 10 min or less:
+
+Initial Edgecase Param()
 
 
-Variables:
 
 
-Control flow
+
+Return
+
+|
+V IDENTIFY EDGE to Identify TEST CASES in 10 min or less
+
+Properties of Edgecase:
+
+
+
+
+
+Alt EdgeCase & similarities:
+
+		
+
+
+|
+V Define Naïve-Approach/Psuedocode on whiteboard under 20 min or less:
+
+List out properties of problem you have gotten so far with order in mind:
+
+Define Variables(to store reference manipulate) & Identify CRUD:
+
+
+Identify Test Case with Control Flow in mind:
+
+
+|
+V Code if stuck check past steps & Identify Runtime & Optimizations 15 min or less
+
+
+
+
+Control flow(Break, Continue) based on defined steps & edge cases
+
+    Simple Test case: Rules:
+     ---------------------------------------------
+      new customer -> 15% off
+      repeat customer -> 10% off
+      coupon customer -> 30% off
+
+     num of test case = num of rules = 2^num of conditions = 2^3 = 8 rules
+
+     n = not likely p = probably
+     Identify commonalities between test case
+     Follow Discrete math De-Morgan's Law
+     new cus T T T T F F F F
+     repeat cus T T F F T T F F
+     coupon cus T F T F T F T F
+     result N N P P P N N
+
          TestCase: {
 
           Pre-Condition:
@@ -37,34 +78,44 @@ Control flow
 
          Post-Conditions:
 
-}        switch case()
 
-
-
- Steps:
- 1.
- 2.
-
-
-To Leverage & Rule out
-
- DataStructure&Algo :
-
-
- Functions: string method to convert array to string 
-
-
-
-
-
- 
- 
-*/
-
-
-const stringCat =(string) => {
+         Switch case()
 
 }
+
+*/
+
+const log = (pre="", arg="", post="") => {console.log(`${pre} ${arg} ${post} `)}
+const info = (pre="", arg="", post="") => {console.info(`${pre} ${arg} ${post} `)}
+const warn = (pre="", arg="", post="") => {console.warn(`${pre} ${arg} ${post} `)}
+const error = (pre="", arg="", post="") => {console.error(`${pre} ${arg} ${post} `)}
+const table = (pre="", arg="", post="") => {console.table(`${pre} ${arg} ${post} `)}
+const runTimeStart = (arg) => console.time(arg)
+const runTimeEnd = (arg) => console.timeEnd(arg)
+
+
+  const stringCat =(string) => {
+
+  } 
+ 
+  
+runTimeStart("Runtime")
+log("Edge case one", stringCat("barfoothefoobarman", ["foo","bar"])) // Expected I/O: [0,9]
+log("Edge case two", stringCat("wordgoodgoodgoodbestword", ["word","good","best","word"])) // Expected I/O: []
+log("Edge case three", stringCat("barfoofoobarthefoobarman", ["bar","foo","the"])) // Expected I/O: [6,9,12]
+runTimeEnd("Runtime")
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // const findSubstring = (letters, words) =>{
@@ -190,7 +241,7 @@ function isConcat(sub,map,wordLength){
   console.time("Sliding")
   // console.log(findSubstring("barfoothefoobarman", ["foo","bar"])) // [0,9]
   // console.log(findSubstring("wordgoodgoodgoodbestword",  ["word","good","best","word"])) // []
-  console.log(findSubstring("barfoofoobarthefoobarman", ["bar","foo","the"])) // [6,9,12]
+  // console.log(findSubstring("barfoofoobarthefoobarman", ["bar","foo","the"])) // [6,9,12]
 
   console.timeEnd("Sliding")
   
