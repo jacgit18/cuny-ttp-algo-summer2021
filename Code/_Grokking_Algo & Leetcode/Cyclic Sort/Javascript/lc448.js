@@ -96,39 +96,73 @@ const runTimeStart = (arg) => console.time(arg)
 const runTimeEnd = (arg) => console.timeEnd(arg)
 
 const findDisappearedNumbers = function(nums) {
-  missingNumbers = [];
+  let index = 0;
+  const CurrentIndexLength = nums.length;
 
-  return missingNumbers;
+while (index < CurrentIndexLength){
+  const currentSubarray = nums[index];
+  const decrementedSubarray = currentSubarray -1; 
+
+  if (currentSubarray != nums[decrementedSubarray]){
+    
+
+    [ nums[index], nums[decrementedSubarray]] = [nums[decrementedSubarray], nums[index]]; 
+
+  } else{
+
+    ++index;
+
+  }
+
+}
+let result = []
+
+  for (index = 0; index < CurrentIndexLength; index++) {
+    if (nums[index] !== index + 1) {
+      result.push(index + 1);
+    }
+    // log(result);
+  }
+
+ return result
+
+
 };
 
-runTimeStart("Runtime")
+// runTimeStart("Runtime")
 log(findDisappearedNumbers([4,3,2,7,8,2,3,1])); // [5,6]
-log(findDisappearedNumbers([2, 4, 1, 2]));// [2]
-runTimeEnd("Runtime")
+log(findDisappearedNumbers([1, 1]));// [2]
+// runTimeEnd("Runtime")
 
 
 // Solution
 // -----
-// function find_missing_numbers(nums) {
-//   let i = 0;
-//   while (i < nums.length) {
-//     const j = nums[i] - 1;
-//     if (nums[i] !== nums[j]) {
-//       [nums[i], nums[j]] = [nums[j], nums[i]]; // swap
-//     } else {
-//       i += 1;
-//     }
-//   }
-//   missingNumbers = [];
+function find_missing_numbers(nums) {
+  let i = 0;
+  while (i < nums.length) {
+    const j = nums[i] - 1;
+    if (nums[i] !== nums[j]) {
+      [nums[i], nums[j]] = [nums[j], nums[i]]; // swap
+    } else {
+      i += 1;
+    }
+  }
+  missingNumbers = [];
 
-//   for (i = 0; i < nums.length; i++) {
-//     if (nums[i] !== i + 1) {
-//       missingNumbers.push(i + 1);
-//     }
-//   }
+  for (i = 0; i < nums.length; i++) {
+    if (nums[i] !== i + 1) {
+      missingNumbers.push(i + 1);
+    }
+  }
 
-//   return missingNumbers;
-// }
+  return missingNumbers;
+}
+
+runTimeStart("Runtime")
+log(find_missing_numbers([4,3,2,7,8,2,3,1])); // [5,6]
+log(find_missing_numbers([1, 1]));// [2]
+runTimeEnd("Runtime")
+
 
 // -----
 

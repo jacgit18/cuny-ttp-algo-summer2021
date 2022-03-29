@@ -57,40 +57,32 @@ const table = (arg) => console.table(arg)
 
 const cyclic_sort = function (nums) {
 let index = 0;
-let count = 0;
+const CurrentIndexLength = nums.length;
 
-while (index < nums.length){
-  let y = nums[index] -1; 
-  // log(y)
-  if (y != index){
-    // log("index atfer if", nums[index])
-
-    let nextIndex = nums[index] - 1; 
-    // log("index atfer nextIndex", nums[index] - 1)
+while (index < CurrentIndexLength){
+  const currentSubarray = nums[index];
+  const decrementedSubarray = currentSubarray -1; 
 
 
-    let x = nums[index];
+  // if (decrementedSubarray != index){
+    if (currentSubarray != nums[decrementedSubarray]){
 
 
-    nums[index] = nums[nextIndex];
-    // log("index update", nums[index])
-    // log("nextIndex before update", nums[nextIndex])
-    // log("x before update", x)
-    
+    // let nextIndex = decrementedSubarray; 
 
-    nums[nextIndex] = x; 
-    // log("nextIndex atfer update", nums[nextIndex])
-    // log(`\n`)
-    // log("Pre", nums, "Post")
+    // nums[index] = nums[nextIndex];
+    // nums[nextIndex] = x;
+    // [ nums[nextIndex], nums[index]] = [currentSubarray, nums[nextIndex]]; // swap indexs
+    [ nums[decrementedSubarray], nums[index]] = [nums[index], nums[decrementedSubarray]]; // swap indexs
+
 
 
   } else{
 
-    index++;
+    ++index;
 
   }
-  // log("Pre", nums, "Post")
-// log("", ++count, "")
+  
 }
  
 
@@ -99,30 +91,6 @@ while (index < nums.length){
 
 
 log(cyclic_sort([3, 1, 5, 4, 2]))
+log(cyclic_sort([2, 6, 4, 3, 1, 5]))
+log(cyclic_sort([1, 5, 6, 4, 3, 2]))
 
-// console.log(`${cyclic_sort([3, 1, 5, 4, 2])}`);
-// console.log(`${cyclic_sort([2, 6, 4, 3, 1, 5])}`);
-// console.log(`${cyclic_sort([1, 5, 6, 4, 3, 2])}`);
-
-// Solution
-// -----
-// function cyclic_sort(nums) {
-//   let i = 0;
-//   while (i < nums.length) {
-//     const j = nums[i] - 1;
-    // if (nums[i] !== nums[j]) {
-//       [nums[i], nums[j]] = [nums[j], nums[i]]; // swap array destructuring
-//     } else {
-//       i += 1;
-//     }
-//   }
-//   return nums;
-// }
-
-// -----
-
-// Time complexity #
-// The time complexity of the above algorithm is O(n). Although we are not incrementing the index i when swapping the numbers, this will result in more than ‘n’ iterations of the loop, but in the worst-case scenario, the while loop will swap a total of ‘n-1’ numbers and once a number is at its correct index, we will move on to the next number by incrementing i. So overall, our algorithm will take O(n) + O(n-1) which is asymptotically equivalent to O(n).
-
-// Space complexity #
-// The algorithm runs in constant space O(1).

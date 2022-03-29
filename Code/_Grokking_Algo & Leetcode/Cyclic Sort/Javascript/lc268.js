@@ -95,15 +95,55 @@ const runTimeStart = (arg) => console.time(arg)
 const runTimeEnd = (arg) => console.timeEnd(arg)
 
 
-const find_missing_number = function (nums) {
+const find_missing_number = (nums) =>{
+  let index = 0;
+  let count = 0;
+  const CurrentIndexLength = nums.length;
+
+  
+  while (index < CurrentIndexLength){
+
+    // let decrementedSubarray = nums[index] -1; 
+
+    let currentSubarray = nums[index];
+
+
+    if (nums[index] < CurrentIndexLength && nums[index] !== nums[currentSubarray]){
+  
+      // let nextIndex = nums[index] - 1; 
+      // let nextIndex = decrementedSubarray; 
+      // nums[index] = nums[nextIndex];
+      // nums[nextIndex] = currentSubarray; 
+      [ nums[index], nums[currentSubarray]] = [nums[currentSubarray], nums[index]]; // swap indexs
+
+  
+    } else{
+  
+      index++;
+  
+    }
+
+  }
+   
+
+  for (index = 0; index < CurrentIndexLength; index++) {
+    if (nums[index] !== index) {
+      return index;
+    }
+  }
+
+  return CurrentIndexLength;
+  
+
 
 
 }
 
 runTimeStart("Runtime")
-find_missing_numberSol([4, 0, 3, 1])
-console.log(find_missing_numberSol([4, 0, 3, 1]));
-console.log(find_missing_numberSol([8, 3, 5, 2, 4, 6, 0, 1]));
+// log(find_missing_number([3, 1, 5, 4, 2]))
+log(find_missing_number([3, 0, 1])) // 2
+log(find_missing_number([0, 1])); // 2
+log(find_missing_number([9,6,4,2,3,5,7,0,1])); // 8
 runTimeEnd("Runtime")
 
 
@@ -115,9 +155,9 @@ const find_missing_numberSol = function (nums) {
   let index = 0;
   const CurrentIndex = nums.length;
   while (index < CurrentIndex) {
-    let j = nums[index];
-    if (nums[index] < CurrentIndex && nums[index] !== nums[j]) {
-      [nums[index], nums[j]] = [nums[j], nums[index]]; // swap indexs
+    let currentSubarray = nums[index];
+    if (nums[index] < CurrentIndex && nums[index] !== nums[currentSubarray]) {
+      [nums[index], nums[currentSubarray]] = [nums[currentSubarray], nums[index]]; // swap indexs
     } else {
       index++;
     }
@@ -132,38 +172,7 @@ const find_missing_numberSol = function (nums) {
   return CurrentIndex;
 };
 
-// find_missing_numberSol([4, 0, 3, 1]);
-// console.log(find_missing_numberSol([4, 0, 3, 1]));
-// console.log(find_missing_numberSol([8, 3, 5, 2, 4, 6, 0, 1]));
 
-// Solution
-// -----
-// function find_missing_number(nums) {
-//   let i = 0;
-//   const n = nums.length;
-//   while (i < n) {
-//     j = nums[i];
-//     if (nums[i] < n && nums[i] !== nums[j]) {
-//       [nums[i], nums[j]] = [nums[j], nums[i]]; // swap
-//     } else {
-//       i += 1;
-//     }
-//   }
-
-//   // find the first number missing from its index, that will be our required number
-//   for (i = 0; i < n; i++) {
-//     if (nums[i] !== i) {
-//       return i;
-//     }
-//   }
-
-//   return n;
-// }
-
-// -----
-
-// Time complexity #
-// The time complexity of the above algorithm is O(n). In the while loop, although we are not incrementing the index i when swapping the numbers, this will result in more than n iterations of the loop, but in the worst-case scenario, the while loop will swap a total of n-1 numbers and once a number is at its correct index, we will move on to the next number by incrementing i. In the end, we iterate the input array again to find the first number missing from its index, so overall, our algorithm will take O(n) + O(n-1) + O(n) which is asymptotically equivalent to O(n).
-
-// Space complexity #
-// The algorithm runs in constant space O(1).
+// log(find_missing_numberSol([3, 0, 1])) // 2
+// log(find_missing_numberSol([0, 1])); // 2
+// log(find_missing_numberSol([9,6,4,2,3,5,7,0,1])); // 8
