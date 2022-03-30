@@ -53,7 +53,7 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
 - Cyclic Sort
   - [x] Cyclic Sort (easy)
   - [x] Find the Missing Number (easy): LC #268
-  - [] Find all Missing Numbers (easy): LC #448
+  - [x] Find All Numbers Disappeared in an Array (easy): LC #448
   - [] Find the Duplicate Number (easy): LC #287
   - [] Find all Duplicate Numbers (easy): LC #442
   - [] Find the Corrupt Pair (easy): LC #645
