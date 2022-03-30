@@ -57,9 +57,9 @@ const table = (arg) => console.table(arg)
 
 const cyclic_sort = function (nums) {
 let index = 0;
-const CurrentIndexLength = nums.length;
+const ArrayLength = nums.length;
 
-while (index < CurrentIndexLength){
+while (index < ArrayLength){
   const currentSubarray = nums[index];
   const decrementedSubarray = currentSubarray -1; 
 

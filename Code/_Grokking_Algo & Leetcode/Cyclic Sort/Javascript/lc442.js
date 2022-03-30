@@ -102,13 +102,38 @@ const runTimeStart = (arg) => console.time(arg)
 const runTimeEnd = (arg) => console.timeEnd(arg)
 
 const find_all_duplicates = function(nums) {
-  duplicateNumbers = [];
+  let index = 0;
+  const ArrayLength = nums.length;
+  
+  while (index < ArrayLength){
+    const currentSubarray = nums[index];
+    const decrementedSubarray = currentSubarray -1; 
+  
+  
+      if (currentSubarray != nums[decrementedSubarray]){
+  
+  
+      
+      [ nums[decrementedSubarray], nums[index]] = [nums[index], nums[decrementedSubarray]]; 
+  
+  
+  
+    } else{
+  
+      ++index;
+  
+    }
+    
+  }
 
-  return duplicateNumbers;
+  
+   
+  
+    return nums;
 };
 
 runTimeStart("Runtime")
-log(find_all_duplicates([4,3,2,7,8,2,3,1])); // [2,3]
+log(find_all_duplicates([4,3,2,7,8,2,3,1])); // [2,3] missing num in range 
 log(find_all_duplicates([1, 1, 2])); // [1]
 log(find_all_duplicates([1])); // []
 runTimeEnd("Runtime")

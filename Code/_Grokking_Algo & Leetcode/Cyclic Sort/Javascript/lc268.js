@@ -97,18 +97,20 @@ const runTimeEnd = (arg) => console.timeEnd(arg)
 
 const find_missing_number = (nums) =>{
   let index = 0;
-  let count = 0;
-  const CurrentIndexLength = nums.length;
+  const ArrayLength = nums.length;
 
   
-  while (index < CurrentIndexLength){
+  while (index < ArrayLength){
 
     // let decrementedSubarray = nums[index] -1; 
 
-    let currentSubarray = nums[index];
+    let currentSubarray = nums[index]; // 3 0 1 
+    
+    //         3>0>1 !== nums[currentSubarray]   = undefined 3 0
+    if ( nums[index] !== nums[currentSubarray]){
 
-
-    if (nums[index] < CurrentIndexLength && nums[index] !== nums[currentSubarray]){
+      // not really needed nums[index] < CurrentIndexLength 
+    // if (nums[index] < CurrentIndexLength && nums[index] !== nums[currentSubarray]){
   
       // let nextIndex = nums[index] - 1; 
       // let nextIndex = decrementedSubarray; 
@@ -126,13 +128,13 @@ const find_missing_number = (nums) =>{
   }
    
 
-  for (index = 0; index < CurrentIndexLength; index++) {
+  for (index = 0; index < ArrayLength; index++) {
     if (nums[index] !== index) {
       return index;
     }
   }
 
-  return CurrentIndexLength;
+  return ArrayLength;
   
 
 

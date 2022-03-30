@@ -43,7 +43,7 @@ var levelOrderBottom = function(root) {
  * / \     / \
   9  null 10  5 
  / \      / \ / \
- null--------null
+0   null--------null
 Input: root = [12,7,1,9,null,10,5]
 Output: [[12],[7,1],[9,10,5]]
 
@@ -60,17 +60,22 @@ dfs vist each side completley before other side
       /* base case */
       return 0;
     }
-    let left = height(node.left);
-    let right = height(node.right);
+    // let left = height(node.left);
+    // let right = height(node.right);
   
-    return Math.max(left, right) + 1;
+    return Math.max(height(node.left), height(node.right)) + 1;
   }
 
   let root = new TreeNode(12);
+  console.log(root)
 root.left = new TreeNode(7);
-root.right = new TreeNode(1);
 root.left.left = new TreeNode(9);
+root.left.left.left = new TreeNode(0);
+
+root.right = new TreeNode(1);
 root.right.left = new TreeNode(10);
 root.right.right = new TreeNode(5);
 
-console.log(levelOrderBottom(root))
+// console.log(levelOrderBottom(root))
+// console.log(levelOrder(root))
+console.log(height(root))

@@ -97,9 +97,9 @@ const runTimeEnd = (arg) => console.timeEnd(arg)
 
 const findDisappearedNumbers = function(nums) {
   let index = 0;
-  const CurrentIndexLength = nums.length;
+  const ArrayLength = nums.length;
 
-while (index < CurrentIndexLength){
+while (index < ArrayLength){
   const currentSubarray = nums[index];
   const decrementedSubarray = currentSubarray -1; 
 
@@ -117,7 +117,7 @@ while (index < CurrentIndexLength){
 }
 let result = []
 
-  for (index = 0; index < CurrentIndexLength; index++) {
+  for (index = 0; index < ArrayLength; index++) {
     if (nums[index] !== index + 1) {
       result.push(index + 1);
     }

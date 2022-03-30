@@ -102,7 +102,37 @@ const runTimeEnd = (arg) => console.timeEnd(arg)
 
 const find_duplicate = function(nums) {
 
-  return -1;
+  let index = 0;
+  const ArrayLength = nums.length;
+  
+  while (index < ArrayLength){
+    const currentSubarray = nums[index];
+    const decrementedSubarray = currentSubarray -1; 
+  
+  
+      if (currentSubarray != nums[decrementedSubarray]){
+  
+  
+      
+      [ nums[decrementedSubarray], nums[index]] = [nums[index], nums[decrementedSubarray]]; 
+  
+  
+  
+    } else{
+  
+      ++index;
+  
+    }
+    
+  }
+
+  
+   
+  
+    return nums;
+
+
+
 };
 
 

@@ -39,7 +39,7 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Maximum CPU Load(Task Scheduler) (hard): LC proably #621
   - [] Employee Free Time (hard): LC #759
 
-- Subsets
+- Subsets/Backtracking
   - [x] Subsets (easy): LC #78
   - [] Subsets With Duplicates (easy): LC #90
   - [] Permutations (medium): LC #46
