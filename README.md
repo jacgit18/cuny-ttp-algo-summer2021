@@ -97,6 +97,8 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Design Browser History (medium): LC #1472
 
 - Trees: BFS
+  - [] Same Tree(easy) LC #100
+  - [x] Symmetric Tree (easy): LC #101
   - [x] Binary Tree Level Order Traversal (easy): LC #102
   - [x] Minimum Depth of a Binary Tree (easy): LC #111
   - [x] Maximum Depth of a Binary Tree (easy): LC #104

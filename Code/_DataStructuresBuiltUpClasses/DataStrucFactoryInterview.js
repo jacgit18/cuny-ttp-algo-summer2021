@@ -160,24 +160,26 @@ class Vertex {
     return head;
   }
   
-   ArrayTreeDeserialize(arr) {
-    if (arr.length === 0) { return null; }
-    let root = new TreeNode(arr[0]);
-    let queue = [root];
-    for(let i = 1; i < arr.length; i += 2) {
-      let current = queue.shift();
-      if (arr[i] !== null) {
-        current.left = new TreeNode(arr[i]);
-        queue.push(current.left);
-      }
-      if (arr[i + 1] !== null && arr[i + 1] !== undefined) {
-        current.right = new TreeNode(arr[i + 1]);
-        queue.push(current.right);
-      }
-    }
-    return root;
-  }
+  // NOT pure tree its a binary tree
+  //  ArrayTreeDeserialize(arr) {
+  //   if (arr.length === 0) { return null; }
+  //   let root = new TreeNode(arr[0]);
+  //   let queue = [root];
+  //   for(let i = 1; i < arr.length; i += 2) {
+  //     let current = queue.shift();
+  //     if (arr[i] !== null) {
+  //       current.left = new TreeNode(arr[i]);
+  //       queue.push(current.left);
+  //     }
+  //     if (arr[i + 1] !== null && arr[i + 1] !== undefined) {
+  //       current.right = new TreeNode(arr[i + 1]);
+  //       queue.push(current.right);
+  //     }
+  //   }
+  //   return root;
+  // }
 
+  // is this is a BINARY Tree or BINARY Search Tree
   ArrayBinaryTreeDeserialize(arr) {
     if (arr.length === 0) { return null; }
     // could get mid and put it as root 
@@ -247,13 +249,13 @@ class Vertex {
     [5, 6],
   ];
 
-const stuructureMaker = new NodeConstructor();
+// const stuructureMaker = new NodeConstructor();
 
 // let linkedList = console.log(stuructureMaker.ArrayLinkListDeserialize(LinkListArray))
 // let linkedListCyclic = console.log(stuructureMaker.ArrayCyclicLinkListDeserialize(LinkListArray))
 // let linkedListDD = console.log(stuructureMaker.ArrayLinkListDoubleDeserialize(LinkListArray))
 // let tree = console.log(stuructureMaker.ArrayTreeDeserialize((TreeArray)));
-let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
+// let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
 
  
 
