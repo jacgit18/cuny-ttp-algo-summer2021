@@ -100,12 +100,12 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Same Tree(easy) LC #100
   - [x] Symmetric Tree (easy): LC #101
   - [x] Binary Tree Level Order Traversal (easy): LC #102
-  - [x] Minimum Depth of a Binary Tree (easy): LC #111
+  - [] Minimum Depth of a Binary Tree (easy): LC #111
   - [x] Maximum Depth of a Binary Tree (easy): LC #104
   - [x] Level Averages in a Binary Tree (easy): LC #637
   - [] Reverse Level Order Traversal II (easy): LC #107
   - [] Zigzag Traversal (medium): LC #103
-  - [] Level Order Successor (easy): LC #
+  - [x] Level Order Successor (easy): LC #
   - [] Connect Level Order Siblings (medium): LC #117
   - [] Connect All Level Order Siblings (medium): LC maybe #116
   - [] Right View of a Binary Tree (easy): LC #199  
@@ -173,3 +173,8 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Minimum Subset Sum Difference (hard)
   - [] Count of Subset Sum (hard)
   - [] Target Sum (hard): LC #494
+
+- Other Dynamic Programming & Binary Search
+  - [] Super Egg Drop(hard): LC #887
+  - [] Distribute Candies to People(easy): LC #1103
+  - [] Search a 2D Matrix(medium): LC #74

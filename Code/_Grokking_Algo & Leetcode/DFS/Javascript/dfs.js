@@ -14,7 +14,7 @@ const tree = new treeGrower();
    */
   
   let array = [4, 2, 5, 1, 3, null, 7, null, null, null, null, 6, 8]
-  let newTree = tree.ArrayTreeDeserialize(array)
+  let newTree = tree.ArrayBinaryTreeDeserialize(array)
   
   
   

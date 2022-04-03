@@ -33,8 +33,11 @@ class CrazyQueue {
   myQueue.enqueue('Joy');
   myQueue.enqueue('Matt');
   myQueue.enqueue('Pavel');
+  console.log(myQueue)
+
   myQueue.dequeue();
+  console.log(myQueue)
+
   // myQueue.dequeue();
   // myQueue.dequeue();
   // myQueue.peek();
-  console.log(myQueue)

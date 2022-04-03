@@ -19,14 +19,15 @@
   const myStack = new Stack();
   myStack.peek();
   myStack.push('google');
+    myStack.peek();
+
   myStack.push('udemy');
-  myStack.peek();
 
   // myStack.push('discord');
   myStack.peek();
-  myStack.pop();
-  myStack.pop();
-  myStack.pop();
+  // myStack.pop();
+  // myStack.pop();
+  // myStack.pop();
   
   
   //Discord

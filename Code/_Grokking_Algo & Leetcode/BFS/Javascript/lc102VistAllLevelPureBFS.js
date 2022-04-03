@@ -29,7 +29,7 @@ dfs vist each side completley before other side
 
 */
 
-
+// simpler
 function bfs(node) {
     let queue = [node];
     let current;

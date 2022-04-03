@@ -43,10 +43,10 @@ const find_level_averages = function(root) {
       sum += currentNode.value;
       // console.log(` this is Sum ${sum}`)
 
-      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.left !== null) queue.push(currentNode.left);
       // console.log(` this is current node left ${currentNode.left.value}`);
 
-      if (currentNode.right) queue.push(currentNode.right);
+      if (currentNode.right !== null) queue.push(currentNode.right);
       // console.log(` this is current node right ${currentNode.right.value}`);
 
     }

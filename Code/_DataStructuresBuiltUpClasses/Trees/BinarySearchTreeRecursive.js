@@ -212,15 +212,15 @@ class Node {
   
   module.exports = BT
   
-  // const tree = new BT();
-  // tree.add(9)
-  // tree.add(4)
-  // tree.add(6)
-  // tree.add(20)
-  // tree.add(170)
-  // tree.add(15)
-  // tree.add(1)
-  // console.log(tree)
+  const tree = new BT();
+  tree.add(12)
+  tree.add(7)
+  tree.add(9)
+  tree.add(0)
+  tree.add(1)
+  tree.add(10)
+  tree.add(5)
+  console.log(tree.levelOrder())
 
   // bst.add(9);
   // bst.add(4);

@@ -76,6 +76,9 @@
 
 
 // Constructor to create a new Node
+const treeGrower = require('../../../_DataStructuresBuiltUpClasses/DataStrucFactoryInterview')
+const tree = new treeGrower();
+
 function Node(key) {
   this.key = key;
   this.parent = null;
@@ -83,12 +86,7 @@ function Node(key) {
   this.right = null;
 }
 
-// Constructor to create a new BST 
-function BinarySearchTree() {
-  this.root = null;
-}
-
-BinarySearchTree.prototype.findInOrderSuccessor = function(root) {
+findInOrderSuccessor = function(root) {
  if (root.right != null)  return findMinKeyWithinTree(root.right)
 
 let ancestor = root.parent;
@@ -114,56 +112,16 @@ function findMinKeyWithinTree(inputNode){
   return inputNode
 }
 
-// Creates a new node by a key and inserts it to the BST
-BinarySearchTree.prototype.insert = function(key) {
 
-  var root = this.root;
-
-  // 1. If the tree is empty, create the root
-  if(!root) {
-      this.root = new Node(key);
-      return;
-  }
-
-  // 2) Otherwise, create a node with the key
-  //    and traverse down the tree to find where to
-  //    to insert it
-  var currentNode = root;
-  var newNode = new Node(key);
-
-  while(currentNode !== null) {
-      if(key < currentNode.key) {
-          if(!currentNode.left) {
-              currentNode.left = newNode;
-              newNode.parent = currentNode;
-              break;
-          } else {
-              currentNode = currentNode.left;
-          }
-      } else {
-          if(!currentNode.right) {
-              currentNode.right = newNode;
-              newNode.parent = currentNode;
-              break;
-          } else {
-              currentNode = currentNode.right;
-          }
-      }
-  }
-}
-
-// Returns a reference to a node in the BST by its key.
-// Use this fuction when you need a node to test your 
-// findInOrderSuccessor function on. 
-BinarySearchTree.prototype.getNodeByKey = function(key) {
-  var currentNode = this.root;
+getNodeByKey = function(tree, keyTofind) {
+  var currentNode = tree;
 
   while(currentNode) {
-      if(key === currentNode.key) {
+      if(keyTofind === currentNode.value) {
           return currentNode;
       }
 
-      if(key < currentNode.key) {
+      if(keyTofind > currentNode.value) {
           currentNode = currentNode.left;
       }
       else {
@@ -174,29 +132,28 @@ BinarySearchTree.prototype.getNodeByKey = function(key) {
   return null;
 }
 
-/*********************************************
-* Driver program to test above function     *
-*********************************************/
 
-// Create a Binary Search Tree can work with binary tree
-var bst = new BinarySearchTree();
-bst.insert(1);
-bst.insert(2);
-bst.insert(3);
-bst.insert(4);
-bst.insert(5);
-bst.insert(6);
-console.log(bst)
+var bst = tree.ArrayBinaryTreeDeserialize([1,2,3,4,5,null,6])
 
+// bst.insert(1);
+// bst.insert(2);
+// bst.insert(3);
+// bst.insert(4);
+// bst.insert(5);
+// bst.insert(6);
+// console.log(bst.left.left.value);
+let search = bst.left.value;
 // Get a reference to the node whose key is 9
-var test = bst.getNodeByKey(3);
+// var test = getNodeByKey(bst, search);
+// console.log(test)
 
 // Find the in order successor of test
-var succ = test ? bst.findInOrderSuccessor(test) : null;
+var succ = findInOrderSuccessor(bst) ;
+console.log(succ)
 
 // Print the key of the successor node
-if(succ) {
-  console.log("Inorder successor of " + test.key + " is " + succ.key);
-} else {
-  console.log("Inorder successor does not exist");
-}
+// if(succ) {
+//   console.log("Inorder successor of " + test.key + " is " + succ.key);
+// } else {
+//   console.log("Inorder successor does not exist");
+// }

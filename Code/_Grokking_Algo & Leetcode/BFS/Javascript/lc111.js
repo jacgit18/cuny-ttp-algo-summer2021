@@ -49,21 +49,7 @@ class TreeNode {
  * 
  */
 const find_minimum_depth = function(root) {
-  if(root == null) return 0;
-    let node = root;
-    let queue = [node];
-    let minDepth = 0;
-    while(queue.length >0){
-        let len = queue.length;
-        minDepth++;
-        for(let i=0; i<len; i++){
-            let node = queue.shift();
-            if(node.left==null && node.right == null) return minDepth;
-            node.left && queue.push(node.left);
-            node.right && queue.push(node.right);
-        }
-    }
-    return minDepth;
+ 
 };
 
 
