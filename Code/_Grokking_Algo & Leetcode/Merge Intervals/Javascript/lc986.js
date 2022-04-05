@@ -9,7 +9,7 @@ class Interval {
   }
 }
 
-const merge = (firstList, secondList) =>{
+const intervalIntersection = (firstList, secondList) =>{
   const result = [];
   let [intervalOneIdx ,intervalTwoIdx] =[ 0, 0];
 
@@ -46,7 +46,7 @@ let secondList = [[1,5],[8,12],[15,24],[25,26]];
 
 
 
-console.log(merge(firstList, secondList));
+console.log(intervalIntersection(firstList, secondList));
 
 
 

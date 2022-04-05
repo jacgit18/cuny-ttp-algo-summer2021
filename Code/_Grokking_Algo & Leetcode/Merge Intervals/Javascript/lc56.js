@@ -45,9 +45,9 @@ const merge = function(intervals) {
   });
 
   const mergedIntervals = [];
-
-  let start = intervals[0].start,
-  end =intervals[0].end ;
+  
+  let start = intervals[0].start;
+  let end =intervals[0].end ;
 
   for (i = 1; i < intervals.length; i++) {
     const interval = intervals[i];

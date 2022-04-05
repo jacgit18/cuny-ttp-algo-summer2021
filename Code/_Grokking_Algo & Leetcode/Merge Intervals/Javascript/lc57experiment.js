@@ -40,11 +40,26 @@ function insert(intervals, new_interval) {
 
 
 process.stdout.write('Intervals after inserting the new interval: ');
+// let result = insert(
+//   [new Interval(1, 3), new Interval(5, 7), new Interval(8, 12)],
+//   new Interval(4, 6)
+// );
+
 let result = insert(
-  [new Interval(1, 3), new Interval(5, 7), new Interval(8, 12)],
-  new Interval(4, 6)
+  [new Interval(1, 3), new Interval(6, 9)],
+  new Interval(2, 5)
 );
+
+let resultTwo = insert(
+  [new Interval(1, 2), new Interval(3, 5), new Interval(6, 7),  new Interval(8, 10), new Interval(12, 16)],
+  new Interval(4, 8)
+);
+
+
 for (i = 0; i < result.length; i++) {
   result[i].print_interval();
 }
 console.log();
+for (i = 0; i < resultTwo.length; i++) {
+  resultTwo[i].print_interval();
+}
