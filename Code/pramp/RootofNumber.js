@@ -1,27 +1,37 @@
-function root(x, n) {
-  
-    //const result = (n % 2  === 0) ? n : n;
-
-    if (x % n  === 0){
+function root(x, n){
+    // if (n % 2  === 0 || x % n  === 0){
        
-        return Math.sqrt(x)
+       
+   //  }
+    
+    //    if (n % 2  === 0  && Math.sqrt(x) === n ){
+       
+    //     return Math.sqrt(n)
+    //   }
+
+      if (Math.cbrt(x) === n ){
+       
+        return Math.cbrt(x)
       }
  
-  
-    if (n % 2  === 0){
+
+    if (n % 2  === 0 || x % n  === 0 || Math.sqrt(x) === n ){
        return Math.sqrt(x) ;
   
     } else{
         return Math.cbrt(x).toFixed(3);
 
-        //    return Math.pow(x/n, n) // how to get 1.913 with 7
-             
-            //return x/x*n
+  
       
     }
     
+    
+    
   }
+   
   
+  console.log(root(4, 2));
+
   
   console.log(root(7, 3));
 
@@ -66,7 +76,8 @@ function root(x, n) {
   }
    
 
-
+  console.log(rooTwo(4, 2));
     console.log(rooTwo(7, 3));
     console.log(rooTwo(9, 2));
     console.log(rooTwo(16, 4));
+    console.log(rooTwo(27, 3)); // should be 3 since 3*3*3
