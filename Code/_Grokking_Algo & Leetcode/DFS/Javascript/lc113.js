@@ -44,8 +44,7 @@ const find_paths = (root, sum) =>{
     const currSum = parentsSum + tree.value;
     const currArr = [...parents, tree.value]; // what does the three dots do
       // Termination-Conditions: check left and right are path sum
-    if (!tree.left && !tree.right && currSum === sum)
-      result.push(currArr);
+    if (!tree.left && !tree.right && currSum === sum) result.push(currArr);
     else {
       if (tree.left) search(tree.left, currArr, currSum);
       if (tree.right) search(tree.right, currArr, currSum);
