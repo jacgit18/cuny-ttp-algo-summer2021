@@ -28,7 +28,7 @@ class Graph {
   
   module.exports = Graph;
 
-  // var myGraph = new Graph();
+  const myGraph = new Graph();
   // myGraph.addVertex('0');
 
   // myGraph.addVertex('1');
@@ -58,7 +58,7 @@ class Graph {
   // myGraph.addEdge('0', '2'); 
   // myGraph.addEdge('6', '5');
   
-  // myGraph.showConnections();
+  myGraph.showConnections();
 
   /**
    * 

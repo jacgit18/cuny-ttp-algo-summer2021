@@ -13,7 +13,7 @@ class MyMath {
     }
 
     MegaMath = (x) =>{
-        console.log(Math);
+        console.log('TWST', Math);
         console.log(Math.PI);
         console.log(Math.E);
 
@@ -126,6 +126,5 @@ console.log(MyMath.myequals(mysquare1, mysquare2));// in static method you call 
 
 let theMath = new MyMath();
 
-theMath.MegaMath(5);
-
+console.log(theMath.MegaMath(5))
 

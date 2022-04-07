@@ -32,43 +32,58 @@ let matrix2 = [[0,0,0,0],
               [0,0,0,0],
               [0,0,0,0]]
 
+              let matrix3 = 
+              [[0,0,0],
+              [0,0,0],
+              [0,0,0,]]
+
 
 function robotPaths(matrix) {
 
-  function traverse(x,y) {
+  function traverse(Row,Col) {
     //BC: Out of Bounds
     // matrix[0].length proably num of rows and matrix.length is column num
-    let booleanCheck = x<0||y<0||x>=matrix[0].length||y>=matrix.length;
-    if(booleanCheck) {
+   
+    let maxRowLength = matrix[0].length; 
+    let maxColLength = matrix.length; 
+    let OutofBoundsCheck = Row<0||Col<0||Row>=matrix[0].length||Col>=matrix.length;
+    // const AlreadyVisitedCoordinate = (matrix[Col][Row] === 1);
+    let TargetReached = Row === maxRowLength - 1 && Col === maxColLength - 1;
+    
+    if(OutofBoundsCheck) {
 
       return 0;
     }
 
     //BC: Already visited coordinate
-    else if(matrix[y][x] === 1) {
+      else if(matrix[Col][Row] === 1) {
       return 0;
     }
 
     //BC: Reached Target
-    else if(x === matrix[0].length - 1 && y === matrix.length - 1) {
+    else if(TargetReached) {
       return 1;
     }
 
     
 
     //Mark coordintate as visited
-    matrix[y][x] = 1;
+    // matrix[Row][Col] = 1;
+    matrix[Col][Row] = 1;
+    
+
 
     //Initialize sum of all paths
     let sumPaths = 0;
 
-    sumPaths += traverse(x+1, y); //right
-    sumPaths += traverse(x-1, y); //left
-    sumPaths += traverse(x, y+1); //down
-    sumPaths += traverse(x, y-1); //up
+    sumPaths += traverse(Row+1, Col); //right
+    sumPaths += traverse(Row-1, Col); //left
+    sumPaths += traverse(Row, Col+1); //down
+    sumPaths += traverse(Row, Col-1); //up
 
     //Mark coordinate as unvisited
-    matrix[y][x] = 0;
+    matrix[Col][Row] = 0;
+
 
     return sumPaths;
 

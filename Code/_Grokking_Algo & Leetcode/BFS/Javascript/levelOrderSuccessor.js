@@ -180,16 +180,24 @@ BinarySearchTree.prototype.getNodeByKey = function(key) {
 
 // Create a Binary Search Tree can work with binary tree
 var bst = new BinarySearchTree();
-bst.insert(1);
-bst.insert(2);
-bst.insert(3);
-bst.insert(4);
+// bst.insert(1);
+// bst.insert(2);
+// bst.insert(3);
+// bst.insert(4);
+// bst.insert(5);
+// bst.insert(6);
+bst.insert(20);
+bst.insert(9);
 bst.insert(5);
-bst.insert(6);
+bst.insert(12);
+bst.insert(11);
+bst.insert(14);
+bst.insert(25);
+
 console.log(bst)
 
 // Get a reference to the node whose key is 9
-var test = bst.getNodeByKey(3);
+var test = bst.getNodeByKey(11);
 
 // Find the in order successor of test
 var succ = test ? bst.findInOrderSuccessor(test) : null;
