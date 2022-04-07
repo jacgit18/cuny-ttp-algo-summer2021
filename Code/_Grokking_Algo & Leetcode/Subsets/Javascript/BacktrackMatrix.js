@@ -66,7 +66,23 @@ function robotPaths(matrix) {
     }
 
     
+/** when hit recursive calls we always check right first until we hit end of row then we go out
+ *  of bounds check left hit base case until we hit unvisted position and check previous position before starting with left then right, down, up
+ * 
+ * all uniuqe paths from left root, then right root, then down root, then up root
 
+ * right 3 times adding 1 to currRow then we hit last index row = 3 col = 0 and try left subbing 1 fron currCol row = 2 col = 0
+ from last right position 1 time then return zero since visted now were still
+at last right position so we go down at the last right adding 1 to currCol since at new position we check right again and left and so on while we hit base cases with updated Row and col
+ *             matrix = [[1,1,1,1], 
+ *                      [0,0,0,0],
+ *                      [0,0,0,0]]
+ * 
+ *             matrix = [[0,0,0,0],
+ *                      [0,0,0,0],
+ *                      [0,0,0,0]]
+ * 
+ */
     //Mark coordintate as visited
     // matrix[Row][Col] = 1;
     matrix[Col][Row] = 1;
@@ -76,10 +92,10 @@ function robotPaths(matrix) {
     //Initialize sum of all paths
     let sumPaths = 0;
 
-    sumPaths += traverse(Row+1, Col); //right
-    sumPaths += traverse(Row-1, Col); //left
-    sumPaths += traverse(Row, Col+1); //down
-    sumPaths += traverse(Row, Col-1); //up
+    sumPaths += traverse(Row+1, Col); //right // 10 paths
+    sumPaths += traverse(Row-1, Col); //left  // 9 paths
+    sumPaths += traverse(Row, Col+1); //down  // 10 paths
+    sumPaths += traverse(Row, Col-1); //up  // 9 paths
 
     //Mark coordinate as unvisited
     matrix[Col][Row] = 0;
@@ -94,3 +110,7 @@ function robotPaths(matrix) {
 
 
 console.log(robotPaths(matrix2));
+
+
+
+
