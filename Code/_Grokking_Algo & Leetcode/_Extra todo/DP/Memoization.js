@@ -41,4 +41,4 @@
   console.log(1, memoized(35))
   // console.log(cache)
   // console.log('-----------')
-  console.log(2, memoized(35))
+  console.log(2, memoized(10))
