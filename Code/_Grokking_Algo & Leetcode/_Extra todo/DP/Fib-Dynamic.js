@@ -114,10 +114,10 @@ function fibBottomUpDPForward(n) {
 	if( n <= 2) {
 		return 1
 	}
-// let dp := make([]int, n+1) generates array
-// let	dp = [0, 0, 0, 0, 0, 0, 0]
 
-let	dp = []
+let dp = Array(n+1).fill(0)
+
+
 
 	dp[0] = 0
 	dp[1] = 1
@@ -143,8 +143,10 @@ function fibBottomUpDPBackward(n) {
 		return 1
 	}
 
-	// dp := make([]int, n+2) // generates array 
-  let	dp = [0, 0, 0, 0, 0, 0, 0, 0]
+
+  let dp = Array(n+2).fill(0)
+
+
 
 	dp[0] = 0
 	dp[1] = 1
