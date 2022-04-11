@@ -93,7 +93,7 @@ function fibonacciRecursive(n) {
 
 
 // console.time("time two")
-console.log('DP2', fibonacciMaster2(6));
+// console.log('DP2', fibonacciMaster2(6));
 // console.timeEnd("time two")
 
 // console.log('we did ' + calculations + ' calculations');
@@ -114,7 +114,9 @@ function fibBottomUpDPForward(n) {
 	if( n <= 2) {
 		return 1
 	}
-// let dp := make([]int, n+1)
+// let dp := make([]int, n+1) generates array
+// let	dp = [0, 0, 0, 0, 0, 0, 0]
+
 let	dp = []
 
 	dp[0] = 0
@@ -141,9 +143,8 @@ function fibBottomUpDPBackward(n) {
 		return 1
 	}
 
-  // let dp := make([]int, n+1)
-	// dp := make([]int, n+2)
-  let	dp = []
+	// dp := make([]int, n+2) // generates array 
+  let	dp = [0, 0, 0, 0, 0, 0, 0, 0]
 
 	dp[0] = 0
 	dp[1] = 1
