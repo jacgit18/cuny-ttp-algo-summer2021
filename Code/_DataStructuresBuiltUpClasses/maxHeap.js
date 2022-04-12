@@ -83,21 +83,24 @@ class MaxHeap {
     }
 }
 
-const hp = new MaxHeap();
-
-hp.insert(652)
-hp.insert(43)
-hp.insert(335)
-hp.insert(466)
-hp.insert(532)
-hp.insert(2330)
-hp.insert(324)
-hp.insert(222)
-hp.insert(4645454)
-hp.insert(343212)
+module.exports = MaxHeap;
 
 
-console.log(hp.getMax())
-console.log(hp)
-hp.remove()
-console.log(hp)
+// const hp = new MaxHeap();
+
+// hp.insert(652)
+// hp.insert(43)
+// hp.insert(335)
+// hp.insert(466)
+// hp.insert(532)
+// hp.insert(2330)
+// hp.insert(324)
+// hp.insert(222)
+// hp.insert(4645454)
+// hp.insert(343212)
+
+
+// console.log(hp.getMax())
+// console.log(hp)
+// hp.remove()
+// console.log(hp)

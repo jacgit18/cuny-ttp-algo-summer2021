@@ -89,6 +89,7 @@ class MinHeap {
         return smallest
     }
 }
+module.exports = MinHeap;
 
 const hp = new MinHeap();
 
