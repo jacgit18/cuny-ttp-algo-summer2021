@@ -40,7 +40,7 @@ let matrix2 = [[0,0,0,0],
 
 function robotPaths(matrix) {
 
-  function traverse(Row,Col) {
+  return traverse = (Row = 0, Col = 0) =>{
     //BC: Out of Bounds
     // matrix[0].length proably num of rows and matrix.length is column num
    
@@ -114,11 +114,14 @@ function robotPaths(matrix) {
 
   }
 
-  return traverse(0,0);
+  // return traverse(0,0);
 }
 
 
-console.log(robotPaths(matrix2));
+let gatecall = robotPaths(matrix2);
+
+
+console.log(gatecall());
 
 
 
