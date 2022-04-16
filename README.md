@@ -160,11 +160,11 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Frequency Stack (hard): LC #895
   
 - K-way Merge
-  - [] Merge K Sorted Lists (medium): LC #23
+  - [] Merge K Sorted Lists (Hard): LC #23
   - [] Kth Smallest Number in M Sorted Lists (Medium)
   - [] Kth Smallest Number in a Sorted Matrix (Hard): LC #378
   - [] Smallest Number Range (Hard): LC #632
-  - [] Problem K Pairs with Largest Sums (Hard): LC $373
+  - [] Problem K Pairs with Largest Sums (Hard): LC #373
   
 - Knapsack (Dynamic Programming)
   - [] 0/1 Knapsack (medium)
@@ -173,8 +173,21 @@ Two pointer and Sliding window can be interchangeable solution but one would jus
   - [] Minimum Subset Sum Difference (hard)
   - [] Count of Subset Sum (hard)
   - [] Target Sum (hard): LC #494
+  - [] Coin Change (medium): LC #322
+  - [] Coin Change 2 (medium): LC #518
+  - [] Minimum Cost For Tickets (medium): LC #983
 
 - Other Dynamic Programming & Binary Search
   - [] Super Egg Drop(hard): LC #887
   - [] Distribute Candies to People(easy): LC #1103
   - [] Search a 2D Matrix(medium): LC #74
+  - [] Maximum Alternating Subsequence Sum(medium): LC #1911
+  - [] House Robber(medium): LC #198
+  - [] Climbing Stairs(easy): LC #70
+  - [] Longest Palindromic Subsequence(medium): LC #516
+  - [] Palindromic Substrings(medium): LC #647
+  - [] Longest Palindromic Substring(medium): LC #5
+  - [] Distinct Subsequences(hard): LC #115
+  - [] Edit Distance(hard): LC #72
+  - [] Longest Increasing Subsequence(medium): LC #300
+  - [] Longest Common Subsequence(medium): LC #1143
