@@ -1,4 +1,4 @@
-const linkSetter = require("../../../_DataStructuresBuiltUpClasses/DataStrucFactoryInterview");
+const linkSetter = require("../../../../_DataStructuresBuiltUpClasses/DataStrucFactoryInterview");
 const linkedGetter = new linkSetter();
 // Problem Statement #
 
@@ -158,6 +158,16 @@ let printFoward = (node) =>{
   
     }
   }
+
+  let printFowardRec = (node) =>{
+    let current = node;
+    if(current!== null){
+        console.log(current.value)
+        current = printFowardRec(current.next)  
+    
+      }
+    }
+  
   
   const printBackward = (node) =>{
 
@@ -166,6 +176,16 @@ let printFoward = (node) =>{
     printBackward(node.next)
     console.log(node.value); // backward
   }
+
+  const printBackwardIter = (node) =>{
+    // push to empty array and reverse
+    while(node === null){
+    
+    // console.log(node.value); // foward
+    node.next
+    console.log(node.value); // backward
+  }
+}
 
 const reverseNoComments = function (head) {
   if (head == null || head < 0) return null;
@@ -186,8 +206,50 @@ const reverseNoComments = function (head) {
 
 printFoward(linkedList);
 console.log()
-printBackward(linkedList); // prints values backwards not reverse
-console.log()
-console.log(`Nodes of original LinkedList are: ${head.get_list()}`);
 
-console.log(`Nodes of reversed LinkedList are: ${reverseNoComments(head).get_list()}`);
+printFowardRec(linkedList);
+
+console.log()
+// printBackward(linkedList); // prints values backwards not reverse
+// console.log()
+// console.log(`Nodes of original LinkedList are: ${head.get_list()}`);
+
+// console.log(`Nodes of reversed LinkedList are: ${reverseNoComments(head).get_list()}`);
+
+
+
+
+const reverseREc = function (head) {
+  if(!head) return null;
+  
+  function reverse(currNode, prev) {
+      const next = currNode.next;
+      currNode.next = prev;
+      if(!next) return currNode;
+      return reverse(next, currNode);
+  }
+  return reverse(head, null);
+};
+
+const reverseList = function (head, prev = null) {
+   
+  if (!head){
+      return prev;
+  }
+   let current = head;
+  let next = current.next; 
+  current.next = prev;     
+  prev = current;       
+  return reverseList(next, prev)
+};
+
+console.log(reverseREc(linkedList));
+
+
+// var reverseList = function(head) {
+//   let [prev, current] = [null, head]
+//   while(current) {
+//       [current.next, prev, current] = [prev, current, current.next]
+//   }
+//   return prev
+// }

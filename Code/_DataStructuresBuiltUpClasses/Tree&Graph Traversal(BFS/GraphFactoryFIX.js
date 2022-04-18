@@ -85,7 +85,67 @@ let id = 4;
 
   let graph1 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
   // let graph1 =  ArrayGraphDeserialize(id, GraphArray)
-  log(graph1)
+  // console.log(graph1)
+
+/* 
+ *
+ *             2
+ *           /   \
+ *    0 ~~~ 1     4 ~~~ 5 ~~~ 3
+ *           \   / \  /
+ *             7    6
+ */
+
+  function bfs(vertex) {
+    let result = [];
+    let queue = [vertex]; 
+    let current;
+    let visited = new Set();
+    visited.add(vertex); // the whole graph is stored so set is of size 1
+    while (queue.length > 0) {
+      current = queue.shift();
+      current.edges.forEach((edge) => {
+        if (!visited.has(edge)) {
+          queue.push(edge);
+          visited.add(edge);
+        }
+      }
+  );
+      result. push(current.id);
+    }
+    return result;
+  }
+  
+
+
+
+
+  function dfs(vertex) {
+    let result = [];
+    let stack = [vertex];
+    let current;
+    let visited = new Set();
+    visited.add(vertex);
+  
+    while (stack.length > 0) {
+      current = stack.pop();
+  
+      current.edges.forEach((edge) => {
+        if (!visited.has(edge)) {
+          stack.push(edge);
+          visited.add(edge);
+        }
+      });
+  
+      result.push(current.id);
+    }
+    return result;
+  }
+  console.log("DFS:", dfs(graph1));  
+  console.log("BFS:", bfs(graph1));
+
+
+
 
 
 // console.log(Object.keys(graph1).length)
