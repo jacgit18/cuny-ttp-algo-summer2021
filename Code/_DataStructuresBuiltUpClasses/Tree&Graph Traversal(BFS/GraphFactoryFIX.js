@@ -41,32 +41,32 @@ class Vertex {
     let v2;
 
     
-    for (const edge in vertices.edges){
-      v1 = edge[0]; 
-      v2 = edge[1]; 
-
-      vertices[v1].edges.push(vertices[v2]); 
-      vertices[v2].edges.push(vertices[v1]);
-    }
-
-    // edges.forEach((edge) => {
-    //   // [2,4] row 1
-    //   v1 = edge[0]; // assign to first rowCOl [2]
-    //   v2 = edge[1]; // assign to second row [4] might act as column
-
-
+    // for (const edge in vertices.edges){
+    //   v1 = edge[0]; 
+    //   v2 = edge[1]; 
 
     //   vertices[v1].edges.push(vertices[v2]); 
-    //   // accees key of v1 or 2 intially to push to edge v2 or 4 
     //   vertices[v2].edges.push(vertices[v1]);
-    //   // does vice versa process
-    //   // 2 > 4 / 4 > 2
-
     // }
+
+    edges.forEach((edge) => {
+      // [2,4] row 1
+      v1 = edge[0]; // assign to first rowCOl [2]
+      v2 = edge[1]; // assign to second row [4] might act as column
+
+
+
+      vertices[v1].edges.push(vertices[v2]); 
+      // accees key of v1 or 2 intially to push to edge v2 or 4 
+      vertices[v2].edges.push(vertices[v1]);
+      // does vice versa process
+      // 2 > 4 / 4 > 2
+
+    }
 
 
     
-    // );
+    );
   
     return vertices[0];
   }
@@ -154,6 +154,8 @@ let id = 4;
       //     visited.add(edge);
       //   }
       // });
+      result.push(current.id);
+
 
       for (const edge of current.edges){
         if (!visited.has(edge)) {
@@ -162,11 +164,51 @@ let id = 4;
         }
       }
   
+      // result.push(current.id);
+    }
+    return result;
+  }
+
+
+
+  function dfsRec(vertex) {
+    let result = [];
+    let stack = [vertex];
+    let current;
+    let visited = new Set();
+    visited.add(vertex);
+  
+    if (stack.length > 0) {
+      current = stack.pop();
+  
+      // current.edges.forEach((edge) => {
+      //   if (!visited.has(edge)) {
+      //     stack.push(edge);
+      //     visited.add(edge);
+      //   }
+      // });
+
+      // for (const edge of current.edges){
+        if (!visited.has(edges)) {
+          stack.push(edges);
+          visited.add(edges);
+          dfsRec(stack)
+
+          return
+        }
+      // }
+
+      dfsRec(stack)
+
+  
       result.push(current.id);
     }
     return result;
   }
+
   console.log("DFS:", dfs(graph1));  
+  console.log("DFSRec:", dfsRec(graph1));  
+
   console.log("BFS:", bfs(graph1));
 
 
