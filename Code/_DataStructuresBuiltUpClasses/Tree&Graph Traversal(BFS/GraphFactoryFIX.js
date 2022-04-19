@@ -41,23 +41,32 @@ class Vertex {
     let v2;
 
     
-
-    edges.forEach((edge) => {
-      // [2,4] row 1
-      v1 = edge[0]; // assign to first rowCOl [2]
-      v2 = edge[1]; // assign to second row [4] might act as column
-
-
+    for (const edge in vertices.edges){
+      v1 = edge[0]; 
+      v2 = edge[1]; 
 
       vertices[v1].edges.push(vertices[v2]); 
-      // accees key of v1 or 2 intially to push to edge v2 or 4 
       vertices[v2].edges.push(vertices[v1]);
-      // does vice versa process
-      // 2 > 4 / 4 > 2
-
     }
+
+    // edges.forEach((edge) => {
+    //   // [2,4] row 1
+    //   v1 = edge[0]; // assign to first rowCOl [2]
+    //   v2 = edge[1]; // assign to second row [4] might act as column
+
+
+
+    //   vertices[v1].edges.push(vertices[v2]); 
+    //   // accees key of v1 or 2 intially to push to edge v2 or 4 
+    //   vertices[v2].edges.push(vertices[v1]);
+    //   // does vice versa process
+    //   // 2 > 4 / 4 > 2
+
+    // }
+
+
     
-    );
+    // );
   
     return vertices[0];
   }
@@ -85,7 +94,7 @@ let id = 4;
 
   let graph1 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
   // let graph1 =  ArrayGraphDeserialize(id, GraphArray)
-  // console.log(graph1)
+  console.log(graph1)
 
 /* 
  *
@@ -104,14 +113,23 @@ let id = 4;
     visited.add(vertex); // the whole graph is stored so set is of size 1
     while (queue.length > 0) {
       current = queue.shift();
-      current.edges.forEach((edge) => {
-        if (!visited.has(edge)) {
-          queue.push(edge);
-          visited.add(edge);
-        }
-      }
-  );
-      result. push(current.id);
+
+  //     current.edges.forEach((edge) => {
+  //       if (!visited.has(edge)) {
+  //         queue.push(edge);
+  //         visited.add(edge);
+  //       }
+  //     }
+  // );
+
+  for (const edge of current.edges){
+    if (!visited.has(edge)) {
+      queue.push(edge);
+      visited.add(edge);
+    }
+  }
+
+      result.push(current.id);
     }
     return result;
   }
@@ -130,12 +148,19 @@ let id = 4;
     while (stack.length > 0) {
       current = stack.pop();
   
-      current.edges.forEach((edge) => {
+      // current.edges.forEach((edge) => {
+      //   if (!visited.has(edge)) {
+      //     stack.push(edge);
+      //     visited.add(edge);
+      //   }
+      // });
+
+      for (const edge of current.edges){
         if (!visited.has(edge)) {
           stack.push(edge);
           visited.add(edge);
         }
-      });
+      }
   
       result.push(current.id);
     }

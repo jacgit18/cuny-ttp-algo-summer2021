@@ -88,14 +88,14 @@ var lengthOfLastWord = function(s) {
 
 
 
-        console.time('testOne')
-        console.log(    lengthOfLastWord("   fly me   to   the moon  ")  )
-        console.timeEnd('testOne')
+        // console.time('testOne')
+        // console.log(    lengthOfLastWord("   fly me   to   the moon  ")  )
+        // console.timeEnd('testOne')
 
 
-        console.time('testTwo')
+        // console.time('testTwo')
 
-        console.log(    lengthOfLastWordVer("   fly me   to   the moon  ")  )
-        console.timeEnd('testTwo')
+        // console.log(    lengthOfLastWordVer("   fly me   to   the moon  ")  )
+        // console.timeEnd('testTwo')
 
 

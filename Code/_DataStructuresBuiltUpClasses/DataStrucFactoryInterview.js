@@ -135,7 +135,7 @@ class Vertex {
       current.next = new Node(arr[i]);
       current = current.next;
       if(current.next === null){
-        current.next = head; //fix
+        current.next = head; //fixed
       }
     }
     return head;
@@ -159,6 +159,26 @@ class Vertex {
     // this.tail = head;
     return head;
   }
+
+  // fix
+  ArrayCyclicLinkListDoubleDeserialize(arr) {
+    if (arr.length === 0) { return null; }
+    let head = new DoubleLLNode(arr[0]);
+    let current = head;
+    let tail = head;
+    let pre = current;
+    let nex = head.next;
+
+
+    for (let i = 1; i < arr.length; i++) {
+      current.next = new DoubleLLNode(arr[i]);
+      prev = current
+      current = current.next;
+    }
+    // this.tail = head;
+    return head;
+  }
+  
   
   // NOT pure tree its a binary tree
   //  ArrayTreeDeserialize(arr) {
@@ -208,9 +228,22 @@ class Vertex {
 
    ArrayGraphDeserialize(nodeIdx, edges) {
     let vertices = {};
-    while (nodeIdx--) {
+        // while (nodeIdx--) {
+
+    while (nodeIdx > 0) {
+            // if(nodeIdx > 0){
+
       vertices[nodeIdx] = new Vertex(nodeIdx);
-  
+      // nodeIdx--;
+              // edges.length
+
+    // }
+     // else if(edges.contains(0)){
+      //   vertices[nodeIdx] = new Vertex(nodeIdx);
+
+      // }
+
+
     }
     let v1;
     let v2;
