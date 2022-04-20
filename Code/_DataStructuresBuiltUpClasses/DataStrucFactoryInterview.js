@@ -199,6 +199,7 @@ class Vertex {
   //   return root;
   // }
 
+  // Binary search tree just need to include arr with nulls
   ArrayBinaryTreeDeserialize(arr) {
     if (arr.length === 0) { return null; }
     // could get mid and put it as root to create balanced binary search tree
@@ -283,7 +284,9 @@ class Vertex {
   }
   
   let LinkListArray = [1,5,7,10];
+  // let TreeArray = [4, 2, 5, 1, 3, null, 7, null, null, null, null, 6, 8]
   let TreeArray = [4, 2, 5, 1, 3, null, 7, null, null, null, null, 6, 8]
+
 
 
   let idGraphIndex = 8;
@@ -304,7 +307,7 @@ const stuructureMaker = new NodeConstructor();
 // let linkedList = console.log(stuructureMaker.ArrayLinkListDeserialize(LinkListArray))
 // let linkedListCyclic = console.log(stuructureMaker.ArrayCyclicLinkListDeserialize(LinkListArray))
 // let linkedListDD = console.log(stuructureMaker.ArrayLinkListDoubleDeserialize(LinkListArray))
-// let tree = console.log(stuructureMaker.ArrayBinaryTreeDeserialize((TreeArray)));
+let tree = console.log(stuructureMaker.ArrayBinaryTreeDeserialize((TreeArray)));
 // let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
 
  
