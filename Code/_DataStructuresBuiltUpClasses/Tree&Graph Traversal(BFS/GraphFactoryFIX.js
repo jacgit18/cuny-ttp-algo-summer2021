@@ -20,13 +20,13 @@ class Vertex {
 
    const ArrayGraphDeserialize = (nodeIdx, edges) =>{
     let vertices = {};
-    // while (nodeIdx--) {
+    while (nodeIdx--) {
 
-    while (nodeIdx >= 0) {
+    // while (nodeIdx >= 0) {
 
       // if(nodeIdx > 0){
         vertices[nodeIdx] = new Vertex(nodeIdx);
-        nodeIdx--;
+        // nodeIdx--;
         
         // edges.length
 
@@ -72,9 +72,16 @@ class Vertex {
   }
 
   
+  let id = 3;
 
-  let GraphArray = [[2,4],[1,3],[2,4],[1,3]];
-let id = 4;
+  // let GraphArray = [[2,4],[1,3],[2,4],[1,3]];
+  let GraphArray = [[1,2],[2,3],[3,4],[4,1]];
+  /**
+   *  1 ------ 2
+   *  |        |
+   *  4 ------ 3
+   */
+
 
   let idGraphIndex = 8;
 
@@ -92,8 +99,8 @@ let id = 4;
 
 // const stuructureMaker = new NodeConstructor();
 
-  let graph1 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
-  // let graph1 =  ArrayGraphDeserialize(id, GraphArray)
+  // let graph1 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
+  let graph1 =  ArrayGraphDeserialize(id, GraphArray)
   console.log(graph1)
 
 /* 
@@ -207,7 +214,7 @@ let id = 4;
   }
 
   console.log("DFS:", dfs(graph1));  
-  console.log("DFSRec:", dfsRec(graph1));  
+  // console.log("DFSRec:", dfsRec(graph1));  
 
   console.log("BFS:", bfs(graph1));
 
