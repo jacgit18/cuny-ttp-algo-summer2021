@@ -99,8 +99,8 @@ class Vertex {
 
 // const stuructureMaker = new NodeConstructor();
 
-  // let graph1 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
-  let graph1 =  ArrayGraphDeserialize(id, GraphArray)
+  let graph1 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
+  // let graph1 =  ArrayGraphDeserialize(id, GraphArray)
   console.log(graph1)
 
 /* 
@@ -180,43 +180,36 @@ class Vertex {
 
   function dfsRec(vertex) {
     let result = [];
-    let stack = [vertex];
+    let stack = [vertex]; 
     let current;
+
+
     let visited = new Set();
-    visited.add(vertex);
+     if(visited.has(current)) return;
+     current = stack.pop();
   
-    if (stack.length > 0) {
-      current = stack.pop();
-  
-      // current.edges.forEach((edge) => {
-      //   if (!visited.has(edge)) {
-      //     stack.push(edge);
-      //     visited.add(edge);
-      //   }
-      // });
+    visited.add(current);
+    result.push(current.id);
 
-      // for (const edge of current.edges){
-        if (!visited.has(edges)) {
-          stack.push(edges);
-          visited.add(edges);
-          dfsRec(stack)
-
-          return
-        }
-      // }
-
-      dfsRec(stack)
-
-  
-      result.push(current.id);
-    }
+      for (let edge of current.edges){
+         stack.push(edge);
+ 
+        dfsRec(edge)
+       
+      }
+    
+    
     return result;
   }
 
-  console.log("DFS:", dfs(graph1));  
-  // console.log("DFSRec:", dfsRec(graph1));  
+  
 
-  console.log("BFS:", bfs(graph1));
+
+  // console.log("DFS:", dfs(graph1));  
+  console.log("DFSRec:", dfsRec(graph1)); 
+
+
+  // console.log("BFS:", bfs(graph1));
 
 
 
