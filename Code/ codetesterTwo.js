@@ -1,60 +1,75 @@
+function traverseMatrix(arr, currRow = 0, currCol = 0){
+    let columnBoundary = currCol === arr.length +1;
+    if (columnBoundary) return 0;
+ 
+    let rowBound = currRow >=  arr.length;
+    if (rowBound) return 1;
+   
+    //rm undefined
+    if(arr[currRow][currCol] !== undefined || arr[currRow][currCol] === typeof Number){
+        console.log(arr[currRow][currCol]);
 
-        var points1 = [[1, 2], 3, [4, 3], [10, 50], [98, 100]];
-
-        var points = [[1, 2], [3, 4],[5, 6]];
-
-        function matrixRecursion(array, length = 0) {
-            if (array.length === length) return 0;
-            console.log(array[length]);
-
-            // if (Array.isArray(array[length])) {
-            //     matrixRecursion(array[length]);
-            // }
-            for(let row = 0; row < array.length; row++){
-
-    
-            matrixRecursion(array[row][col], col++);
-
-            }
-
-        }
-        
-    // console.log(matrixRecursion(points))
-    
-    
-    
-    function matrixIter(array) {
-    
-    for(let row = 0; row < array.length; row++){
+    }
+ 
+    // Recursive call to traverse the matrix
+    // in the Horizontal direction
+    if (traverseMatrix(arr, currRow, currCol + 1) === 1) return 1;
+ 
   
-        for(let col = 0; col < array[row].length; col++) {
-            console.log(array[row][col]);
-        }
-    }
-    
-    }
-    console.log()
-    
-    // console.log(matrixIter(points))
-    
+    return traverseMatrix(arr, currRow + 1, 0);
+}
+ 
+ 
 
-    function ArrayRecursive(arr) {
-        let row = 0;
-        let col= 0;
-        if (row < arr.length) return;
-        // if(col <= arr[row].length) return; 
-        console.log(arr[row][col]);
-        // row++;
+let arr0 = [ [ 1, 2, 3 ] ];
+
+let arr1 = [ [ 1, 2, 3 ],
+             [ 4, 5, 6 ]];
+
+let arr2 = [ [ 1, 2, 3 ],
+            [ 4, 5, 6 ],
+            [ 7, 8, 9 ]];
+
+let arr3 = [ [ 1, 2, 3 ],
+            [ 4, 5, 6 ],
+            [ 7, 8, 9 ],
+            [ 10, 11, 12 ]];
+ 
+traverseMatrix(arr0)
+// console.log()
+// traverseMatrix(arr1)
+// console.log()
+// traverseMatrix(arr2)
+// console.log()
+// traverseMatrix(arr3)
+
+// let arr3 = [1,1,2,2,3,3,6,6,6]
 
 
-        ArrayRecursive(arr[row])
+// let dup = new Set();
 
-        ArrayRecursive(arr[row][col])
+// for (let i = 0; i <arr3.length; i++) {
+//     dup.add(arr3[i])
+
+
+// }
+
+
+// const result = arr4
+// .filter( (array) =>  array < 6 )
+// .reduce( (acc, curr) =>{
+//     if(!acc.has(curr < 3)){
+//         acc.Set(curr, new Set())
+//     }
+//     acc.get(curr).add(curr)
+//     return curr
+// });
+
+// console.log(result);
 
 
 
-
-        
-      }
-
-      console.log(ArrayRecursive(points))
+console.log(String.fromCharCode("a").charCodeAt(4)               
+);
+const str = 'To be, or not to be, that is the question.'
+console.log(str.includes('To be', 0))     // true
