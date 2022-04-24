@@ -56,7 +56,7 @@ class ListNode {
   
   let array = [1,5,7,10,12,15];
   let list = generateList(array);
-  let a = 7;
+  let a = 5;
   let b = 12;
   
   let resultList = swap(list, a, b);
