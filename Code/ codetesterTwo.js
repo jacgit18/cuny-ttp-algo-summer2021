@@ -73,3 +73,9 @@ console.log(String.fromCharCode("a").charCodeAt(4)
 );
 const str = 'To be, or not to be, that is the question.'
 console.log(str.includes('To be', 0))     // true
+
+
+
+let array = [-2, -1]
+array.map( (x ) => { return Math.abs(x ** 2)});
+

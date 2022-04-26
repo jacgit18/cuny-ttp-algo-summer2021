@@ -1,5 +1,3 @@
-const treeSetter = require("../../../_DataStructuresBuiltUpClasses/Trees/BinaryTreeRecursive");
-const treeGetter = new treeSetter();
 // Given an array of integers nums which is sorted in ascending order, and an integer target, write a function 
 // to search target in nums. If target exists, then return its index. Otherwise, return -1.
 
@@ -7,15 +5,7 @@ const treeGetter = new treeSetter();
 
 
 // Applys to tree,s and Array
-  class Node
-  {
-      constructor(data) {
-         this.left = null;
-         this.right = null;
-         this.data = data;
-      }
-  }
-   
+
 
 const search = (nums, target) =>{
 

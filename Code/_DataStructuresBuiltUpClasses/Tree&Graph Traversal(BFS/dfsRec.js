@@ -22,18 +22,31 @@ class Vertex {
 
 
     edges.forEach((edge) => {
+
       v1 = edge[0]; 
+
+          // console.log(v1)
+
       v2 = edge[1]; 
+   
+
 
       vertices[v1].edges.push(vertices[v2]); 
+     // console.log(vertices[v1])
+
       vertices[v2].edges.push(vertices[v1]);
+   // console.log(vertices)
+      // console.log( vertices[v2])
 
 
     }
-
-
     
     );
+
+    // console.log(vertices);
+    // console.log(vertices[v1])
+    // console.log(vertices[v2])
+
   
     return vertices[0];
   }
@@ -52,7 +65,7 @@ class Vertex {
    
   ];
 
-  // let idGraphIndex = 5; // anything lesser then 5 throws error and no full graph
+  // let idGraphIndex = 3; // anything lesser then 5 throws error and no full graph
 
   // let GraphRelationshipArray = [
   //   [1, 2],
@@ -77,14 +90,18 @@ class Vertex {
   graph.edges[1] = new Vertex(3)
   
   graph.edges[2] = new Vertex(4)
-  graph.edges[2].edges[0] = graph.id
-  graph.edges[2].edges[1] = graph.edges[1].id
+    
+  graph.edges[0].edges[0] = graph.id
+  graph.edges[0].edges[1] = graph.edges[1].id
+
 
   graph.edges[1].edges[0] = graph.edges[0].id
   graph.edges[1].edges[1] = graph.edges[2].id
 
-  graph.edges[0].edges[0] = graph.edges[1].id
-  graph.edges[0].edges[1] = graph.id
+ 
+  graph.edges[2].edges[0] = graph.edges[1].id
+  graph.edges[2].edges[1] = graph.id
+
 
   // graph.id.edge = graph.edges[2].id// migth not need to point 1
 
@@ -93,7 +110,7 @@ class Vertex {
   // 4-----------3
 
  
-  console.log(graph.edges)
+  // console.log(graph.edges)
 
   // console.log(graph.edges[0])
   // console.log(graph.edges[1])
@@ -104,19 +121,19 @@ class Vertex {
   // let v2;
 
   // for (let edge in graph.edges){
-    // console.log(edge)
-    // v1 = edge[0]; 
-    // v2 = edge[1]; 
+  //   console.log(edge)
+  //   v1 = edge[0]; 
+  //   v2 = edge[1]; 
 
-    // vertices[v1].edges.push(vertices[v2]); 
-    // vertices[v2].edges.push(vertices[v1]);
+  //   vertices[v1].edges.push(vertices[v2]); 
+  //   vertices[v2].edges.push(vertices[v1]);
     
   // }
   
   
   
-    console.log('Small Graph ',graph)
-    console.log('graph ONE Test', graph1)
+    // console.log('Small Graph ',graph)
+    // console.log('graph ONE Test', graph1)
 
 
 
@@ -166,4 +183,4 @@ function dfsRec(vertex) {
  
 
 // console.log("DFSRec:", dfsRec(graph));  
-  console.log("DFSRec:", dfsRec(graph1));  
+  // console.log("DFSRec:", dfsRec(graph1));  
