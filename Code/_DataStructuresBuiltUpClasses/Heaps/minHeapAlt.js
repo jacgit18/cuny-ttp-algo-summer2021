@@ -1,4 +1,3 @@
-// convert to min
 class MinBinaryHeap{
     
     constructor(){
@@ -18,9 +17,9 @@ class MinBinaryHeap{
         //loop while index is not 0 or element no longer needs to bubble
         while(index > 0){
             //get parent index via formula
-            let parentIndex = Math.floor((index - 1)/2);
+            let parentIndex = Math.ceil((index - 1)/2);
             //if values is greater than parent, swap the two
-            if(this.values[parentIndex] < this.values[index]){
+            if(this.values[parentIndex] > this.values[index]){
                 //swap with helper method
                 this.swap(index, parentIndex);
                 //change current index to parent index
@@ -84,7 +83,7 @@ bubbleDown(){
     }  
 }
 
-removeMax(){
+removeMin(){
     //swap first and last element
     this.swap(0, this.values.length - 1);
     //pop max value off of values
@@ -99,3 +98,26 @@ removeMax(){
 
 
 }
+
+
+
+const hp = new MinBinaryHeap();
+
+hp.insert(652)
+hp.insert(335)
+hp.insert(466)
+hp.insert(532)
+hp.insert(2330)
+hp.insert(324)
+hp.insert(222)
+hp.insert(4654)
+hp.insert(5432)
+hp.insert(43)
+
+// hp.bubbleDown()
+
+console.log(hp)
+
+console.log(hp.removeMin())
+// hp.bubbleDown()
+console.log(hp)

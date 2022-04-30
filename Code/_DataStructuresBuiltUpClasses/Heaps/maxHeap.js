@@ -86,21 +86,22 @@ class MaxHeap {
 module.exports = MaxHeap;
 
 
-// const hp = new MaxHeap();
+const hp = new MaxHeap();
 
-// hp.insert(652)
-// hp.insert(43)
-// hp.insert(335)
-// hp.insert(466)
-// hp.insert(532)
-// hp.insert(2330)
-// hp.insert(324)
-// hp.insert(222)
-// hp.insert(4645454)
-// hp.insert(343212)
+hp.insert(652)
+hp.insert(335)
+hp.insert(466)
+hp.insert(532)
+hp.insert(2330)
+hp.insert(324)
+hp.insert(222)
+hp.insert(4654)
+hp.insert(343212)
+hp.insert(43)
 
 
-// console.log(hp.getMax())
-// console.log(hp)
-// hp.remove()
-// console.log(hp)
+
+console.log(hp.getMax())
+console.log(hp)
+hp.remove()
+console.log(hp)

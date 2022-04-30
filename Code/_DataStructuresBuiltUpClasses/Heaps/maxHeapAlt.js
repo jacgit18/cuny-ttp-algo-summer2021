@@ -98,3 +98,25 @@ removeMax(){
 
 
 }
+
+
+const hp = new MaxBinaryHeap();
+
+hp.insert(652)
+hp.insert(335)
+hp.insert(466)
+hp.insert(532)
+hp.insert(2330)
+hp.insert(324)
+hp.insert(222)
+hp.insert(4654)
+hp.insert(343212)
+hp.insert(43)
+
+// hp.bubbleDown()
+
+console.log(hp)
+
+console.log(hp.removeMax())
+hp.bubbleDown()
+console.log(hp)

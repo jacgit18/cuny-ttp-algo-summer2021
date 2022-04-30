@@ -26,10 +26,11 @@ class MinHeap {
            
             /* Traversing up the parent node until the current node (current) is greater than the parent (current/2)*/
             while (current > 1 && this.heap[Math.floor(current/2)] > this.heap[current]) {
-                console.log(this.heap[current])
+                // console.log(this.heap[current])
+                // console.log(this.heap[current])
                 // let indexMath = Math.floor(current/2);
                 // console.log(`index ${indexMath} current value is ${current} iter ${count1++}`);
-                console.log(`index value ${this.heap[Math.floor(current/2)]} iter ${count2++}`);
+                // console.log(`index value ${this.heap[Math.floor(current/2)]} iter ${count2++}`);
 
                 /* Swapping the two nodes by using the ES6 destructuring syntax*/
                 [this.heap[Math.floor(current/2)], this.heap[current]] = [this.heap[current], this.heap[Math.floor(current/2)]]
@@ -101,7 +102,7 @@ hp.insert(2330)
 hp.insert(324)
 hp.insert(222)
 hp.insert(4654)
-hp.insert(343212)
+hp.insert(5432)
 hp.insert(43)
 
 
