@@ -11,10 +11,12 @@ class Vertex {
    const ArrayGraphDeserialize = (nodeIdx, edges) =>{
     let vertices = {};
      
+    // while (nodeIdx === 0) {
+
     while (nodeIdx--) {
 
         vertices[nodeIdx] = new Vertex(nodeIdx);
-
+      // nodeIdx--
     }
      
     let v1;
@@ -24,48 +26,34 @@ class Vertex {
     edges.forEach((edge) => {
 
       v1 = edge[0]; 
-
-          // console.log(v1)
-
       v2 = edge[1]; 
    
 
-
       vertices[v1].edges.push(vertices[v2]); 
-     // console.log(vertices[v1])
-
       vertices[v2].edges.push(vertices[v1]);
-   // console.log(vertices)
-      // console.log( vertices[v2])
 
 
-    }
-    
-    );
-
-    // console.log(vertices);
-    // console.log(vertices[v1])
-    // console.log(vertices[v2])
+    });
 
   
     return vertices[0];
   }
 
-  let idGraphIndex = 8; 
-  let GraphRelationshipArray = [
-    [0, 1],
-    [1, 2],
-    [2, 4],
-    [3, 5],
-    [4, 5],
-    [1, 7],
-    [4, 6],
-    [4, 7],
-    [5, 6],
+  // let idGraphIndex = 8; 
+  // let GraphRelationshipArray = [
+  //   [0, 1],
+  //   [1, 2],
+  //   [2, 4],
+  //   [3, 5],
+  //   [4, 5],
+  //   [1, 7],
+  //   [4, 6],
+  //   [4, 7],
+  //   [5, 6],
    
-  ];
+  // ];
 
-  // let idGraphIndex = 3; // anything lesser then 5 throws error and no full graph
+  let idGraphIndex = 5; // anything lesser then 5 throws error and no full graph
 
   // let GraphRelationshipArray = [
   //   [1, 2],
@@ -75,8 +63,21 @@ class Vertex {
    
   // ];
 
-  let graph1 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
+  let GraphRelationshipArray = [
+    [1, 2],
+    [1, 4],
+    [2, 1],
+    [2, 3],
+    [3, 2],
+    [3, 4],
+    [4, 1]
+    ];
 
+
+  // 1-----------2
+  // |           |            
+  // 4-----------3
+  let graph0 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
   let graph = new Vertex(1)
   // graph.edges[0] = 1
   
@@ -105,13 +106,10 @@ class Vertex {
 
   // graph.id.edge = graph.edges[2].id// migth not need to point 1
 
-  // 1-----------2
-  // |           |            
-  // 4-----------3
 
  
-  // console.log(graph.edges)
-
+  // console.log(graph.edges[1])
+// 
   // console.log(graph.edges[0])
   // console.log(graph.edges[1])
   // console.log(graph.edges[2])
@@ -132,8 +130,10 @@ class Vertex {
   
   
   
-    // console.log('Small Graph ',graph)
-    // console.log('graph ONE Test', graph1)
+    console.log('Graph Gen ',graph0)
+    console.log('Graph Built ', graph)
+
+    console.log('Graph Built Edges ', graph.edges)
 
 
 
