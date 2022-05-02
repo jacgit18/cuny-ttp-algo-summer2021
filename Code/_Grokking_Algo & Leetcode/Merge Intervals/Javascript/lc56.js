@@ -41,7 +41,9 @@ const merge = function(intervals) {
   }
   // ?
   intervals.sort((a, b) =>{
-    a.start - b.start
+    // a.start - b.start
+    a[0] - b[0]
+
   });
 
   const mergedIntervals = [];
@@ -51,12 +53,13 @@ const merge = function(intervals) {
   // let [intervalOneIdx ,intervalTwoIdx] =[ 0, 0];
 
   // let start, end;
-  let start = intervals[0];
+  let start = intervals[0][0];
 
 
-  for (i = 1; i < intervals.length; i++) {
+  for (i = 0; i < intervals.length; i++) {
     // const interval = intervals[i];
     // const [start, end] = firstList[i];
+    let end = intervals[i][1]
 
     // overlapping intervals, adjust the 'end
     if (start <= end){
@@ -166,7 +169,40 @@ let merged_intervalsArray = mergeArray([[1,3],[2,6],[8,10],[15,18]]);
 
 let merged_intervalsArray2 = mergeArray([[1,4],[4,5]]);
 
+// console.log(merged_intervalsArray)
+// console.log(merged_intervalsArray2)
+
+
 // console.log(merged_intervals)
-console.log(merged_intervalsArray)
 // console.log(merged_intervals2)
-console.log(merged_intervalsArray2)
+
+
+
+var mergeONE = function(intervals) {
+  if (intervals.length <= 1) return intervals;
+
+  intervals.sort((a, b) => a[0] - b[0]);
+
+for (let i = 0; i < intervals.length; i++) {
+  
+  const current = intervals[i];
+  const next = intervals[i + 1];
+
+  if (i !== intervals.length - 1 && current[1] >= next[0]) {
+    current[1] = Math.max(current[1], next[1]);
+    intervals.splice(i, 2, current);
+    i--;
+  }
+}
+
+return intervals;
+  
+  
+};
+
+console.log('test',mergeONE([[1,3],[2,6],[8,10],[15,18]]))
+console.log('test',mergeONE([[1,4],[4,5]]))
+
+
+// console.log('test2',merge([[1,3],[2,6],[8,10],[15,18]]))
+// console.log('test2',merge([[1,4],[4,5]]))

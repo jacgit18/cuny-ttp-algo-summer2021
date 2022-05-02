@@ -39,10 +39,9 @@ const intervalIntersection = (firstList, secondList) =>{
 };
 
 let firstList= [[0,2],[5,10],[13,23],[24,25]]; 
-// let firstList= [new Interval(0, 2), new Interval(5, 10), new Interval(13, 23), new Interval(13, 23)]; 
 
 let secondList = [[1,5],[8,12],[15,24],[25,26]];
-// let secondList= [new Interval(1, 5), new Interval(8, 12), new Interval(15, 24), new Interval(25, 26)]; 
+
 
 
 
@@ -52,33 +51,39 @@ console.log(intervalIntersection(firstList, secondList));
 
 // Solution
 // -----
-// function merge(intervals_a, intervals_b) {
-  // let result = [],
-  //   i = 0,
-  //   j = 0;
+function merge(intervals_a, intervals_b) {
+  let result = [],
+    i = 0,
+    j = 0;
 
-  // while (i < intervals_a.length && j < intervals_b.length) {
-  //   // check if intervals overlap and intervals_a[i]'s start time lies within the other intervals_b[j]
-  //   a_overlaps_b = intervals_a[i].start >= intervals_b[j].start && intervals_a[i].start <= intervals_b[j].end;
+  while (i < intervals_a.length && j < intervals_b.length) {
+    // check if intervals overlap and intervals_a[i]'s start time lies within the other intervals_b[j]
+    a_overlaps_b = intervals_a[i].start >= intervals_b[j].start && intervals_a[i].start <= intervals_b[j].end;
 
-  //   // check if intervals overlap and intervals_a[j]'s start time lies within the other intervals_b[i]
-  //   b_overlaps_a = intervals_b[j].start >= intervals_a[i].start && intervals_b[j].start <= intervals_a[i].end;
+    // check if intervals overlap and intervals_a[j]'s start time lies within the other intervals_b[i]
+    b_overlaps_a = intervals_b[j].start >= intervals_a[i].start && intervals_b[j].start <= intervals_a[i].end;
 
-  //   // store the the intersection part
-  //   if (a_overlaps_b || b_overlaps_a) {
-  //     result.push(new Interval(Math.max(intervals_a[i].start, intervals_b[j].start),
-  //       Math.min(intervals_a[i].end, intervals_b[j].end)));
-  //   }
-  //   // move next from the interval which is finishing first
-  //   if (intervals_a[i].end < intervals_b[j].end) {
-  //     i += 1;
-  //   } else {
-  //     j += 1;
-  //   }
-  // }
+    // store the the intersection part
+    if (a_overlaps_b || b_overlaps_a) {
+      result.push(new Interval(Math.max(intervals_a[i].start, intervals_b[j].start),
+        Math.min(intervals_a[i].end, intervals_b[j].end)));
+    }
+    // move next from the interval which is finishing first
+    if (intervals_a[i].end < intervals_b[j].end) {
+      i += 1;
+    } else {
+      j += 1;
+    }
+  }
 
-  // return result;
-// }
+  return result;
+}
+
+let firstListOne= [new Interval(0, 2), new Interval(5, 10), new Interval(13, 23), new Interval(13, 23)]; 
+let secondListTwo= [new Interval(1, 5), new Interval(8, 12), new Interval(15, 24), new Interval(25, 26)]; 
+
+console.log(merge(firstListOne, secondListTwo));
+
 
 // -----
 
