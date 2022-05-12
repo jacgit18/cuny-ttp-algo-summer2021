@@ -7,38 +7,38 @@ class Node {
   
   class Queue {
     constructor(){
-      this.first = null;
-      this.last = null;
+      this.front = null;
+      this.back = null;
       this.length = 0;
     }
     peek() {
-      return console.log(this.first)
+      return console.log(this.front)
     }
 
     // same as push 
     enqueue(value){
       const newNode = new Node(value);
       if (this.length === 0) {
-        this.first = newNode;
-        this.last = newNode;
+        this.front = newNode;
+        this.back = newNode;
       } else {
-        this.last.next = newNode;
-        this.last = newNode;
+        this.back.next = newNode;
+        this.back = newNode;
       }
       this.length++;
       return this;
     }
 
-    // like pop but removes the first objects in the queue 
+    // like pop but removes the front objects in the queue 
     dequeue(){
-      if (!this.first) {
+      if (!this.front) {
         return null;
       }
-      if (this.first === this.last) {
-        this.last = null;
+      if (this.front === this.back) {
+        this.back = null;
       }
-      const holdingPointer = this.first;
-      this.first = this.first.next;
+      // const holdingPointer = this.front;
+      this.front = this.front.next;
       this.length--;
       return this;
     }
@@ -47,15 +47,22 @@ class Node {
   
   const myQueue = new Queue();
   // myQueue.peek();// null
-  myQueue.enqueue('Joy'); // always will show in peek since first
-  myQueue.peek();
+  myQueue.enqueue('Joy'); // always will show in peek since front
+  // myQueue.peek();
 
   myQueue.enqueue('Matt');
-  myQueue.peek();
+  // myQueue.peek();
   myQueue.enqueue('Pavel');
-  myQueue.peek();
+  // myQueue.peek();
+  // myQueue.dequeue();
+  // myQueue.dequeue();
   myQueue.dequeue();
-  myQueue.dequeue();
-  myQueue.dequeue();
-  myQueue.peek();
+  // myQueue.peek();
+  // console.log(myQueue)
+  console.log(myQueue)
+
+  myQueue.front = new Node("chad")
+  myQueue.front.next = myQueue.back
+  console.log(myQueue)
+
   

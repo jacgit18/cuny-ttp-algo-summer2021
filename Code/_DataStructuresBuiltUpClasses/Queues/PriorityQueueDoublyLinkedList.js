@@ -1,4 +1,4 @@
-var front, rear;
+var front, back;
 
 // Linked List Node
 class Node {
@@ -31,8 +31,8 @@ function push(fr, rr, n, p) {
       fr = news;
     }
 
-    // If p is more rear node's priority,
-    // then insert after the rear.
+    // If p is more back node's priority,
+    // then insert after the back.
     else if (p > rr.priority) {
       news.next = null;
       rr.next = news;
@@ -53,10 +53,10 @@ function push(fr, rr, n, p) {
     }
   }
   front = fr;
-  rear = rr;
+  back = rr;
 }
 
-// Return the value at rear
+// Return the value at back
 function peek(fr) {
   return fr.info;
 }
@@ -74,18 +74,24 @@ function pop(fr, rr) {
   if (fr == null) rr = null;
 
   front = fr;
-  rear = rr;
+  back = rr;
   return res;
 }
 
 // Driver code
 
-push(front, rear, 2, 3);
-push(front, rear, 3, 4);
-push(front, rear, 4, 5);
-push(front, rear, 5, 6);
-push(front, rear, 6, 7);
-push(front, rear, 1, 2);
+push(front, back, 2, 3);
+push(front, back, 3, 4);
+push(front, back, 4, 5);
+push(front, back, 5, 6);
+push(front, back, 6, 7);
+push(front, back, 1, 2);
 
-document.write(pop(front, rear) + "<br/>");
-document.write(peek(front));
+// document.write(pop(front, back) + "<br/>");
+// console.log(pop(front, back) )
+// console.log(peek(front))
+console.log(front);
+console.log(back);
+
+
+

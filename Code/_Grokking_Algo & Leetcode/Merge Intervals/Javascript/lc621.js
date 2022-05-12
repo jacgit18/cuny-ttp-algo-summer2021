@@ -11,86 +11,8 @@
 
 
 
-
-
-class Interval {
-  constructor(start, end) {
-    this.start = start;
-    this.end = end;
-  }
-}
-
-/* 
-
-Problem/Notes:
-
-
-I/O:
-
-EdgeCase:{
-
-}
-
-Naïve-Approach:
-
-
-Constraints:
-
-
-Variables:
-
-
-Control flow
-         TestCase: {
-
-          Pre-Condition:
-
-         Conditions:
-
-         Termination-Conditions:
-
-         Post-Conditions:
-
-}        switch case()
-
-
-
- Steps:
- 1.
- 2.
-
-
-To Leverage & Rule out
-
- DataStructure&Algo :
-
-
- Functions:
-
-
-
-
-
- 
- 
-*/
-
 const leastInterval = (intervals) => {
-  let intervalOneIdx = 0;
-  let result = [];
 
-  while (intervalOneIdx < intervals.length) {
-    const [start, end] = intervals[intervalOneIdx];
-    if (start >= end) {
-      result.push(Math.max(start, end));
-    }
-
-    ++intervalOneIdx;
-
-    if (start < end) {
-      return false;
-    }
-  }
 };
 
 let testCaseOne = [
@@ -100,6 +22,10 @@ let testCaseOne = [
 ]; 
 
 
+
+console.log(
+  `${leastInterval(testCaseOne)}`
+);
 // Example 1:
 
 // Input: tasks = ["A","A","A","B","B","B"], n = 2
@@ -126,15 +52,26 @@ let testCaseOne = [
 // A -> B -> C -> A -> D -> E -> A -> F -> G -> A -> idle -> idle -> A -> idle -> idle -> A
 
 
-console.log(
-  `${leastInterval(testCaseOne)}`
-);
-  
-// console.log(`Can attend all appointments: ${can_attend_all_appointments([
-//   new Interval(0, 30),
-//   new Interval(5, 10),
-//   new Interval(15, 20),
-// ])}`);
+
+
+
+// const leastInterval = (intervals) => {
+//   let intervalOneIdx = 0;
+//   let result = [];
+
+//   while (intervalOneIdx < intervals.length) {
+//     const [start, end] = intervals[intervalOneIdx];
+//     if (start >= end) {
+//       result.push(Math.max(start, end));
+//     }
+
+//     ++intervalOneIdx;
+
+//     if (start < end) {
+//       return false;
+//     }
+//   }
+// };
 
 
 

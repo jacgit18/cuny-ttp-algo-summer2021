@@ -12,13 +12,13 @@ class MyQueue
 	constructor()
 	{
 		this.front = null;
-		this.rear = null;
+		this.back = null;
 	}
 	// Add a node into queue
 	enqueue(data)
 	{
 		// Create a new node
-		var node = new QNode(data, this.rear);
+		var node = new QNode(data, this.back);
 		if (this.front == null)
 		{
 			// When adding a first node of queue
@@ -27,10 +27,10 @@ class MyQueue
 		}
 		else
 		{
-			this.rear.next = node;
+			this.back.next = node;
 			this.size = this.size + 1;
 		}
-		this.rear = node;
+		this.back = node;
 	}
 	isEmpty()
 	{
@@ -64,18 +64,21 @@ class MyQueue
 	// Remove a front node of a queue
 	dequeue()
 	{
-		if (this.isEmpty() == true)
+		// if (this.isEmpty() == true) // same as this 
+		if (this.size == 0)
+
 		{
 			// When queue is empty
 			return -1;
 		}
 		else
 		{
-			var data = this.peek();
-			if (this.front == this.rear)
+			// var data = this.peek(); 
+			var data = this.front.data; // same as this 
+			if (this.front == this.back)
 			{
 				// When queue contains only one node
-				this.rear = null;
+				this.back = null;
 				this.front = null;
 			}
 			else
@@ -103,19 +106,35 @@ class MyQueue
 	}
 }
 
-function main()
-{
-	var q = new MyQueue();
+
+
+var q = new MyQueue();
 	// Add queue element
-	q.enqueue(1);
-	q.enqueue(2);
-	q.enqueue(3);
-	q.enqueue(4);
-	q.enqueue(5);
-	q.printQdata();
+	q.enqueue("joy");
+	q.enqueue("matt");
+	q.enqueue("pavel");
+	q.dequeue();
+
+	// q.enqueue(4);
+	// q.enqueue(5);
+	// q.printQdata();
 
     console.log(q)
 
+
+
+function main()
+{
+	// var q = new MyQueue();
+	// Add queue element
+	// q.enqueue(1);
+	// q.enqueue(2);
+	// q.enqueue(3);
+	// q.enqueue(4);
+	// q.enqueue(5);
+	// q.printQdata();
+
+    // console.log(q)
 	// process.stdout.write(" Size : " + q.isSize());
 	// // Remove queue element
 	// process.stdout.write("\n Dequeue Node : " + q.dequeue());
@@ -125,4 +144,4 @@ function main()
 	// process.stdout.write(" Size : " + q.isSize());
 }
 // Start program execution
-main();
+// main();
