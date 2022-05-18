@@ -40,7 +40,7 @@
 windowSum = 0,
 windowStart = 0;
 
-for (window_end = 0; window_end < arr.length; window_end++) {
+for (let window_end = 0; window_end < arr.length; window_end++) {
   // add the next element
   windowSum += arr[window_end];
   // slide the window, we don't need to slide if we've not hit the required window size of 'k'
