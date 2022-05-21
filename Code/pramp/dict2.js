@@ -1,21 +1,21 @@
 const dict = require("./dict");
 
-
-function flattenDictionary(dict) {
-    // your code goes here
-    let results = {};
-    let currKey = "";
-  
-    function flattenUtil(dict) {
-      // 1. 'Iterate' over the dictionary
+  // 1. 'Iterate' over the dictionary
       // Keys will either be 'Key_' for outermost level
       // or a letter/empty string for inner levels
       // 2. If the value is an int/string, append onto output dictionary
       // else if the value is a dictionary, recurse
       // 3. Base case: dict empty, return
+function flattenDictionary(dict) {
+    let results = {};
+    let currKey = "";
   
+    function flattenUtil(dict) {
+    
       Object.keys(dict).forEach(key => {
-        if (typeof dict[key] === 'object') {
+        let valType = typeof(dict[key]) === 'object'
+        let propertyDataValue = dict[key];
+        if (valType) {
           if (!currKey) {
             currKey += key;
           } else {
