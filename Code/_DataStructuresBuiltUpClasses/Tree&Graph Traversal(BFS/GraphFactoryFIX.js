@@ -83,24 +83,24 @@ class Vertex {
    */
 
 
-  let idGraphIndex = 8;
+  // let idGraphIndex = 8;
 
-  let GraphRelationshipArray = [
-    [0, 1],
-    [1, 2],
-    [2, 4],
-    [3, 5],
-    [4, 5],
-    [1, 7],
-    [4, 6],
-    [4, 7],
-    [5, 6],
-  ];
+  // let GraphRelationshipArray = [
+  //   [0, 1],
+  //   [1, 2],
+  //   [2, 4],
+  //   [3, 5],
+  //   [4, 5],
+  //   [1, 7],
+  //   [4, 6],
+  //   [4, 7],
+  //   [5, 6],
+  // ];
 
 // const stuructureMaker = new NodeConstructor();
 
-  let graph1 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
-  // let graph1 =  ArrayGraphDeserialize(id, GraphArray)
+  // let graph1 =  ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray)
+  let graph1 =  ArrayGraphDeserialize(id, GraphArray)
   console.log(graph1)
 
 /* 
@@ -206,7 +206,7 @@ class Vertex {
 
 
   // console.log("DFS:", dfs(graph1));  
-  console.log("DFSRec:", dfsRec(graph1)); 
+  // console.log("DFSRec:", dfsRec(graph1)); 
 
 
   // console.log("BFS:", bfs(graph1));
