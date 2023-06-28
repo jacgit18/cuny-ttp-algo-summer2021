@@ -75,15 +75,11 @@ mySet.add(9);
 
 
   class DoubleLLNode {
-    constructor(value) {
-      this.head = {
-          value: value,
-          next: null,
-          prev: null
-      };
-      this.tail = this.head;
-      // this.length = 1;
-  }
+    constructor(data) {
+      this.data = data;
+      this.previous = null;
+      this.next = null;
+    }
   }
 
 
@@ -141,41 +137,48 @@ class Vertex {
     return head;
   }
 
-  // fix
-  ArrayLinkListDoubleDeserialize(arr) {
-    if (arr.length === 0) { return null; }
+
+   ArrayLinkListDoubleDeserialize(arr) {
+    if (!arr || arr.length === 0) {
+      return null;
+    }
+    
     let head = new DoubleLLNode(arr[0]);
     let current = head;
-    let tail = head;
-    let pre = current;
-    let nex = head.next;
-
-
+    
     for (let i = 1; i < arr.length; i++) {
-      current.next = new DoubleLLNode(arr[i]);
-      prev = current
-      current = current.next;
+      let newNode = new DoubleLLNode(arr[i]);
+      current.next = newNode;
+      newNode.previous = current;
+      current = newNode;
     }
-    // this.tail = head;
+    
     return head;
   }
 
-  // fix
+
+
+  
+
   ArrayCyclicLinkListDoubleDeserialize(arr) {
-    if (arr.length === 0) { return null; }
+    if (!arr || arr.length === 0) {
+      return null;
+    }
+    
     let head = new DoubleLLNode(arr[0]);
     let current = head;
-    let tail = head;
-    let pre = current;
-    let nex = head.next;
-
-
+    
     for (let i = 1; i < arr.length; i++) {
-      current.next = new DoubleLLNode(arr[i]);
-      prev = current
-      current = current.next;
+      let newNode = new DoubleLLNode(arr[i]);
+      current.next = newNode;
+      newNode.previous = current;
+      current = newNode;
     }
-    // this.tail = head;
+    
+    // Make the list cyclic
+    current.next = head;
+    head.previous = current;
+    
     return head;
   }
   
@@ -242,9 +245,7 @@ class Vertex {
   //   return root;
   // }
 
-
-
-   ArrayGraphDeserialize(nodeIdx, edges) {
+  OGBugArrayGraphDeserialize(nodeIdx, edges) {
     let vertices = {};
         // while (nodeIdx--) {
 
@@ -279,6 +280,25 @@ class Vertex {
     );
   
     return vertices[0];
+  }
+
+   ArrayGraphDeserialize(edges, nodeIdx) {
+    const graph = {};
+
+    // Add nodes to the graph with empty neighbor arrays using a while loop
+    let i = 0;
+    while (i <= nodeIdx) {
+      graph[i] = [];
+      i++;
+    }
+  
+    // Add relationships to the graph using forEach
+    edges.forEach(([node1, node2]) => {
+      graph[node1].push(node2);
+      graph[node2].push(node1);
+    });
+  
+    return graph;
   }
 
     
@@ -415,8 +435,9 @@ const stuructureMaker = new NodeConstructor();
 // let linkedList = console.log(stuructureMaker.ArrayLinkListDeserialize(LinkListArray))
 // let linkedListCyclic = console.log(stuructureMaker.ArrayCyclicLinkListDeserialize(LinkListArray))
 // let linkedListDD = console.log(stuructureMaker.ArrayLinkListDoubleDeserialize(LinkListArray))
-let tree = console.log(stuructureMaker.ArrayBinaryTreeDeserialize((TreeArray)));
-// let graph = console.log(stuructureMaker.ArrayGraphDeserialize(idGraphIndex, GraphRelationshipArray))
+// let linkedListDDCY = console.log(stuructureMaker.ArrayCyclicLinkListDoubleDeserialize(LinkListArray))
+// let tree = console.log(stuructureMaker.ArrayBinaryTreeDeserialize((TreeArray)));
+let graph = console.log(stuructureMaker.ArrayGraphDeserialize(GraphRelationshipArray, idGraphIndex))
 
  
 
